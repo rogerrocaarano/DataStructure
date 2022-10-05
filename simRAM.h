@@ -28,13 +28,13 @@ private:
 public:
     simRAM();
 
-    memDir newSpace(string idStr);
+    memDir newSpace(const string &idStr);
 
     void delSpace(memDir dir);
 
-    void setData(memDir dir, string idStr, int dataValue);
+    void setData(memDir dir, const string &idStr, int dataValue);
 
-    int getData(memDir dir, string idStr);
+    int getData(memDir dir, const string &idStr);
 
     int getAvailableSpace();
 

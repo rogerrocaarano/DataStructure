@@ -23,7 +23,7 @@ namespace IDs {
         return idCount;
     }
 
-    string *idStrToArray(string idStr) {
+    string *idStrToArray(const string &idStr) {
         int IDsCount = countIds(idStr);
         auto *ids = new string[IDsCount];
         int i = 0;
@@ -52,7 +52,7 @@ simRAM::simRAM() {
     nextFreeNode = 0;
 }
 
-memDir simRAM::newSpace(string idStr) {
+memDir simRAM::newSpace(const string &idStr) {
     // Getting ids from a comma separated string
     // and saving it to an array.
     int idCount = IDs::countIds(idStr);
@@ -83,7 +83,7 @@ void simRAM::delSpace(memDir dir) {
     nextFreeNode = dir;
 }
 
-void simRAM::setData(memDir dir, string idStr, int dataValue) {
+void simRAM::setData(memDir dir, const string &idStr, int dataValue) {
     memDir z = dir;
     while (z != NULL_VALUE) {
         if (mem[z].id == idStr) {          // If found id:
@@ -93,7 +93,7 @@ void simRAM::setData(memDir dir, string idStr, int dataValue) {
     }
 }
 
-int simRAM::getData(memDir dir, string idStr) {
+int simRAM::getData(memDir dir, const string &idStr) {
     memDir z = dir;
     while (z != NULL_VALUE) {
         if (mem[z].id == idStr) {
