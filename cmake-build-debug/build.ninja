@@ -61,6 +61,12 @@ build CMakeFiles/RAMSimulator.dir/simRAM.cpp.obj: CXX_COMPILER__RAMSimulator_Deb
   OBJECT_DIR = CMakeFiles\RAMSimulator.dir
   OBJECT_FILE_DIR = CMakeFiles\RAMSimulator.dir
 
+build CMakeFiles/RAMSimulator.dir/lists.cpp.obj: CXX_COMPILER__RAMSimulator_Debug C$:/Users/rogerroca/CLionProjects/RAMSimulator/lists.cpp || cmake_object_order_depends_target_RAMSimulator
+  DEP_FILE = CMakeFiles\RAMSimulator.dir\lists.cpp.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\RAMSimulator.dir
+  OBJECT_FILE_DIR = CMakeFiles\RAMSimulator.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target RAMSimulator
@@ -69,7 +75,7 @@ build CMakeFiles/RAMSimulator.dir/simRAM.cpp.obj: CXX_COMPILER__RAMSimulator_Deb
 #############################################
 # Link the executable RAMSimulator.exe
 
-build RAMSimulator.exe: CXX_EXECUTABLE_LINKER__RAMSimulator_Debug CMakeFiles/RAMSimulator.dir/main.cpp.obj CMakeFiles/RAMSimulator.dir/simRAM.cpp.obj
+build RAMSimulator.exe: CXX_EXECUTABLE_LINKER__RAMSimulator_Debug CMakeFiles/RAMSimulator.dir/main.cpp.obj CMakeFiles/RAMSimulator.dir/simRAM.cpp.obj CMakeFiles/RAMSimulator.dir/lists.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\RAMSimulator.dir

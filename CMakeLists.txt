@@ -3,4 +3,4 @@ project(RAMSimulator)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(RAMSimulator main.cpp simRAM.cpp simRAM.h)
+add_executable(RAMSimulator main.cpp simRAM.cpp simRAM.h lists.cpp lists.h)
