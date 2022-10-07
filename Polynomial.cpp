@@ -126,7 +126,7 @@ void Polynomial::setTerm(int coef, int exp) {
         }
     } else {
         if (coef != 0) {
-            pol->insertItemLast(exp);
+            pol->insertItemFirst(exp); // No initial value, needs to initialise the list.
             pol->insertItem(pol->getLastDir(), coef);
         }
     }
