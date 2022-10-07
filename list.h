@@ -21,31 +21,31 @@ private:
 public:
     list();
 
-    list(simRAM *);
+    list(simRAM *mem);
 
     memDir getLastDir();
 
     memDir getFirstDir();
 
-    memDir getNextDir(memDir);
+    memDir getNextDir(memDir dir);
 
-    memDir getPreviousDir(memDir);
+    memDir getPreviousDir(memDir dir);
 
     bool isEmpty();
 
-    int getValue(memDir);
+    int getValue(memDir dir);
 
     int getLength();
 
-    void insertItem(memDir, DATA_TYPE);
+    void insertItem(memDir dir, DATA_TYPE value);
 
-    void insertItemFirst(DATA_TYPE);
+    void insertItemFirst(DATA_TYPE value);
 
-    void insertItemLast(DATA_TYPE);
+    void insertItemLast(DATA_TYPE value);
 
-    void delItem(memDir);
+    void delItem(memDir dir);
 
-    void setItem(memDir, DATA_TYPE);
+    void setItem(memDir dir, DATA_TYPE value);
 };
 
 

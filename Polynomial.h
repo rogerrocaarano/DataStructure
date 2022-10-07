@@ -24,21 +24,22 @@ public:
 
     int getGrade();
 
-    int getCoefficient(int);
+    int getCoefficient(int exp);
 
-    void setCoefficient(int, int);
+    void setCoefficient(int coef, int exp);
 
-    void setTerm(int, int);
+    void setTerm(int coef, int exp);
 
     int getNumberOfTerms();
 
-    int getExponent(int);
+    int getExponent(int term);
 
-    void addition(Polynomial, Polynomial);
+    void addition(Polynomial p1, Polynomial p2);
 
-    void subtraction(Polynomial, Polynomial);
+    void subtraction(Polynomial p1, Polynomial p2);
 
-    void multiplication(Polynomial, Polynomial);
+    void multiplication(Polynomial p1, Polynomial p2);
+
 };
 
 #endif //RAMSIMULATOR_POLYNOMIAL_H
