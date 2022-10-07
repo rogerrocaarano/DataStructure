@@ -58,6 +58,7 @@ memDir list::getFirstDir() {
 memDir list::getNextDir(memDir dir) {
     if (isEmpty()) {
         Ex::emptyList();
+        return NULL_VALUE;
     } else {
         if (dir == getLastDir()) {
             Ex::incorrectDir();

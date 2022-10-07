@@ -34,6 +34,7 @@ memDir Polynomial::findExp(int exp) {
         return expDir;
     } else {
         Ex::noTerms();
+        return NULL_VALUE;
     }
 }
 
@@ -104,20 +105,45 @@ void Polynomial::setCoefficient(int coef, int exp) {
 }
 
 void Polynomial::setTerm(int coef, int exp) {
-    memDir expDir = findExp(exp);
-    if (expDir != NULL_VALUE) {
-        memDir coefDir = pol->getPreviousDir(expDir);
-        pol->setItem(coefDir, pol->getValue(coefDir) + coef);
-        if (pol->getValue(coefDir) == 0) {
-            pol->delItem(expDir);
-            pol->delItem(coefDir);
-        } else {
-            if (coef != 0) {
-                pol->insertItemLast(exp);
-                pol->insertItem(pol->getLastDir(), coef);
+    /**
+    * 7/10/2022 12:07
+    * Added a condition for no terms in the polynomial.
+    */
+    if (!isZero()) {
+        memDir expDir = findExp(exp);
+        if (expDir != NULL_VALUE) {
+            memDir coefDir = pol->getPreviousDir(expDir);
+            pol->setItem(coefDir, pol->getValue(coefDir) + coef);
+            if (pol->getValue(coefDir) == 0) {
+                pol->delItem(expDir);
+                pol->delItem(coefDir);
+            } else {
+                if (coef != 0) {
+                    pol->insertItemLast(exp);
+                    pol->insertItem(pol->getLastDir(), coef);
+                }
             }
         }
+    } else {
+        if (coef != 0) {
+            pol->insertItemLast(exp);
+            pol->insertItem(pol->getLastDir(), coef);
+        }
     }
+//    memDir expDir = findExp(exp);
+//    if (expDir != NULL_VALUE) {
+//        memDir coefDir = pol->getPreviousDir(expDir);
+//        pol->setItem(coefDir, pol->getValue(coefDir) + coef);
+//        if (pol->getValue(coefDir) == 0) {
+//            pol->delItem(expDir);
+//            pol->delItem(coefDir);
+//        } else {
+//            if (coef != 0) {
+//                pol->insertItemLast(exp);
+//                pol->insertItem(pol->getLastDir(), coef);
+//            }
+//        }
+//    }
 }
 
 int Polynomial::getNumberOfTerms() {

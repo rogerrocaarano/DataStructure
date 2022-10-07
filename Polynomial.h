@@ -39,7 +39,6 @@ public:
     void subtraction(Polynomial p1, Polynomial p2);
 
     void multiplication(Polynomial p1, Polynomial p2);
-
 };
 
 #endif //RAMSIMULATOR_POLYNOMIAL_H
