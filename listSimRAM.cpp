@@ -2,38 +2,38 @@
 // Created by rogerroca on 5/10/2022.
 //
 
-#include "list.h"
+#include "listSimRAM.h"
 #include "iostream"
 
 using namespace std;
 
 namespace Ex {
     void emptyList() {
-        cout << "Lista Vacía" << endl;
+        cout << "Empty List" << endl;
     }
 
     void incorrectDir() {
-        cout << "Dirección Incorrecta" << endl;
+        cout << "Incorrect Direction" << endl;
     }
 
     void lowMemSpace() {
-        cout << "Espacio de memoria insuficiente." << endl;
+        cout << "Low memory space" << endl;
     }
 }
 
-list::list() {
+listSimRAM::listSimRAM() {
     this->listMem = new simRAM(); // Init simulated memory.
     length = 0;
     ptrDir = NULL_VALUE;
 }
 
-list::list(simRAM *mem) {
+listSimRAM::listSimRAM(simRAM *mem) {
     this->listMem = mem; // Use user input memory.
     length = 0;
     ptrDir = NULL_VALUE;
 }
 
-memDir list::getLastDir() {
+memDir listSimRAM::getLastDir() {
     memDir lastDir;
     if (isEmpty()) {
         Ex::emptyList();
@@ -47,7 +47,7 @@ memDir list::getLastDir() {
     }
 }
 
-memDir list::getFirstDir() {
+memDir listSimRAM::getFirstDir() {
     if (isEmpty()) {
         Ex::emptyList();
     } else {
@@ -55,7 +55,7 @@ memDir list::getFirstDir() {
     }
 }
 
-memDir list::getNextDir(memDir dir) {
+memDir listSimRAM::getNextDir(memDir dir) {
     if (isEmpty()) {
         Ex::emptyList();
         return NULL_VALUE;
@@ -68,7 +68,7 @@ memDir list::getNextDir(memDir dir) {
     }
 }
 
-memDir list::getPreviousDir(memDir dir) {
+memDir listSimRAM::getPreviousDir(memDir dir) {
     if (isEmpty()) {
         Ex::emptyList();
     } else {
@@ -89,11 +89,11 @@ memDir list::getPreviousDir(memDir dir) {
     }
 }
 
-bool list::isEmpty() {
+bool listSimRAM::isEmpty() {
     return !(length > 0);
 }
 
-int list::getValue(memDir dir) {
+int listSimRAM::getValue(memDir dir) {
     if (isEmpty()) {
         Ex::emptyList();
     } else {
@@ -101,35 +101,43 @@ int list::getValue(memDir dir) {
     }
 }
 
-int list::getLength() {
+int listSimRAM::getLength() {
     return length;
 }
 
-void list::insertItem(memDir dir, DATA_TYPE value) {
-    memDir x = listMem->newSpace(LIST_NODE); // request new memory space.
-    if (x != NULL_VALUE) {
-        listMem->setData(x, LIST_ITEM, value);
-        listMem->setData(x, NEXT_LIST_ITEM_POINTER, dir);
-        if (isEmpty()) {
-            ptrDir = x;
-            length = 1;
-        } else {
-            length++;
-            if (dir == getFirstDir()) {
-                listMem->setData(x, NEXT_LIST_ITEM_POINTER, dir);
-                ptrDir = x;
-            } else {
-                memDir prevDir = getPreviousDir(dir);
-                listMem->setData(prevDir, NEXT_LIST_ITEM_POINTER, x);
-                listMem->setData(x, NEXT_LIST_ITEM_POINTER, dir);
-            }
-        }
+void listSimRAM::insertItem(memDir dir, DATA_TYPE value) {
+    /**
+    * 17/10/2022 17:00
+    * Added exception for empty list
+    **/
+    if (this->isEmpty()) {
+        insertItemFirst(value);
     } else {
-        Ex::lowMemSpace();
+        memDir x = listMem->newSpace(LIST_NODE); // request new memory space.
+        if (x != NULL_VALUE) {
+            listMem->setData(x, LIST_ITEM, value);
+            listMem->setData(x, NEXT_LIST_ITEM_POINTER, dir);
+            if (isEmpty()) {
+                ptrDir = x;
+                length = 1;
+            } else {
+                length++;
+                if (dir == getFirstDir()) {
+                    listMem->setData(x, NEXT_LIST_ITEM_POINTER, dir);
+                    ptrDir = x;
+                } else {
+                    memDir prevDir = getPreviousDir(dir);
+                    listMem->setData(prevDir, NEXT_LIST_ITEM_POINTER, x);
+                    listMem->setData(x, NEXT_LIST_ITEM_POINTER, dir);
+                }
+            }
+        } else {
+            Ex::lowMemSpace();
+        }
     }
 }
 
-void list::insertItemFirst(DATA_TYPE value) {
+void listSimRAM::insertItemFirst(DATA_TYPE value) {
     memDir x = listMem->newSpace(LIST_NODE);
     if (x != NULL_VALUE) {
         listMem->setData(x, LIST_ITEM, value);
@@ -141,7 +149,7 @@ void list::insertItemFirst(DATA_TYPE value) {
     }
 }
 
-void list::insertItemLast(DATA_TYPE value) {
+void listSimRAM::insertItemLast(DATA_TYPE value) {
     memDir x = listMem->newSpace(LIST_NODE);
     if (x != NULL_VALUE) {
         listMem->setData(x, LIST_ITEM, value);
@@ -158,7 +166,7 @@ void list::insertItemLast(DATA_TYPE value) {
 
 }
 
-void list::delItem(memDir dir) {
+void listSimRAM::delItem(memDir dir) {
     if (isEmpty()) {
         Ex::emptyList();
     } else {
@@ -174,10 +182,14 @@ void list::delItem(memDir dir) {
     }
 }
 
-void list::setItem(memDir dir, DATA_TYPE value) {
+void listSimRAM::setItem(memDir dir, DATA_TYPE value) {
     if (isEmpty()) {
         Ex::emptyList();
     } else {
         listMem->setData(dir, LIST_ITEM, value);
     }
+}
+
+void listSimRAM::printList() {
+    listMem->showMemory();
 }

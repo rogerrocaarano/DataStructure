@@ -5,13 +5,13 @@
 #ifndef RAMSIMULATOR_POLYNOMIAL_H
 #define RAMSIMULATOR_POLYNOMIAL_H
 
-#include "list.h"
+#include "listSimRAM.h"
 
 using namespace std;
 
 class Polynomial {
 private:
-    list *pol;
+    listSimRAM *pol;
 
     memDir findExp(int);
 
@@ -39,6 +39,9 @@ public:
     void subtraction(Polynomial p1, Polynomial p2);
 
     void multiplication(Polynomial p1, Polynomial p2);
+
+    void isOpposite(Polynomial p1, Polynomial p2);
+
 };
 
 #endif //RAMSIMULATOR_POLYNOMIAL_H

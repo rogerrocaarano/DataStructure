@@ -8,8 +8,8 @@
 using namespace std;
 
 namespace Ex {
-    void noTerms() {
-        cout << "Polinomio no tiene términos" << endl;
+    void noTerm(int exp) {
+        cout << "Polinomio no tiene término de exp=" << exp << endl;
     }
 
     void noGrade() {
@@ -28,12 +28,13 @@ memDir Polynomial::findExp(int exp) {
         while (dir != NULL_VALUE && expDir == NULL_VALUE) {
             if (pol->getValue(dir) == exp) {
                 expDir = dir;
+            } else {
+                dir = pol->getNextDir(pol->getNextDir(dir));
             }
-            dir = pol->getNextDir(pol->getNextDir(dir));
         }
         return expDir;
     } else {
-        Ex::noTerms();
+        Ex::noTerm(exp);
         return NULL_VALUE;
     }
 }
@@ -52,13 +53,13 @@ memDir Polynomial::findTermN(int i) {
         }
         return termDir;
     } else {
-        Ex::noTerms();
+//        Ex::noTerm(exp);
     }
 }
 
 Polynomial::Polynomial() {
-    // Init list.
-    this->pol = new list();
+    // Init listSimRAM.
+    this->pol = new listSimRAM();
 }
 
 bool Polynomial::isZero() {
@@ -77,7 +78,7 @@ int Polynomial::getGrade() {
         }
         return maxGrade;
     } else {
-        Ex::noTerms();
+//        Ex::noTerm();
     }
 }
 
@@ -105,45 +106,20 @@ void Polynomial::setCoefficient(int coef, int exp) {
 }
 
 void Polynomial::setTerm(int coef, int exp) {
-    /**
-    * 7/10/2022 12:07
-    * Added a condition for no terms in the polynomial.
-    */
-    if (!isZero()) {
-        memDir expDir = findExp(exp);
-        if (expDir != NULL_VALUE) {
-            memDir coefDir = pol->getPreviousDir(expDir);
-            pol->setItem(coefDir, pol->getValue(coefDir) + coef);
-            if (pol->getValue(coefDir) == 0) {
-                pol->delItem(expDir);
-                pol->delItem(coefDir);
-            } else {
-                if (coef != 0) {
-                    pol->insertItemLast(exp);
-                    pol->insertItem(pol->getLastDir(), coef);
-                }
+    memDir expDir = findExp(exp);
+    if (expDir != NULL_VALUE) {
+        memDir coefDir = pol->getPreviousDir(expDir);
+        pol->setItem(coefDir, pol->getValue(coefDir) + coef);
+        if (pol->getValue(coefDir) == 0) {
+            pol->delItem(expDir);
+            pol->delItem(coefDir);
+        } else {
+            if (coef != 0) {
+                pol->insertItemLast(exp);
+                pol->insertItem(pol->getLastDir(), coef);
             }
         }
-    } else {
-        if (coef != 0) {
-            pol->insertItemFirst(exp); // No initial value, needs to initialise the list.
-            pol->insertItem(pol->getLastDir(), coef);
-        }
     }
-//    memDir expDir = findExp(exp);
-//    if (expDir != NULL_VALUE) {
-//        memDir coefDir = pol->getPreviousDir(expDir);
-//        pol->setItem(coefDir, pol->getValue(coefDir) + coef);
-//        if (pol->getValue(coefDir) == 0) {
-//            pol->delItem(expDir);
-//            pol->delItem(coefDir);
-//        } else {
-//            if (coef != 0) {
-//                pol->insertItemLast(exp);
-//                pol->insertItem(pol->getLastDir(), coef);
-//            }
-//        }
-//    }
 }
 
 int Polynomial::getNumberOfTerms() {
@@ -187,4 +163,33 @@ void Polynomial::subtraction(Polynomial p1, Polynomial p2) {
 
 void Polynomial::multiplication(Polynomial p1, Polynomial p2) {
 //todo Find how to do this.
+}
+
+void Polynomial::isOpposite(Polynomial p1, Polynomial p2) {
+    addition(p1, p2);
+    if (isZero()) {
+        cout << "Son polinomios opuestos." << endl;
+    } else {
+        cout << "No son polinomios opuestos." << endl;
+    }
+//    bool Opposite = true;
+//    if (p1.getNumberOfTerms() != p2.getNumberOfTerms()
+//        || p1.getGrade() != p2.getGrade()) {
+//        Opposite = false;
+//    } else {
+//        while (Opposite) {
+//            for (int i = 0; p1.getGrade(); i++) {
+//                memDir exp1Dir = p1.findExp(i);
+//                memDir exp2Dir = p2.findExp(i);
+//                if (exp1Dir == NULL_VALUE ^ exp2Dir == NULL_VALUE) {
+//                    Opposite = false;
+//                } else {
+//                    if (p1.getCoefficient(i) != (-1) * p2.getCoefficient(i)) {
+//                        Opposite = false;
+//                    }
+//                }
+//            }
+//        }
+//    }
+//    return Opposite;
 }

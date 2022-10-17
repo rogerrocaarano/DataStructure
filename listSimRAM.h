@@ -2,8 +2,8 @@
 // Created by rogerroca on 5/10/2022.
 //
 
-#ifndef RAMSIMULATOR_LIST_H
-#define RAMSIMULATOR_LIST_H
+#ifndef RAMSIMULATOR_LISTSIMRAM_H
+#define RAMSIMULATOR_LISTSIMRAM_H
 
 #include "simRAM.h"
 
@@ -11,17 +11,17 @@ const string LIST_ITEM = "item";
 const string NEXT_LIST_ITEM_POINTER = "next";
 const string LIST_NODE = LIST_ITEM + ',' + NEXT_LIST_ITEM_POINTER;
 
-typedef int DATA_TYPE; // Data type than the list can store.
+typedef int DATA_TYPE; // Data type than the listSimRAM can store.
 
-class list {
+class listSimRAM {
 private:
     memDir ptrDir; // Points to a memory node.
     int length;
     simRAM *listMem;
 public:
-    list();
+    listSimRAM();
 
-    list(simRAM *mem);
+    listSimRAM(simRAM *mem);
 
     memDir getLastDir();
 
@@ -46,7 +46,9 @@ public:
     void delItem(memDir dir);
 
     void setItem(memDir dir, DATA_TYPE value);
+
+    void printList();
 };
 
 
-#endif //RAMSIMULATOR_LIST_H
+#endif //RAMSIMULATOR_LISTSIMRAM_H
