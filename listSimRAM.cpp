@@ -61,7 +61,12 @@ memDir listSimRAM::getNextDir(memDir dir) {
         return NULL_VALUE;
     } else {
         if (dir == getLastDir()) {
+            /**
+            * 17/10/2022 19:55
+             * Added a return value for the exception.
+            */
             Ex::incorrectDir();
+            return NULL_VALUE;
         } else {
             return (listMem->getData(dir, NEXT_LIST_ITEM_POINTER));
         }
@@ -150,20 +155,23 @@ void listSimRAM::insertItemFirst(DATA_TYPE value) {
 }
 
 void listSimRAM::insertItemLast(DATA_TYPE value) {
-    memDir x = listMem->newSpace(LIST_NODE);
-    if (x != NULL_VALUE) {
-        listMem->setData(x, LIST_ITEM, value);
-        listMem->setData(x, NEXT_LIST_ITEM_POINTER, NULL_VALUE);
-        if (getLength() != NULL_VALUE) {
-            listMem->setData(getLastDir(), NEXT_LIST_ITEM_POINTER, x);
-        } else {
-            ptrDir = x;
-        }
-        length++;
+    if (this->isEmpty()) {
+        insertItemFirst(value);
     } else {
-        Ex::lowMemSpace();
+        memDir x = listMem->newSpace(LIST_NODE);
+        if (x != NULL_VALUE) {
+            listMem->setData(x, LIST_ITEM, value);
+            listMem->setData(x, NEXT_LIST_ITEM_POINTER, NULL_VALUE);
+            if (getLength() != NULL_VALUE) {
+                listMem->setData(getLastDir(), NEXT_LIST_ITEM_POINTER, x);
+            } else {
+                ptrDir = x;
+            }
+            length++;
+        } else {
+            Ex::lowMemSpace();
+        }
     }
-
 }
 
 void listSimRAM::delItem(memDir dir) {

@@ -2,7 +2,7 @@
 // Created by rogerroca on 6/10/2022.
 //
 
-#include "Polynomial.h"
+#include "PolynomialList.h"
 #include "iostream"
 
 using namespace std;
@@ -21,7 +21,7 @@ namespace Ex {
     }
 }
 
-memDir Polynomial::findExp(int exp) {
+memDir PolynomialList::findExp(int exp) {
     memDir dir = pol->getNextDir(pol->getFirstDir());
     if (dir != NULL_VALUE) {
         memDir expDir = NULL_VALUE;
@@ -39,7 +39,7 @@ memDir Polynomial::findExp(int exp) {
     }
 }
 
-memDir Polynomial::findTermN(int i) {
+memDir PolynomialList::findTermN(int i) {
     memDir dir = pol->getFirstDir();
     int nt = 0;
     if (dir != NULL_VALUE) {
@@ -57,16 +57,16 @@ memDir Polynomial::findTermN(int i) {
     }
 }
 
-Polynomial::Polynomial() {
+PolynomialList::PolynomialList() {
     // Init listSimRAM.
     this->pol = new listSimRAM();
 }
 
-bool Polynomial::isZero() {
+bool PolynomialList::isZero() {
     return pol->getLength() == 0;
 }
 
-int Polynomial::getGrade() {
+int PolynomialList::getGrade() {
     memDir dir = pol->getNextDir(pol->getFirstDir());
     if (dir != NULL_VALUE) {
         int maxGrade = pol->getValue(dir);
@@ -82,7 +82,7 @@ int Polynomial::getGrade() {
     }
 }
 
-int Polynomial::getCoefficient(int exp) {
+int PolynomialList::getCoefficient(int exp) {
     memDir dir = findExp(exp);
     if (dir != NULL_VALUE) {
         return pol->getValue(pol->getPreviousDir(dir));
@@ -91,7 +91,7 @@ int Polynomial::getCoefficient(int exp) {
     }
 }
 
-void Polynomial::setCoefficient(int coef, int exp) {
+void PolynomialList::setCoefficient(int coef, int exp) {
     memDir dir = findExp(exp);
     if (dir != NULL_VALUE) {
         memDir coefDir = pol->getPreviousDir(dir);
@@ -105,7 +105,7 @@ void Polynomial::setCoefficient(int coef, int exp) {
     }
 }
 
-void Polynomial::setTerm(int coef, int exp) {
+void PolynomialList::setTerm(int coef, int exp) {
     memDir expDir = findExp(exp);
     if (expDir != NULL_VALUE) {
         memDir coefDir = pol->getPreviousDir(expDir);
@@ -113,20 +113,20 @@ void Polynomial::setTerm(int coef, int exp) {
         if (pol->getValue(coefDir) == 0) {
             pol->delItem(expDir);
             pol->delItem(coefDir);
-        } else {
-            if (coef != 0) {
-                pol->insertItemLast(exp);
-                pol->insertItem(pol->getLastDir(), coef);
-            }
+        }
+    } else {
+        if (coef != 0) {
+            pol->insertItemLast(coef);
+            pol->insertItemLast(exp);
         }
     }
 }
 
-int Polynomial::getNumberOfTerms() {
+int PolynomialList::getNumberOfTerms() {
     return pol->getLength() / 2;
 }
 
-int Polynomial::getExponent(int term) {
+int PolynomialList::getExponent(int term) {
     memDir dir = findTermN(term);
     if (dir != NULL_VALUE) {
         return pol->getValue(pol->getNextDir(dir));
@@ -135,7 +135,7 @@ int Polynomial::getExponent(int term) {
     }
 }
 
-void Polynomial::addition(Polynomial p1, Polynomial p2) {
+void PolynomialList::addition(PolynomialList p1, PolynomialList p2) {
     for (int i = 1; p1.getNumberOfTerms(); i++) {
         int exp = p1.findExp(i);
         int coef = p1.getCoefficient(exp);
@@ -148,7 +148,7 @@ void Polynomial::addition(Polynomial p1, Polynomial p2) {
     }
 }
 
-void Polynomial::subtraction(Polynomial p1, Polynomial p2) {
+void PolynomialList::subtraction(PolynomialList p1, PolynomialList p2) {
     for (int i = 1; p1.getNumberOfTerms(); i++) {
         int exp = p1.findExp(i);
         int coef = p1.getCoefficient(exp);
@@ -161,11 +161,11 @@ void Polynomial::subtraction(Polynomial p1, Polynomial p2) {
     }
 }
 
-void Polynomial::multiplication(Polynomial p1, Polynomial p2) {
+void PolynomialList::multiplication(PolynomialList p1, PolynomialList p2) {
 //todo Find how to do this.
 }
 
-void Polynomial::isOpposite(Polynomial p1, Polynomial p2) {
+void PolynomialList::isOpposite(PolynomialList p1, PolynomialList p2) {
     addition(p1, p2);
     if (isZero()) {
         cout << "Son polinomios opuestos." << endl;
@@ -192,4 +192,8 @@ void Polynomial::isOpposite(Polynomial p1, Polynomial p2) {
 //        }
 //    }
 //    return Opposite;
+}
+
+void PolynomialList::print() {
+    pol->printList();
 }

@@ -128,29 +128,29 @@ RAMSimulator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/build
 .PHONY : RAMSimulator/fast
 
-Polynomial.obj: Polynomial.cpp.obj
-.PHONY : Polynomial.obj
+PolynomialList.obj: PolynomialList.cpp.obj
+.PHONY : PolynomialList.obj
 
 # target to build an object file
-Polynomial.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/Polynomial.cpp.obj
-.PHONY : Polynomial.cpp.obj
+PolynomialList.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.obj
+.PHONY : PolynomialList.cpp.obj
 
-Polynomial.i: Polynomial.cpp.i
-.PHONY : Polynomial.i
+PolynomialList.i: PolynomialList.cpp.i
+.PHONY : PolynomialList.i
 
 # target to preprocess a source file
-Polynomial.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/Polynomial.cpp.i
-.PHONY : Polynomial.cpp.i
+PolynomialList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.i
+.PHONY : PolynomialList.cpp.i
 
-Polynomial.s: Polynomial.cpp.s
-.PHONY : Polynomial.s
+PolynomialList.s: PolynomialList.cpp.s
+.PHONY : PolynomialList.s
 
 # target to generate assembly for a file
-Polynomial.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/Polynomial.cpp.s
-.PHONY : Polynomial.cpp.s
+PolynomialList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.s
+.PHONY : PolynomialList.cpp.s
 
 listSimRAM.obj: listSimRAM.cpp.obj
 .PHONY : listSimRAM.obj
@@ -233,9 +233,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... RAMSimulator
-	@echo ... Polynomial.obj
-	@echo ... Polynomial.i
-	@echo ... Polynomial.s
+	@echo ... PolynomialList.obj
+	@echo ... PolynomialList.i
+	@echo ... PolynomialList.s
 	@echo ... listSimRAM.obj
 	@echo ... listSimRAM.i
 	@echo ... listSimRAM.s
