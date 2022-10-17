@@ -1,6 +1,7 @@
-#include <iostream>
+#include "iostream"
 #include "simRAM.h"
 #include "listSimRAM.h"
+#include "PolynomialList.h"
 
 using namespace std;
 
@@ -26,8 +27,17 @@ void testListSimRam() {
     l.printList();
 }
 
+void testPolynomialList() {
+    PolynomialList p;
+    p.setTerm(3, 2);
+    p.print();
+}
+
 int main() {
 //    testSimRam();
-    testListSimRam();
+//    testListSimRam();
+    testPolynomialList();
+
     return 0;
+
 }

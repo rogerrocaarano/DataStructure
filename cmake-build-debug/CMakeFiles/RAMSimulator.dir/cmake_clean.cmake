@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/RAMSimulator.dir/Polynomial.cpp.obj"
-  "CMakeFiles/RAMSimulator.dir/Polynomial.cpp.obj.d"
+  "CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.obj"
+  "CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.obj.d"
   "CMakeFiles/RAMSimulator.dir/listSimRAM.cpp.obj"
   "CMakeFiles/RAMSimulator.dir/listSimRAM.cpp.obj.d"
   "CMakeFiles/RAMSimulator.dir/main.cpp.obj"

@@ -110,26 +110,26 @@ CMakeFiles/RAMSimulator.dir/listSimRAM.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RAMSimulator.dir/listSimRAM.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\rogerroca\CLionProjects\RAMSimulator\listSimRAM.cpp -o CMakeFiles\RAMSimulator.dir\listSimRAM.cpp.s
 
-CMakeFiles/RAMSimulator.dir/Polynomial.cpp.obj: CMakeFiles/RAMSimulator.dir/flags.make
-CMakeFiles/RAMSimulator.dir/Polynomial.cpp.obj: ../Polynomial.cpp
-CMakeFiles/RAMSimulator.dir/Polynomial.cpp.obj: CMakeFiles/RAMSimulator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rogerroca\CLionProjects\RAMSimulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/RAMSimulator.dir/Polynomial.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RAMSimulator.dir/Polynomial.cpp.obj -MF CMakeFiles\RAMSimulator.dir\Polynomial.cpp.obj.d -o CMakeFiles\RAMSimulator.dir\Polynomial.cpp.obj -c C:\Users\rogerroca\CLionProjects\RAMSimulator\Polynomial.cpp
+CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.obj: CMakeFiles/RAMSimulator.dir/flags.make
+CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.obj: ../PolynomialList.cpp
+CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.obj: CMakeFiles/RAMSimulator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\rogerroca\CLionProjects\RAMSimulator\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.obj -MF CMakeFiles\RAMSimulator.dir\PolynomialList.cpp.obj.d -o CMakeFiles\RAMSimulator.dir\PolynomialList.cpp.obj -c C:\Users\rogerroca\CLionProjects\RAMSimulator\PolynomialList.cpp
 
-CMakeFiles/RAMSimulator.dir/Polynomial.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RAMSimulator.dir/Polynomial.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\rogerroca\CLionProjects\RAMSimulator\Polynomial.cpp > CMakeFiles\RAMSimulator.dir\Polynomial.cpp.i
+CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\rogerroca\CLionProjects\RAMSimulator\PolynomialList.cpp > CMakeFiles\RAMSimulator.dir\PolynomialList.cpp.i
 
-CMakeFiles/RAMSimulator.dir/Polynomial.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RAMSimulator.dir/Polynomial.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\rogerroca\CLionProjects\RAMSimulator\Polynomial.cpp -o CMakeFiles\RAMSimulator.dir\Polynomial.cpp.s
+CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\rogerroca\CLionProjects\RAMSimulator\PolynomialList.cpp -o CMakeFiles\RAMSimulator.dir\PolynomialList.cpp.s
 
 # Object files for target RAMSimulator
 RAMSimulator_OBJECTS = \
 "CMakeFiles/RAMSimulator.dir/main.cpp.obj" \
 "CMakeFiles/RAMSimulator.dir/simRAM.cpp.obj" \
 "CMakeFiles/RAMSimulator.dir/listSimRAM.cpp.obj" \
-"CMakeFiles/RAMSimulator.dir/Polynomial.cpp.obj"
+"CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.obj"
 
 # External object files for target RAMSimulator
 RAMSimulator_EXTERNAL_OBJECTS =
@@ -137,7 +137,7 @@ RAMSimulator_EXTERNAL_OBJECTS =
 RAMSimulator.exe: CMakeFiles/RAMSimulator.dir/main.cpp.obj
 RAMSimulator.exe: CMakeFiles/RAMSimulator.dir/simRAM.cpp.obj
 RAMSimulator.exe: CMakeFiles/RAMSimulator.dir/listSimRAM.cpp.obj
-RAMSimulator.exe: CMakeFiles/RAMSimulator.dir/Polynomial.cpp.obj
+RAMSimulator.exe: CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.obj
 RAMSimulator.exe: CMakeFiles/RAMSimulator.dir/build.make
 RAMSimulator.exe: CMakeFiles/RAMSimulator.dir/linklibs.rsp
 RAMSimulator.exe: CMakeFiles/RAMSimulator.dir/objects1.rsp
