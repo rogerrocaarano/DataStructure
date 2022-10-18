@@ -21,18 +21,30 @@ void testSimRam() {
 
 void testListSimRam() {
     listSimRAM l;
-    l.insertItem(l.getFirstDir(), 1);
-    l.insertItemLast(2);
-    l.insertItemFirst(3);
+    l.insertItem(l.getFirstDir(), 100);
+    l.insertItemLast(200);
+    l.insertItemLast(300);
+    l.delItem(2);
+    l.insertItemLast(500);
     l.printList();
 }
 
 void testPolynomialList() {
-    PolynomialList p;
-    p.setTerm(3, 2);
-    p.print();
-    p.setTerm(3, 4);
-    p.print();
+    PolynomialList p1;
+    PolynomialList p2;
+    PolynomialList p3;
+    p1.setTerm(2, -1);
+    p1.setTerm(4, 2);
+    p1.print();
+    p2.setTerm(3, 1);
+    p2.setTerm(5, 2);
+    p2.print();
+    p3.multiplication(p1, p2);
+//    p3.addition(p1, p2);
+//    p3.subtraction(p1, p2);
+//    p3.isOpposite(p1, p2);
+    p3.print();
+
 }
 
 int main() {

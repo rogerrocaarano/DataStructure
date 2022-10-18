@@ -9,15 +9,15 @@ using namespace std;
 
 namespace Ex {
     void noTerm(int exp) {
-        cout << "Polinomio no tiene término de exp=" << exp << endl;
+        cout << "No Term: exp=" << exp << endl;
     }
 
     void noGrade() {
-        cout << "Polinomio no tiene ese término" << endl;
+        cout << "No Term." << endl;
     }
 
     void termNotFound() {
-        cout << "No existe ese número de término" << endl;
+        cout << "Term not found." << endl;
     }
 }
 
@@ -42,19 +42,16 @@ memDir PolynomialList::findExp(int exp) {
 memDir PolynomialList::findTermN(int i) {
     memDir dir = pol->getFirstDir();
     int nt = 0;
-    if (dir != NULL_VALUE) {
-        memDir termDir = NULL_VALUE;
-        while (dir != NULL_VALUE && termDir == NULL_VALUE) {
-            nt++;
-            if (nt == i) {
-                termDir = dir;
-            }
+    memDir termDir = NULL_VALUE;
+    while (dir != NULL_VALUE && termDir == NULL_VALUE) {
+        nt++;
+        if (nt == i) {
+            termDir = dir;
+        } else {
             dir = pol->getNextDir(pol->getNextDir(dir));
         }
-        return termDir;
-    } else {
-//        Ex::noTerm(exp);
     }
+    return termDir;
 }
 
 PolynomialList::PolynomialList() {
@@ -136,33 +133,40 @@ int PolynomialList::getExponent(int term) {
 }
 
 void PolynomialList::addition(PolynomialList p1, PolynomialList p2) {
-    for (int i = 1; p1.getNumberOfTerms(); i++) {
-        int exp = p1.findExp(i);
+    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
+        int exp = p1.getExponent(i);
         int coef = p1.getCoefficient(exp);
         setTerm(coef, exp);
     }
-    for (int i = 1; p2.getNumberOfTerms(); i++) {
-        int exp = p2.findExp(i);
+    for (int i = 1; i <= p2.getNumberOfTerms(); i++) {
+        int exp = p2.getExponent(i);
         int coef = p2.getCoefficient(exp);
         setTerm(coef, exp);
     }
 }
 
 void PolynomialList::subtraction(PolynomialList p1, PolynomialList p2) {
-    for (int i = 1; p1.getNumberOfTerms(); i++) {
-        int exp = p1.findExp(i);
+    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
+        int exp = p1.getExponent(i);
         int coef = p1.getCoefficient(exp);
         setTerm(coef, exp);
     }
-    for (int i = 1; p2.getNumberOfTerms(); i++) {
-        int exp = p2.findExp(i);
+    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
+        int exp = p2.getExponent(i);
         int coef = p2.getCoefficient(exp) * (-1);
         setTerm(coef, exp);
     }
 }
 
 void PolynomialList::multiplication(PolynomialList p1, PolynomialList p2) {
-//todo Find how to do this.
+    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
+        for (int j = 1; j <= p2.getNumberOfTerms(); j++) {
+            int exp = p1.getExponent(i) + p2.getExponent(j);
+            int coef = p1.getCoefficient(p1.getExponent(i))
+                       * p2.getCoefficient(p2.getExponent(j));
+            setTerm(coef, exp);
+        }
+    }
 }
 
 void PolynomialList::isOpposite(PolynomialList p1, PolynomialList p2) {
@@ -172,28 +176,22 @@ void PolynomialList::isOpposite(PolynomialList p1, PolynomialList p2) {
     } else {
         cout << "No son polinomios opuestos." << endl;
     }
-//    bool Opposite = true;
-//    if (p1.getNumberOfTerms() != p2.getNumberOfTerms()
-//        || p1.getGrade() != p2.getGrade()) {
-//        Opposite = false;
-//    } else {
-//        while (Opposite) {
-//            for (int i = 0; p1.getGrade(); i++) {
-//                memDir exp1Dir = p1.findExp(i);
-//                memDir exp2Dir = p2.findExp(i);
-//                if (exp1Dir == NULL_VALUE ^ exp2Dir == NULL_VALUE) {
-//                    Opposite = false;
-//                } else {
-//                    if (p1.getCoefficient(i) != (-1) * p2.getCoefficient(i)) {
-//                        Opposite = false;
-//                    }
-//                }
-//            }
-//        }
-//    }
-//    return Opposite;
 }
 
 void PolynomialList::print() {
-    pol->printList();
+    if (isZero()) {
+        cout << "Pol=0" << endl;
+    } else {
+        cout << "Pol=";
+        for (int i = 1; i <= getNumberOfTerms(); i++) {
+            int exp = getExponent(i);
+            int coef = getCoefficient(exp);
+            if (coef >= 0) {
+                cout << "+" << coef << "*x^" << exp;
+            } else {
+                cout << coef << "*x^" << exp;
+            }
+        }
+        cout << endl;
+    }
 }
