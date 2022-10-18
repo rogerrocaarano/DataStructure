@@ -32,18 +32,10 @@ void testListSimRam() {
 void testPolynomialList() {
     PolynomialList p1;
     PolynomialList p2;
-    PolynomialList p3;
-    p1.setTerm(2, -1);
-    p1.setTerm(4, 2);
-    p1.print();
-    p2.setTerm(3, 1);
-    p2.setTerm(5, 2);
+    p1.setTerm(6, 2);
+    p1.setTerm(10, 3);
+    p2.derive(p1);
     p2.print();
-    p3.multiplication(p1, p2);
-//    p3.addition(p1, p2);
-//    p3.subtraction(p1, p2);
-//    p3.isOpposite(p1, p2);
-    p3.print();
 
 }
 

@@ -9,15 +9,15 @@ using namespace std;
 
 namespace Ex {
     void emptyList() {
-        cout << "Empty List" << endl;
+//        cout << "Empty List" << endl;
     }
 
     void incorrectDir() {
-        cout << "Incorrect Direction" << endl;
+//        cout << "Incorrect Direction" << endl;
     }
 
     void lowMemSpace() {
-        cout << "Low memory space" << endl;
+//        cout << "Low memory space" << endl;
     }
 }
 

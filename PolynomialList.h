@@ -43,6 +43,8 @@ public:
     void isOpposite(PolynomialList p1, PolynomialList p2);
 
     void print();
+
+    void derive(PolynomialList p1);
 };
 
 #endif //RAMSIMULATOR_POLYNOMIALLIST_H

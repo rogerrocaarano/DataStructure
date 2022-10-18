@@ -9,15 +9,15 @@ using namespace std;
 
 namespace Ex {
     void noTerm(int exp) {
-        cout << "No Term: exp=" << exp << endl;
+//        cout << "No Term: exp=" << exp << endl;
     }
 
     void noGrade() {
-        cout << "No Term." << endl;
+//        cout << "No Term." << endl;
     }
 
     void termNotFound() {
-        cout << "Term not found." << endl;
+//        cout << "Term not found." << endl;
     }
 }
 
@@ -180,18 +180,38 @@ void PolynomialList::isOpposite(PolynomialList p1, PolynomialList p2) {
 
 void PolynomialList::print() {
     if (isZero()) {
-        cout << "Pol=0" << endl;
+        cout << "0" << endl;
     } else {
-        cout << "Pol=";
         for (int i = 1; i <= getNumberOfTerms(); i++) {
             int exp = getExponent(i);
             int coef = getCoefficient(exp);
-            if (coef >= 0) {
-                cout << "+" << coef << "*x^" << exp;
+            if (coef >= 0 && i > 1) {
+                if (exp == 0) {
+                    cout << "+" << coef;
+                } else {
+                    cout << "+" << coef << "*x^" << exp;
+                }
             } else {
-                cout << coef << "*x^" << exp;
+                if (exp == 0) {
+                    cout << coef;
+                } else {
+                    cout << coef << "*x^" << exp;
+                }
             }
         }
         cout << endl;
+    }
+}
+
+void PolynomialList::derive(PolynomialList p1) {
+    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
+        if (p1.getExponent(i) != 0) {
+            int exp = p1.getExponent(i) - 1;
+            int coef = p1.getCoefficient(p1.getExponent(i))
+                       * p1.getExponent(i);
+            setTerm(coef, exp);
+        }
+
+
     }
 }
