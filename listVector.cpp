@@ -97,7 +97,12 @@ void listVector::insertItem(dirV dir, DATA_TYPE value) {
 }
 
 void listVector::insertItemFirst(DATA_TYPE value) {
-    insertItem(0, value);
+    if (isEmpty()) {
+        list[0] = value;
+        length = 1;
+    } else {
+        insertItem(0, value);
+    }
 }
 
 void listVector::insertItemLast(DATA_TYPE value) {
@@ -115,10 +120,10 @@ void listVector::delItem(dirV dir) {
         return;
     } else {
         if (dir >= 0 && dir <= length - 1) {
-            length--;
-            for (int i = dir; i > length - 1; i++) {
+            for (int i = dir; i <= length - 2; i++) {
                 list[i] = list[i + 1];
             }
+            length--;
         } else {
             cout << "Invalid direction." << endl;
             return;
@@ -145,7 +150,7 @@ void listVector::printList() {
         cout << "List is empty" << endl;
     } else {
         cout << "List: ";
-        for (int i = 0; i == length - 1; i++) {
+        for (int i = 0; i <= length - 1; i++) {
             if (i == length - 1) {
                 cout << list[i] << endl;
             } else {
