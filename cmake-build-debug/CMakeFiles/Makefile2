@@ -80,12 +80,12 @@ clean: CMakeFiles/RAMSimulator.dir/clean
 CMakeFiles/RAMSimulator.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\rogerroca\CLionProjects\RAMSimulator\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target RAMSimulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\rogerroca\CLionProjects\RAMSimulator\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6 "Built target RAMSimulator"
 .PHONY : CMakeFiles/RAMSimulator.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/RAMSimulator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\RAMSimulator\cmake-build-debug\CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\RAMSimulator\cmake-build-debug\CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/RAMSimulator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\RAMSimulator\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/RAMSimulator.dir/rule

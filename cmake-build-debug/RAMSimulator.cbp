@@ -94,6 +94,12 @@
 		<Unit filename="C:/Users/rogerroca/CLionProjects/RAMSimulator/listSimRAM.h">
 			<Option target="RAMSimulator"/>
 		</Unit>
+		<Unit filename="C:/Users/rogerroca/CLionProjects/RAMSimulator/listVector.cpp">
+			<Option target="RAMSimulator"/>
+		</Unit>
+		<Unit filename="C:/Users/rogerroca/CLionProjects/RAMSimulator/listVector.h">
+			<Option target="RAMSimulator"/>
+		</Unit>
 		<Unit filename="C:/Users/rogerroca/CLionProjects/RAMSimulator/main.cpp">
 			<Option target="RAMSimulator"/>
 		</Unit>

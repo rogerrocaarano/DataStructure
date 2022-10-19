@@ -176,6 +176,30 @@ listSimRAM.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listSimRAM.cpp.s
 .PHONY : listSimRAM.cpp.s
 
+listVector.obj: listVector.cpp.obj
+.PHONY : listVector.obj
+
+# target to build an object file
+listVector.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listVector.cpp.obj
+.PHONY : listVector.cpp.obj
+
+listVector.i: listVector.cpp.i
+.PHONY : listVector.i
+
+# target to preprocess a source file
+listVector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listVector.cpp.i
+.PHONY : listVector.cpp.i
+
+listVector.s: listVector.cpp.s
+.PHONY : listVector.s
+
+# target to generate assembly for a file
+listVector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listVector.cpp.s
+.PHONY : listVector.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -239,6 +263,9 @@ help:
 	@echo ... listSimRAM.obj
 	@echo ... listSimRAM.i
 	@echo ... listSimRAM.s
+	@echo ... listVector.obj
+	@echo ... listVector.i
+	@echo ... listVector.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
