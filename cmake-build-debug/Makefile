@@ -152,6 +152,30 @@ PolynomialList.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.s
 .PHONY : PolynomialList.cpp.s
 
+listPtr.obj: listPtr.cpp.obj
+.PHONY : listPtr.obj
+
+# target to build an object file
+listPtr.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listPtr.cpp.obj
+.PHONY : listPtr.cpp.obj
+
+listPtr.i: listPtr.cpp.i
+.PHONY : listPtr.i
+
+# target to preprocess a source file
+listPtr.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listPtr.cpp.i
+.PHONY : listPtr.cpp.i
+
+listPtr.s: listPtr.cpp.s
+.PHONY : listPtr.s
+
+# target to generate assembly for a file
+listPtr.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listPtr.cpp.s
+.PHONY : listPtr.cpp.s
+
 listSimRAM.obj: listSimRAM.cpp.obj
 .PHONY : listSimRAM.obj
 
@@ -260,6 +284,9 @@ help:
 	@echo ... PolynomialList.obj
 	@echo ... PolynomialList.i
 	@echo ... PolynomialList.s
+	@echo ... listPtr.obj
+	@echo ... listPtr.i
+	@echo ... listPtr.s
 	@echo ... listSimRAM.obj
 	@echo ... listSimRAM.i
 	@echo ... listSimRAM.s

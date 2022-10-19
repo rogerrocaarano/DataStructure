@@ -88,6 +88,12 @@
 		<Unit filename="C:/Users/rogerroca/CLionProjects/RAMSimulator/PolynomialList.h">
 			<Option target="RAMSimulator"/>
 		</Unit>
+		<Unit filename="C:/Users/rogerroca/CLionProjects/RAMSimulator/listPtr.cpp">
+			<Option target="RAMSimulator"/>
+		</Unit>
+		<Unit filename="C:/Users/rogerroca/CLionProjects/RAMSimulator/listPtr.h">
+			<Option target="RAMSimulator"/>
+		</Unit>
 		<Unit filename="C:/Users/rogerroca/CLionProjects/RAMSimulator/listSimRAM.cpp">
 			<Option target="RAMSimulator"/>
 		</Unit>
