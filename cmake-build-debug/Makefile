@@ -248,6 +248,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+polynomialVector.obj: polynomialVector.cpp.obj
+.PHONY : polynomialVector.obj
+
+# target to build an object file
+polynomialVector.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialVector.cpp.obj
+.PHONY : polynomialVector.cpp.obj
+
+polynomialVector.i: polynomialVector.cpp.i
+.PHONY : polynomialVector.i
+
+# target to preprocess a source file
+polynomialVector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialVector.cpp.i
+.PHONY : polynomialVector.cpp.i
+
+polynomialVector.s: polynomialVector.cpp.s
+.PHONY : polynomialVector.s
+
+# target to generate assembly for a file
+polynomialVector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialVector.cpp.s
+.PHONY : polynomialVector.cpp.s
+
 simRAM.obj: simRAM.cpp.obj
 .PHONY : simRAM.obj
 
@@ -296,6 +320,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... polynomialVector.obj
+	@echo ... polynomialVector.i
+	@echo ... polynomialVector.s
 	@echo ... simRAM.obj
 	@echo ... simRAM.i
 	@echo ... simRAM.s

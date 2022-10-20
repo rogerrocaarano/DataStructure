@@ -211,7 +211,5 @@ void PolynomialList::derive(PolynomialList p1) {
                        * p1.getExponent(i);
             setTerm(coef, exp);
         }
-
-
     }
 }
