@@ -4,7 +4,8 @@
 //#include "PolynomialList.h"
 //#include "listVector.h"
 //#include "listPtr.h"
-#include "polynomialVector.h"
+//#include "polynomialVector.h"
+#include "polynomialVectorDouble.h"
 
 using namespace std;
 
@@ -42,20 +43,36 @@ using namespace std;
 //
 //}
 
-void testPolynomialVector() {
-    polynomialVector p1;
-    polynomialVector p2;
-    polynomialVector p3;
+//void testPolynomialVector() {
+//    polynomialVector p1;
+//    polynomialVector p2;
+//    polynomialVector p3;
+//
+//    p1.setTerm(6, 2);
+//    p1.setTerm(10, 3);
+//    p1.print();
+//    p2.setTerm(-6, 2);
+//    p2.setTerm(-10, 3);
+//    p2.print();
+//    p3.derive(p1);
+//    p3.print();
+//}
 
-    p1.setTerm(6, 2);
-    p1.setTerm(10, 3);
+void testPolynomialVectorDouble() {
+    polynomialVectorDouble p1;
+    polynomialVectorDouble p2;
+    polynomialVectorDouble p3;
+
+    p1.setTerm(1.1, 2);
+    p1.setTerm(2.5, 3);
     p1.print();
-    p2.setTerm(-6, 2);
-    p2.setTerm(-10, 3);
+    p2.setTerm(-1.3, 2);
+    p2.setTerm(-2, 3);
     p2.print();
-    p3.derive(p1);
-    p3.print();
+    cout << p1.integral(2, 4, 0.001);
+//    p3.print();
 }
+
 
 //void testListVector() {
 //    listVector l;
@@ -87,7 +104,8 @@ int main() {
 //    testPolynomialList();
 //    testListVector();
 //    testListPtr();
-    testPolynomialVector();
+//    testPolynomialVector();
+    testPolynomialVectorDouble();
     return 0;
 
 }
