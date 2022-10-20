@@ -49,6 +49,7 @@ void polynomialVector::setTerm(int coef, int exp) {
     int pos = findExp(exp);
     if (pos != -1) {
         vCoef[pos] = vCoef[pos] + coef;
+        if (vCoef[pos] == 0) rmTerm(pos);
     } else {
         if (length < MAX_SIZE_POL_VECT) {
             vExp[length] = exp;
@@ -63,8 +64,8 @@ int polynomialVector::getNumberOfTerms() {
 }
 
 int polynomialVector::getExponent(int term) {
-    if (term > 0 && term < length) {
-        return vExp[term];
+    if (term > 0 && term <= length) {
+        return vExp[term - 1];
     } else cout << "Invalid position." << endl;
 }
 

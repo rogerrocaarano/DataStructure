@@ -3,7 +3,8 @@
 //#include "listSimRAM.h"
 //#include "PolynomialList.h"
 //#include "listVector.h"
-#include "listPtr.h"
+//#include "listPtr.h"
+#include "polynomialVector.h"
 
 using namespace std;
 
@@ -41,6 +42,21 @@ using namespace std;
 //
 //}
 
+void testPolynomialVector() {
+    polynomialVector p1;
+    polynomialVector p2;
+    polynomialVector p3;
+
+    p1.setTerm(6, 2);
+    p1.setTerm(10, 3);
+    p1.print();
+    p2.setTerm(-6, 2);
+    p2.setTerm(-10, 3);
+    p2.print();
+    p3.derive(p1);
+    p3.print();
+}
+
 //void testListVector() {
 //    listVector l;
 //    l.insertItemFirst(100);
@@ -53,24 +69,25 @@ using namespace std;
 //    l.printList();
 //}
 
-void testListPtr() {
-    listPtr l;
-    l.insertItemFirst(100);
-    l.insertItemLast(200);
-    l.insertItemLast(300);
-    l.insertItemFirst(10);
-    l.insertItem(l.getPreviousDir(l.getLastDir()), 1);
-    l.printList();
-    cout << l.getValue(2) << endl;
-
-}
+//void testListPtr() {
+//    listPtr l;
+//    l.insertItemFirst(100);
+//    l.insertItemLast(200);
+//    l.insertItemLast(300);
+//    l.insertItemFirst(10);
+//    l.insertItem(l.getPreviousDir(l.getLastDir()), 1);
+//    l.printList();
+//    cout << l.getValue(2) << endl;
+//
+//}
 
 int main() {
 //    testSimRam();
 //    testListSimRam();
 //    testPolynomialList();
 //    testListVector();
-    testListPtr();
+//    testListPtr();
+    testPolynomialVector();
     return 0;
 
 }
