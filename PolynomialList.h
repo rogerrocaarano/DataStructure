@@ -2,8 +2,8 @@
 // Created by rogerroca on 6/10/2022.
 //
 
-#ifndef RAMSIMULATOR_POLYNOMIALLIST_H
-#define RAMSIMULATOR_POLYNOMIALLIST_H
+#ifndef DATASTRUCTURE_POLYNOMIALLIST_H
+#define DATASTRUCTURE_POLYNOMIALLIST_H
 
 #include "listSimRAM.h"
 
@@ -47,4 +47,4 @@ public:
     void derive(PolynomialList p1);
 };
 
-#endif //RAMSIMULATOR_POLYNOMIALLIST_H
+#endif //DATASTRUCTURE_POLYNOMIALLIST_H

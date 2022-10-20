@@ -2,8 +2,8 @@
 // Created by rogerroca on 4/10/2022.
 //
 
-#ifndef RAMSIMULATOR_SIMRAM_H
-#define RAMSIMULATOR_SIMRAM_H
+#ifndef DATASTRUCTURE_SIMRAM_H
+#define DATASTRUCTURE_SIMRAM_H
 
 #include "string"
 
@@ -46,4 +46,4 @@ public:
 };
 
 
-#endif //RAMSIMULATOR_SIMRAM_H
+#endif //DATASTRUCTURE_SIMRAM_H

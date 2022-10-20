@@ -2,8 +2,8 @@
 // Created by rogerroca on 19/10/2022.
 //
 
-#ifndef RAMSIMULATOR_LISTPTR_H
-#define RAMSIMULATOR_LISTPTR_H
+#ifndef DATASTRUCTURE_LISTPTR_H
+#define DATASTRUCTURE_LISTPTR_H
 
 struct ListNode {
     int dataStored;
@@ -53,4 +53,4 @@ public:
 };
 
 
-#endif //RAMSIMULATOR_LISTPTR_H
+#endif //DATASTRUCTURE_LISTPTR_H

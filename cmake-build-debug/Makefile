@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\rogerroca\CLionProjects\RAMSimulator
+CMAKE_SOURCE_DIR = C:\Users\rogerroca\CLionProjects\INF210\DataStructure
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\rogerroca\CLionProjects\RAMSimulator\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\rogerroca\CLionProjects\INF210\DataStructure\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\RAMSimulator\cmake-build-debug\CMakeFiles C:\Users\rogerroca\CLionProjects\RAMSimulator\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\INF210\DataStructure\cmake-build-debug\CMakeFiles C:\Users\rogerroca\CLionProjects\INF210\DataStructure\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\RAMSimulator\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\INF210\DataStructure\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -116,24 +116,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named RAMSimulator
+# Target rules for targets named DataStructure
 
 # Build rule for target.
-RAMSimulator: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 RAMSimulator
-.PHONY : RAMSimulator
+DataStructure: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 DataStructure
+.PHONY : DataStructure
 
 # fast build rule for target.
-RAMSimulator/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/build
-.PHONY : RAMSimulator/fast
+DataStructure/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/build
+.PHONY : DataStructure/fast
 
 PolynomialList.obj: PolynomialList.cpp.obj
 .PHONY : PolynomialList.obj
 
 # target to build an object file
 PolynomialList.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/PolynomialList.cpp.obj
 .PHONY : PolynomialList.cpp.obj
 
 PolynomialList.i: PolynomialList.cpp.i
@@ -141,7 +141,7 @@ PolynomialList.i: PolynomialList.cpp.i
 
 # target to preprocess a source file
 PolynomialList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/PolynomialList.cpp.i
 .PHONY : PolynomialList.cpp.i
 
 PolynomialList.s: PolynomialList.cpp.s
@@ -149,7 +149,7 @@ PolynomialList.s: PolynomialList.cpp.s
 
 # target to generate assembly for a file
 PolynomialList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/PolynomialList.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/PolynomialList.cpp.s
 .PHONY : PolynomialList.cpp.s
 
 listPtr.obj: listPtr.cpp.obj
@@ -157,7 +157,7 @@ listPtr.obj: listPtr.cpp.obj
 
 # target to build an object file
 listPtr.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listPtr.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listPtr.cpp.obj
 .PHONY : listPtr.cpp.obj
 
 listPtr.i: listPtr.cpp.i
@@ -165,7 +165,7 @@ listPtr.i: listPtr.cpp.i
 
 # target to preprocess a source file
 listPtr.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listPtr.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listPtr.cpp.i
 .PHONY : listPtr.cpp.i
 
 listPtr.s: listPtr.cpp.s
@@ -173,7 +173,7 @@ listPtr.s: listPtr.cpp.s
 
 # target to generate assembly for a file
 listPtr.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listPtr.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listPtr.cpp.s
 .PHONY : listPtr.cpp.s
 
 listSimRAM.obj: listSimRAM.cpp.obj
@@ -181,7 +181,7 @@ listSimRAM.obj: listSimRAM.cpp.obj
 
 # target to build an object file
 listSimRAM.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listSimRAM.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listSimRAM.cpp.obj
 .PHONY : listSimRAM.cpp.obj
 
 listSimRAM.i: listSimRAM.cpp.i
@@ -189,7 +189,7 @@ listSimRAM.i: listSimRAM.cpp.i
 
 # target to preprocess a source file
 listSimRAM.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listSimRAM.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listSimRAM.cpp.i
 .PHONY : listSimRAM.cpp.i
 
 listSimRAM.s: listSimRAM.cpp.s
@@ -197,7 +197,7 @@ listSimRAM.s: listSimRAM.cpp.s
 
 # target to generate assembly for a file
 listSimRAM.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listSimRAM.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listSimRAM.cpp.s
 .PHONY : listSimRAM.cpp.s
 
 listVector.obj: listVector.cpp.obj
@@ -205,7 +205,7 @@ listVector.obj: listVector.cpp.obj
 
 # target to build an object file
 listVector.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listVector.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listVector.cpp.obj
 .PHONY : listVector.cpp.obj
 
 listVector.i: listVector.cpp.i
@@ -213,7 +213,7 @@ listVector.i: listVector.cpp.i
 
 # target to preprocess a source file
 listVector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listVector.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listVector.cpp.i
 .PHONY : listVector.cpp.i
 
 listVector.s: listVector.cpp.s
@@ -221,7 +221,7 @@ listVector.s: listVector.cpp.s
 
 # target to generate assembly for a file
 listVector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/listVector.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listVector.cpp.s
 .PHONY : listVector.cpp.s
 
 main.obj: main.cpp.obj
@@ -229,7 +229,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -237,7 +237,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -245,7 +245,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 simRAM.obj: simRAM.cpp.obj
@@ -253,7 +253,7 @@ simRAM.obj: simRAM.cpp.obj
 
 # target to build an object file
 simRAM.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/simRAM.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/simRAM.cpp.obj
 .PHONY : simRAM.cpp.obj
 
 simRAM.i: simRAM.cpp.i
@@ -261,7 +261,7 @@ simRAM.i: simRAM.cpp.i
 
 # target to preprocess a source file
 simRAM.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/simRAM.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/simRAM.cpp.i
 .PHONY : simRAM.cpp.i
 
 simRAM.s: simRAM.cpp.s
@@ -269,7 +269,7 @@ simRAM.s: simRAM.cpp.s
 
 # target to generate assembly for a file
 simRAM.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\RAMSimulator.dir\build.make CMakeFiles/RAMSimulator.dir/simRAM.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/simRAM.cpp.s
 .PHONY : simRAM.cpp.s
 
 # Help Target
@@ -280,7 +280,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... RAMSimulator
+	@echo ... DataStructure
 	@echo ... PolynomialList.obj
 	@echo ... PolynomialList.i
 	@echo ... PolynomialList.s
