@@ -15,11 +15,13 @@ typedef int DATA_TYPE; // Data type than the listVector can store.
 
 class listPtr {
 private:
-    dirP ptrDir;
+    dirP firstPtr;
     int length;
 public:
 
     listPtr();
+
+    dirP getDir(int pos);
 
     dirP getLastDir();
 
@@ -32,6 +34,8 @@ public:
     bool isEmpty();
 
     int getValue(dirP dir);
+
+    int getValue(int pos);
 
     int getLength();
 

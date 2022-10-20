@@ -2,7 +2,8 @@
 //#include "simRAM.h"
 //#include "listSimRAM.h"
 //#include "PolynomialList.h"
-#include "listVector.h"
+//#include "listVector.h"
+#include "listPtr.h"
 
 using namespace std;
 
@@ -40,24 +41,36 @@ using namespace std;
 //
 //}
 
-void testListVector() {
-    listVector l;
+//void testListVector() {
+//    listVector l;
+//    l.insertItemFirst(100);
+//    l.insertItemLast(200);
+//    l.insertItem(1, 150);
+//    l.delItem(1);
+//    l.insertItem(l.getFirstDir(), 300);
+//    l.setItem(0, l.getValue(l.getPreviousDir(2)));
+//
+//    l.printList();
+//}
+
+void testListPtr() {
+    listPtr l;
     l.insertItemFirst(100);
     l.insertItemLast(200);
-    l.insertItem(1, 150);
-    l.delItem(1);
-    l.insertItem(l.getFirstDir(), 300);
-    l.setItem(0, l.getValue(l.getPreviousDir(2)));
-
+    l.insertItemLast(300);
+    l.insertItemFirst(10);
+    l.insertItem(l.getPreviousDir(l.getLastDir()), 1);
     l.printList();
+    cout << l.getValue(2) << endl;
+
 }
 
 int main() {
 //    testSimRam();
 //    testListSimRam();
 //    testPolynomialList();
-    testListVector();
-
+//    testListVector();
+    testListPtr();
     return 0;
 
 }
