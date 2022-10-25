@@ -198,6 +198,17 @@ void listSimRAM::setItem(memDir dir, DATA_TYPE value) {
     }
 }
 
-void listSimRAM::printList() {
-    listMem->showMemory();
+void listSimRAM::show() {
+    cout << "L: ";
+    memDir dir = ptrDir;
+    int i = 1;
+    while (i <= length) {
+        cout << listMem->getData(dir, LIST_ITEM);
+        if (i < length) {
+            cout << " , ";
+        }
+        dir = listMem->getData(dir, NEXT_LIST_ITEM_POINTER);
+        i++;
+    }
+    cout << endl;
 }

@@ -7,8 +7,8 @@
 
 #include "simRAM.h"
 
-const string LIST_ITEM = "item";
-const string NEXT_LIST_ITEM_POINTER = "next";
+const string LIST_ITEM = "L:value";
+const string NEXT_LIST_ITEM_POINTER = "L:next";
 const string LIST_NODE = LIST_ITEM + ',' + NEXT_LIST_ITEM_POINTER;
 
 typedef int DATA_TYPE; // Data type than the listSimRAM can store.
@@ -47,7 +47,7 @@ public:
 
     void setItem(memDir dir, DATA_TYPE value);
 
-    void printList();
+    void show();
 };
 
 

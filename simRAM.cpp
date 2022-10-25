@@ -130,7 +130,7 @@ bool simRAM::isSpaceAvailable(memDir dir) {
     return isAvailable;
 }
 
-void simRAM::showMemory() {
+void simRAM::show() {
     cout << "DIR\tID\t\tDATA\tLINK" << endl;
     cout << "----------------------------------------" << endl;
     for (int i = 0; i < MAX_MEM_SPACE; i++) {

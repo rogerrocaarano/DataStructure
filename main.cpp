@@ -1,111 +1,37 @@
 #include "iostream"
-//#include "simRAM.h"
-//#include "listSimRAM.h"
-//#include "PolynomialList.h"
-//#include "listVector.h"
-//#include "listPtr.h"
-//#include "polynomialVector.h"
-#include "polynomialVectorDouble.h"
+#include "simRAM.h"
+#include "listSimRAM.h"
+#include "polynomialSimRAM.h"
 
-using namespace std;
+void Exam1() {
+    auto *MRRA = new simRAM;
+    auto *LRRA = new listSimRAM(MRRA);
+    auto *PRRA = new polynomialSimRAM(MRRA);
+    memDir Y = MRRA->newSpace("EXAMEN,OP1");
+    memDir H = Y;
+    MRRA->setData(Y, "OP1", 100);
+/***************************************************************
+ * En el enunciado, se menciona 2 veces la variable Y,
+ * la primera es de tipo 'dirección de memoria'
+ * y la segunda de tipo 'entero'.
+ * Si bien, el tipo 'dirección de memoria' es un entero,
+ * declararé en su lugar una nueva variable 'y' de tipo entero,
+ * para respetar el tipo de dato, el resultado final es el mismo.
+ ***************************************************************/
+    int y = MRRA->getData(Y, "EXAMEN") + MRRA->getData(Y, "OP1");
+    cout << "LA SUMA ES " << y << endl;
+    LRRA->insertItem(LRRA->getFirstDir(), y);
+    LRRA->insertItem(LRRA->getFirstDir(), y - 18);
+    MRRA->delSpace(H);
+    PRRA->setTerm(2, 5);
+    LRRA->insertItem(LRRA->getLastDir(), y + 18);
 
-//void testSimRam() {
-//    simRAM m;
-//    m.newSpace("1st req");
-//    m.newSpace("2nd req");
-//    m.newSpace("3rd req");
-//    m.showMemory();
-//    cout << "Test:: isSpaceAvailable: " << m.isSpaceAvailable(m.getAvailableSpace()) << endl; // Should return 1
-//    m.delSpace(2);
-//    m.newSpace("4th req"); // Should be in DIR 2.
-//    m.showMemory();
-//    m.setData(0, "1st req", 100);
-//    m.showMemory();
-//}
-//
-//void testListSimRam() {
-//    listSimRAM l;
-//    l.insertItem(l.getFirstDir(), 100);
-//    l.insertItemLast(200);
-//    l.insertItemLast(300);
-//    l.delItem(2);
-//    l.insertItemLast(500);
-//    l.printList();
-//}
-//
-//void testPolynomialList() {
-//    PolynomialList p1;
-//    PolynomialList p2;
-//    p1.setTerm(6, 2);
-//    p1.setTerm(10, 3);
-//    p2.derive(p1);
-//    p2.print();
-//
-//}
-
-//void testPolynomialVector() {
-//    polynomialVector p1;
-//    polynomialVector p2;
-//    polynomialVector p3;
-//
-//    p1.setTerm(6, 2);
-//    p1.setTerm(10, 3);
-//    p1.print();
-//    p2.setTerm(-6, 2);
-//    p2.setTerm(-10, 3);
-//    p2.print();
-//    p3.derive(p1);
-//    p3.print();
-//}
-
-void testPolynomialVectorDouble() {
-    polynomialVectorDouble p1;
-    polynomialVectorDouble p2;
-    polynomialVectorDouble p3;
-
-    p1.setTerm(1.1, 2);
-    p1.setTerm(2.5, 3);
-    p1.print();
-    p2.setTerm(-1.3, 2);
-    p2.setTerm(-2, 3);
-    p2.print();
-    cout << p1.integral(2, 4, 0.001);
-//    p3.print();
+    LRRA->show();
+    PRRA->show();
+    MRRA->show();
 }
 
-
-//void testListVector() {
-//    listVector l;
-//    l.insertItemFirst(100);
-//    l.insertItemLast(200);
-//    l.insertItem(1, 150);
-//    l.delItem(1);
-//    l.insertItem(l.getFirstDir(), 300);
-//    l.setItem(0, l.getValue(l.getPreviousDir(2)));
-//
-//    l.printList();
-//}
-
-//void testListPtr() {
-//    listPtr l;
-//    l.insertItemFirst(100);
-//    l.insertItemLast(200);
-//    l.insertItemLast(300);
-//    l.insertItemFirst(10);
-//    l.insertItem(l.getPreviousDir(l.getLastDir()), 1);
-//    l.printList();
-//    cout << l.getValue(2) << endl;
-//
-//}
-
 int main() {
-//    testSimRam();
-//    testListSimRam();
-//    testPolynomialList();
-//    testListVector();
-//    testListPtr();
-//    testPolynomialVector();
-    testPolynomialVectorDouble();
+    Exam1();
     return 0;
-
 }

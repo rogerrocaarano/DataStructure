@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\rogerroca\CLionProjects\INF210\DataStructure
+CMAKE_SOURCE_DIR = C:\Users\rogerroca\CLionProjects\INF210\PrimerPacialOption1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\rogerroca\CLionProjects\INF210\DataStructure\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\rogerroca\CLionProjects\INF210\PrimerPacialOption1\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\INF210\DataStructure\cmake-build-debug\CMakeFiles C:\Users\rogerroca\CLionProjects\INF210\DataStructure\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\INF210\PrimerPacialOption1\cmake-build-debug\CMakeFiles C:\Users\rogerroca\CLionProjects\INF210\PrimerPacialOption1\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\INF210\DataStructure\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\INF210\PrimerPacialOption1\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -248,6 +248,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+polynomialSimRAM.obj: polynomialSimRAM.cpp.obj
+.PHONY : polynomialSimRAM.obj
+
+# target to build an object file
+polynomialSimRAM.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialSimRAM.cpp.obj
+.PHONY : polynomialSimRAM.cpp.obj
+
+polynomialSimRAM.i: polynomialSimRAM.cpp.i
+.PHONY : polynomialSimRAM.i
+
+# target to preprocess a source file
+polynomialSimRAM.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialSimRAM.cpp.i
+.PHONY : polynomialSimRAM.cpp.i
+
+polynomialSimRAM.s: polynomialSimRAM.cpp.s
+.PHONY : polynomialSimRAM.s
+
+# target to generate assembly for a file
+polynomialSimRAM.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialSimRAM.cpp.s
+.PHONY : polynomialSimRAM.cpp.s
+
 polynomialVector.obj: polynomialVector.cpp.obj
 .PHONY : polynomialVector.obj
 
@@ -344,6 +368,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... polynomialSimRAM.obj
+	@echo ... polynomialSimRAM.i
+	@echo ... polynomialSimRAM.s
 	@echo ... polynomialVector.obj
 	@echo ... polynomialVector.i
 	@echo ... polynomialVector.s
