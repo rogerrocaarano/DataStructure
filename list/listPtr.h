@@ -49,7 +49,7 @@ public:
 
     void setItem(dirP dir, DATA_TYPE value);
 
-    void printList();
+    void print();
 };
 
 

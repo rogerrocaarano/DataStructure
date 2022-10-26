@@ -26,9 +26,9 @@ void Exam1() {
     PRRA->setTerm(2, 5);
     LRRA->insertItem(LRRA->getLastDir(), y + 18);
 
-    LRRA->show();
-    PRRA->show();
-    MRRA->show();
+    LRRA->print();
+    PRRA->print();
+    MRRA->print();
 }
 
 int main() {

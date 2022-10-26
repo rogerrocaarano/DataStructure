@@ -145,7 +145,7 @@ void listVector::setItem(dirV dir, DATA_TYPE value) {
     }
 }
 
-void listVector::printList() {
+void listVector::print() {
     if (isEmpty()) {
         cout << "List is empty" << endl;
     } else {

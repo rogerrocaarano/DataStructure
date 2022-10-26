@@ -44,7 +44,7 @@ public:
 
     void setItem(dirV dir, DATA_TYPE value);
 
-    void printList();
+    void print();
 };
 
 
