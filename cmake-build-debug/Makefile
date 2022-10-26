@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\rogerroca\CLionProjects\INF210\PrimerPacialOption1
+CMAKE_SOURCE_DIR = C:\Users\rogerroca\CLionProjects\DataStructure
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\rogerroca\CLionProjects\INF210\PrimerPacialOption1\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\rogerroca\CLionProjects\DataStructure\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\INF210\PrimerPacialOption1\cmake-build-debug\CMakeFiles C:\Users\rogerroca\CLionProjects\INF210\PrimerPacialOption1\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\DataStructure\cmake-build-debug\CMakeFiles C:\Users\rogerroca\CLionProjects\DataStructure\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\INF210\PrimerPacialOption1\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\rogerroca\CLionProjects\DataStructure\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,101 +128,77 @@ DataStructure/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/build
 .PHONY : DataStructure/fast
 
-PolynomialList.obj: PolynomialList.cpp.obj
-.PHONY : PolynomialList.obj
+list/listPtr.obj: list/listPtr.cpp.obj
+.PHONY : list/listPtr.obj
 
 # target to build an object file
-PolynomialList.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/PolynomialList.cpp.obj
-.PHONY : PolynomialList.cpp.obj
+list/listPtr.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/list/listPtr.cpp.obj
+.PHONY : list/listPtr.cpp.obj
 
-PolynomialList.i: PolynomialList.cpp.i
-.PHONY : PolynomialList.i
+list/listPtr.i: list/listPtr.cpp.i
+.PHONY : list/listPtr.i
 
 # target to preprocess a source file
-PolynomialList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/PolynomialList.cpp.i
-.PHONY : PolynomialList.cpp.i
+list/listPtr.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/list/listPtr.cpp.i
+.PHONY : list/listPtr.cpp.i
 
-PolynomialList.s: PolynomialList.cpp.s
-.PHONY : PolynomialList.s
+list/listPtr.s: list/listPtr.cpp.s
+.PHONY : list/listPtr.s
 
 # target to generate assembly for a file
-PolynomialList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/PolynomialList.cpp.s
-.PHONY : PolynomialList.cpp.s
+list/listPtr.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/list/listPtr.cpp.s
+.PHONY : list/listPtr.cpp.s
 
-listPtr.obj: listPtr.cpp.obj
-.PHONY : listPtr.obj
+list/listSimRAM.obj: list/listSimRAM.cpp.obj
+.PHONY : list/listSimRAM.obj
 
 # target to build an object file
-listPtr.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listPtr.cpp.obj
-.PHONY : listPtr.cpp.obj
+list/listSimRAM.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/list/listSimRAM.cpp.obj
+.PHONY : list/listSimRAM.cpp.obj
 
-listPtr.i: listPtr.cpp.i
-.PHONY : listPtr.i
+list/listSimRAM.i: list/listSimRAM.cpp.i
+.PHONY : list/listSimRAM.i
 
 # target to preprocess a source file
-listPtr.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listPtr.cpp.i
-.PHONY : listPtr.cpp.i
+list/listSimRAM.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/list/listSimRAM.cpp.i
+.PHONY : list/listSimRAM.cpp.i
 
-listPtr.s: listPtr.cpp.s
-.PHONY : listPtr.s
+list/listSimRAM.s: list/listSimRAM.cpp.s
+.PHONY : list/listSimRAM.s
 
 # target to generate assembly for a file
-listPtr.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listPtr.cpp.s
-.PHONY : listPtr.cpp.s
+list/listSimRAM.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/list/listSimRAM.cpp.s
+.PHONY : list/listSimRAM.cpp.s
 
-listSimRAM.obj: listSimRAM.cpp.obj
-.PHONY : listSimRAM.obj
+list/listVector.obj: list/listVector.cpp.obj
+.PHONY : list/listVector.obj
 
 # target to build an object file
-listSimRAM.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listSimRAM.cpp.obj
-.PHONY : listSimRAM.cpp.obj
+list/listVector.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/list/listVector.cpp.obj
+.PHONY : list/listVector.cpp.obj
 
-listSimRAM.i: listSimRAM.cpp.i
-.PHONY : listSimRAM.i
-
-# target to preprocess a source file
-listSimRAM.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listSimRAM.cpp.i
-.PHONY : listSimRAM.cpp.i
-
-listSimRAM.s: listSimRAM.cpp.s
-.PHONY : listSimRAM.s
-
-# target to generate assembly for a file
-listSimRAM.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listSimRAM.cpp.s
-.PHONY : listSimRAM.cpp.s
-
-listVector.obj: listVector.cpp.obj
-.PHONY : listVector.obj
-
-# target to build an object file
-listVector.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listVector.cpp.obj
-.PHONY : listVector.cpp.obj
-
-listVector.i: listVector.cpp.i
-.PHONY : listVector.i
+list/listVector.i: list/listVector.cpp.i
+.PHONY : list/listVector.i
 
 # target to preprocess a source file
-listVector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listVector.cpp.i
-.PHONY : listVector.cpp.i
+list/listVector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/list/listVector.cpp.i
+.PHONY : list/listVector.cpp.i
 
-listVector.s: listVector.cpp.s
-.PHONY : listVector.s
+list/listVector.s: list/listVector.cpp.s
+.PHONY : list/listVector.s
 
 # target to generate assembly for a file
-listVector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/listVector.cpp.s
-.PHONY : listVector.cpp.s
+list/listVector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/list/listVector.cpp.s
+.PHONY : list/listVector.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -248,77 +224,101 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-polynomialSimRAM.obj: polynomialSimRAM.cpp.obj
-.PHONY : polynomialSimRAM.obj
+polynomial/polynomialList.obj: polynomial/polynomialList.cpp.obj
+.PHONY : polynomial/polynomialList.obj
 
 # target to build an object file
-polynomialSimRAM.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialSimRAM.cpp.obj
-.PHONY : polynomialSimRAM.cpp.obj
+polynomial/polynomialList.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomial/polynomialList.cpp.obj
+.PHONY : polynomial/polynomialList.cpp.obj
 
-polynomialSimRAM.i: polynomialSimRAM.cpp.i
-.PHONY : polynomialSimRAM.i
+polynomial/polynomialList.i: polynomial/polynomialList.cpp.i
+.PHONY : polynomial/polynomialList.i
 
 # target to preprocess a source file
-polynomialSimRAM.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialSimRAM.cpp.i
-.PHONY : polynomialSimRAM.cpp.i
+polynomial/polynomialList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomial/polynomialList.cpp.i
+.PHONY : polynomial/polynomialList.cpp.i
 
-polynomialSimRAM.s: polynomialSimRAM.cpp.s
-.PHONY : polynomialSimRAM.s
+polynomial/polynomialList.s: polynomial/polynomialList.cpp.s
+.PHONY : polynomial/polynomialList.s
 
 # target to generate assembly for a file
-polynomialSimRAM.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialSimRAM.cpp.s
-.PHONY : polynomialSimRAM.cpp.s
+polynomial/polynomialList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomial/polynomialList.cpp.s
+.PHONY : polynomial/polynomialList.cpp.s
 
-polynomialVector.obj: polynomialVector.cpp.obj
-.PHONY : polynomialVector.obj
+polynomial/polynomialSimRAM.obj: polynomial/polynomialSimRAM.cpp.obj
+.PHONY : polynomial/polynomialSimRAM.obj
 
 # target to build an object file
-polynomialVector.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialVector.cpp.obj
-.PHONY : polynomialVector.cpp.obj
+polynomial/polynomialSimRAM.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomial/polynomialSimRAM.cpp.obj
+.PHONY : polynomial/polynomialSimRAM.cpp.obj
 
-polynomialVector.i: polynomialVector.cpp.i
-.PHONY : polynomialVector.i
+polynomial/polynomialSimRAM.i: polynomial/polynomialSimRAM.cpp.i
+.PHONY : polynomial/polynomialSimRAM.i
 
 # target to preprocess a source file
-polynomialVector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialVector.cpp.i
-.PHONY : polynomialVector.cpp.i
+polynomial/polynomialSimRAM.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomial/polynomialSimRAM.cpp.i
+.PHONY : polynomial/polynomialSimRAM.cpp.i
 
-polynomialVector.s: polynomialVector.cpp.s
-.PHONY : polynomialVector.s
+polynomial/polynomialSimRAM.s: polynomial/polynomialSimRAM.cpp.s
+.PHONY : polynomial/polynomialSimRAM.s
 
 # target to generate assembly for a file
-polynomialVector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialVector.cpp.s
-.PHONY : polynomialVector.cpp.s
+polynomial/polynomialSimRAM.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomial/polynomialSimRAM.cpp.s
+.PHONY : polynomial/polynomialSimRAM.cpp.s
 
-polynomialVectorDouble.obj: polynomialVectorDouble.cpp.obj
-.PHONY : polynomialVectorDouble.obj
+polynomial/polynomialVector.obj: polynomial/polynomialVector.cpp.obj
+.PHONY : polynomial/polynomialVector.obj
 
 # target to build an object file
-polynomialVectorDouble.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialVectorDouble.cpp.obj
-.PHONY : polynomialVectorDouble.cpp.obj
+polynomial/polynomialVector.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomial/polynomialVector.cpp.obj
+.PHONY : polynomial/polynomialVector.cpp.obj
 
-polynomialVectorDouble.i: polynomialVectorDouble.cpp.i
-.PHONY : polynomialVectorDouble.i
+polynomial/polynomialVector.i: polynomial/polynomialVector.cpp.i
+.PHONY : polynomial/polynomialVector.i
 
 # target to preprocess a source file
-polynomialVectorDouble.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialVectorDouble.cpp.i
-.PHONY : polynomialVectorDouble.cpp.i
+polynomial/polynomialVector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomial/polynomialVector.cpp.i
+.PHONY : polynomial/polynomialVector.cpp.i
 
-polynomialVectorDouble.s: polynomialVectorDouble.cpp.s
-.PHONY : polynomialVectorDouble.s
+polynomial/polynomialVector.s: polynomial/polynomialVector.cpp.s
+.PHONY : polynomial/polynomialVector.s
 
 # target to generate assembly for a file
-polynomialVectorDouble.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomialVectorDouble.cpp.s
-.PHONY : polynomialVectorDouble.cpp.s
+polynomial/polynomialVector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomial/polynomialVector.cpp.s
+.PHONY : polynomial/polynomialVector.cpp.s
+
+polynomial/polynomialVectorDouble.obj: polynomial/polynomialVectorDouble.cpp.obj
+.PHONY : polynomial/polynomialVectorDouble.obj
+
+# target to build an object file
+polynomial/polynomialVectorDouble.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomial/polynomialVectorDouble.cpp.obj
+.PHONY : polynomial/polynomialVectorDouble.cpp.obj
+
+polynomial/polynomialVectorDouble.i: polynomial/polynomialVectorDouble.cpp.i
+.PHONY : polynomial/polynomialVectorDouble.i
+
+# target to preprocess a source file
+polynomial/polynomialVectorDouble.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomial/polynomialVectorDouble.cpp.i
+.PHONY : polynomial/polynomialVectorDouble.cpp.i
+
+polynomial/polynomialVectorDouble.s: polynomial/polynomialVectorDouble.cpp.s
+.PHONY : polynomial/polynomialVectorDouble.s
+
+# target to generate assembly for a file
+polynomial/polynomialVectorDouble.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DataStructure.dir\build.make CMakeFiles/DataStructure.dir/polynomial/polynomialVectorDouble.cpp.s
+.PHONY : polynomial/polynomialVectorDouble.cpp.s
 
 simRAM.obj: simRAM.cpp.obj
 .PHONY : simRAM.obj
@@ -353,30 +353,30 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... DataStructure
-	@echo ... PolynomialList.obj
-	@echo ... PolynomialList.i
-	@echo ... PolynomialList.s
-	@echo ... listPtr.obj
-	@echo ... listPtr.i
-	@echo ... listPtr.s
-	@echo ... listSimRAM.obj
-	@echo ... listSimRAM.i
-	@echo ... listSimRAM.s
-	@echo ... listVector.obj
-	@echo ... listVector.i
-	@echo ... listVector.s
+	@echo ... list/listPtr.obj
+	@echo ... list/listPtr.i
+	@echo ... list/listPtr.s
+	@echo ... list/listSimRAM.obj
+	@echo ... list/listSimRAM.i
+	@echo ... list/listSimRAM.s
+	@echo ... list/listVector.obj
+	@echo ... list/listVector.i
+	@echo ... list/listVector.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... polynomialSimRAM.obj
-	@echo ... polynomialSimRAM.i
-	@echo ... polynomialSimRAM.s
-	@echo ... polynomialVector.obj
-	@echo ... polynomialVector.i
-	@echo ... polynomialVector.s
-	@echo ... polynomialVectorDouble.obj
-	@echo ... polynomialVectorDouble.i
-	@echo ... polynomialVectorDouble.s
+	@echo ... polynomial/polynomialList.obj
+	@echo ... polynomial/polynomialList.i
+	@echo ... polynomial/polynomialList.s
+	@echo ... polynomial/polynomialSimRAM.obj
+	@echo ... polynomial/polynomialSimRAM.i
+	@echo ... polynomial/polynomialSimRAM.s
+	@echo ... polynomial/polynomialVector.obj
+	@echo ... polynomial/polynomialVector.i
+	@echo ... polynomial/polynomialVector.s
+	@echo ... polynomial/polynomialVectorDouble.obj
+	@echo ... polynomial/polynomialVectorDouble.i
+	@echo ... polynomial/polynomialVectorDouble.s
 	@echo ... simRAM.obj
 	@echo ... simRAM.i
 	@echo ... simRAM.s

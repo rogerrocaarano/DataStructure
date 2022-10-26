@@ -2,7 +2,7 @@
 // Created by rogerroca on 6/10/2022.
 //
 
-#include "PolynomialList.h"
+#include "polynomialList.h"
 #include "iostream"
 
 using namespace std;
@@ -21,7 +21,7 @@ namespace Ex {
     }
 }
 
-memDir PolynomialList::findExp(int exp) {
+memDir polynomialList::findExp(int exp) {
     memDir dir = pol->getNextDir(pol->getFirstDir());
     if (dir != NULL_VALUE) {
         memDir expDir = NULL_VALUE;
@@ -39,7 +39,7 @@ memDir PolynomialList::findExp(int exp) {
     }
 }
 
-memDir PolynomialList::findTermN(int i) {
+memDir polynomialList::findTermN(int i) {
     memDir dir = pol->getFirstDir();
     int nt = 0;
     memDir termDir = NULL_VALUE;
@@ -54,16 +54,16 @@ memDir PolynomialList::findTermN(int i) {
     return termDir;
 }
 
-PolynomialList::PolynomialList() {
+polynomialList::polynomialList() {
     // Init listSimRAM.
     this->pol = new listSimRAM();
 }
 
-bool PolynomialList::isZero() {
+bool polynomialList::isZero() {
     return pol->getLength() == 0;
 }
 
-int PolynomialList::getGrade() {
+int polynomialList::getGrade() {
     memDir dir = pol->getNextDir(pol->getFirstDir());
     if (dir != NULL_VALUE) {
         int maxGrade = pol->getValue(dir);
@@ -79,7 +79,7 @@ int PolynomialList::getGrade() {
     }
 }
 
-int PolynomialList::getCoefficient(int exp) {
+int polynomialList::getCoefficient(int exp) {
     memDir dir = findExp(exp);
     if (dir != NULL_VALUE) {
         return pol->getValue(pol->getPreviousDir(dir));
@@ -88,7 +88,7 @@ int PolynomialList::getCoefficient(int exp) {
     }
 }
 
-void PolynomialList::setCoefficient(int coef, int exp) {
+void polynomialList::setCoefficient(int coef, int exp) {
     memDir dir = findExp(exp);
     if (dir != NULL_VALUE) {
         memDir coefDir = pol->getPreviousDir(dir);
@@ -102,7 +102,7 @@ void PolynomialList::setCoefficient(int coef, int exp) {
     }
 }
 
-void PolynomialList::setTerm(int coef, int exp) {
+void polynomialList::setTerm(int coef, int exp) {
     memDir expDir = findExp(exp);
     if (expDir != NULL_VALUE) {
         memDir coefDir = pol->getPreviousDir(expDir);
@@ -119,11 +119,11 @@ void PolynomialList::setTerm(int coef, int exp) {
     }
 }
 
-int PolynomialList::getNumberOfTerms() {
+int polynomialList::getNumberOfTerms() {
     return pol->getLength() / 2;
 }
 
-int PolynomialList::getExponent(int term) {
+int polynomialList::getExponent(int term) {
     memDir dir = findTermN(term);
     if (dir != NULL_VALUE) {
         return pol->getValue(pol->getNextDir(dir));
@@ -132,7 +132,7 @@ int PolynomialList::getExponent(int term) {
     }
 }
 
-void PolynomialList::addition(PolynomialList p1, PolynomialList p2) {
+void polynomialList::addition(polynomialList p1, polynomialList p2) {
     for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
         int exp = p1.getExponent(i);
         int coef = p1.getCoefficient(exp);
@@ -145,7 +145,7 @@ void PolynomialList::addition(PolynomialList p1, PolynomialList p2) {
     }
 }
 
-void PolynomialList::subtraction(PolynomialList p1, PolynomialList p2) {
+void polynomialList::subtraction(polynomialList p1, polynomialList p2) {
     for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
         int exp = p1.getExponent(i);
         int coef = p1.getCoefficient(exp);
@@ -158,7 +158,7 @@ void PolynomialList::subtraction(PolynomialList p1, PolynomialList p2) {
     }
 }
 
-void PolynomialList::multiplication(PolynomialList p1, PolynomialList p2) {
+void polynomialList::multiplication(polynomialList p1, polynomialList p2) {
     for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
         for (int j = 1; j <= p2.getNumberOfTerms(); j++) {
             int exp = p1.getExponent(i) + p2.getExponent(j);
@@ -169,7 +169,7 @@ void PolynomialList::multiplication(PolynomialList p1, PolynomialList p2) {
     }
 }
 
-void PolynomialList::isOpposite(PolynomialList p1, PolynomialList p2) {
+void polynomialList::isOpposite(polynomialList p1, polynomialList p2) {
     addition(p1, p2);
     if (isZero()) {
         cout << "Son polinomios opuestos." << endl;
@@ -178,7 +178,7 @@ void PolynomialList::isOpposite(PolynomialList p1, PolynomialList p2) {
     }
 }
 
-void PolynomialList::print() {
+void polynomialList::print() {
     if (isZero()) {
         cout << "0" << endl;
     } else {
@@ -203,7 +203,7 @@ void PolynomialList::print() {
     }
 }
 
-void PolynomialList::derive(PolynomialList p1) {
+void polynomialList::derive(polynomialList p1) {
     for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
         if (p1.getExponent(i) != 0) {
             int exp = p1.getExponent(i) - 1;

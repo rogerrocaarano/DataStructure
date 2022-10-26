@@ -5,7 +5,7 @@
 #ifndef DATASTRUCTURE_LISTSIMRAM_H
 #define DATASTRUCTURE_LISTSIMRAM_H
 
-#include "simRAM.h"
+#include "../simRAM.h"
 
 const string LIST_ITEM = "L:value";
 const string NEXT_LIST_ITEM_POINTER = "L:next";

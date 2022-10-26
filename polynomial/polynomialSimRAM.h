@@ -5,7 +5,7 @@
 #ifndef DATASTRUCTURE_POLYNOMIALSIMRAM_H
 #define DATASTRUCTURE_POLYNOMIALSIMRAM_H
 
-#include "simRAM.h"
+#include "../simRAM.h"
 
 const string COEF = "P:coef";
 const string EXP = "P:exp";

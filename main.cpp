@@ -1,7 +1,7 @@
 #include "iostream"
 #include "simRAM.h"
-#include "listSimRAM.h"
-#include "polynomialSimRAM.h"
+#include "list/listSimRAM.h"
+#include "polynomial/polynomialSimRAM.h"
 
 void Exam1() {
     auto *MRRA = new simRAM;

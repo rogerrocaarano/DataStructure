@@ -5,11 +5,11 @@
 #ifndef DATASTRUCTURE_POLYNOMIALLIST_H
 #define DATASTRUCTURE_POLYNOMIALLIST_H
 
-#include "listSimRAM.h"
+#include "../list/listSimRAM.h"
 
 using namespace std;
 
-class PolynomialList {
+class polynomialList {
 private:
     listSimRAM *pol;
 
@@ -18,7 +18,7 @@ private:
     memDir findTermN(int);
 
 public:
-    PolynomialList();
+    polynomialList();
 
     bool isZero();
 
@@ -34,17 +34,17 @@ public:
 
     int getExponent(int term);
 
-    void addition(PolynomialList p1, PolynomialList p2);
+    void addition(polynomialList p1, polynomialList p2);
 
-    void subtraction(PolynomialList p1, PolynomialList p2);
+    void subtraction(polynomialList p1, polynomialList p2);
 
-    void multiplication(PolynomialList p1, PolynomialList p2);
+    void multiplication(polynomialList p1, polynomialList p2);
 
-    void isOpposite(PolynomialList p1, PolynomialList p2);
+    void isOpposite(polynomialList p1, polynomialList p2);
 
     void print();
 
-    void derive(PolynomialList p1);
+    void derive(polynomialList p1);
 };
 
 #endif //DATASTRUCTURE_POLYNOMIALLIST_H
