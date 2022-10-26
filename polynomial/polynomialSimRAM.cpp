@@ -99,7 +99,6 @@ void polynomialSimRAM::setTerm(int coef, int exp) {
             length++;
         }
     }
-
 }
 
 int polynomialSimRAM::getNumberOfTerms() {
@@ -113,7 +112,7 @@ int polynomialSimRAM::getExponent(int term) {
     } else cout << "Term not found" << endl;
 }
 
-void polynomialSimRAM::show() {
+void polynomialSimRAM::print() {
     cout << "P: ";
     memDir dir = ptrPol;
     int i = 1;
@@ -127,4 +126,50 @@ void polynomialSimRAM::show() {
         i++;
     }
     cout << endl;
+}
+
+void polynomialSimRAM::addition(polynomialSimRAM p1, polynomialSimRAM p2) {
+    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
+        int exp = p1.getExponent(i);
+        int coef = p1.getCoefficient(exp);
+        setTerm(coef, exp);
+    }
+    for (int i = 1; i <= p2.getNumberOfTerms(); i++) {
+        int exp = p2.getExponent(i);
+        int coef = p2.getCoefficient(exp);
+        setTerm(coef, exp);
+    }
+}
+
+void polynomialSimRAM::subtraction(polynomialSimRAM p1, polynomialSimRAM p2) {
+    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
+        int exp = p1.getExponent(i);
+        int coef = p1.getCoefficient(exp);
+        setTerm(coef, exp);
+    }
+    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
+        int exp = p2.getExponent(i);
+        int coef = p2.getCoefficient(exp) * (-1);
+        setTerm(coef, exp);
+    }
+}
+
+void polynomialSimRAM::multiplication(polynomialSimRAM p1, polynomialSimRAM p2) {
+    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
+        for (int j = 1; j <= p2.getNumberOfTerms(); j++) {
+            int exp = p1.getExponent(i) + p2.getExponent(j);
+            int coef = p1.getCoefficient(p1.getExponent(i))
+                       * p2.getCoefficient(p2.getExponent(j));
+            setTerm(coef, exp);
+        }
+    }
+}
+
+void polynomialSimRAM::isOpposite(polynomialSimRAM p1, polynomialSimRAM p2) {
+    addition(p1, p2);
+    if (isZero()) {
+        cout << "Son polinomios opuestos." << endl;
+    } else {
+        cout << "No son polinomios opuestos." << endl;
+    }
 }
