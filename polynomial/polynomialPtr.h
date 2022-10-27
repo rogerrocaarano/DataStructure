@@ -52,6 +52,8 @@ public:
     void multiplication(polynomialPtr p1, polynomialPtr p2);
 
     void isOpposite(polynomialPtr p1, polynomialPtr p2);
+
+    void rmTerm(dirP dir);
 };
 
 

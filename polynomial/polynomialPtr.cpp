@@ -68,7 +68,7 @@ void polynomialPtr::setCoefficient(int coef, int exp) {
     if (dir != nullptr) {
         dir->coef = coef;
         if (coef == 0) {
-            m->delSpace(dir);
+            rmTerm(dir);
         }
     } else cout << "Not found." << endl;
 }
@@ -79,20 +79,7 @@ void polynomialPtr::setTerm(int coef, int exp) {
         coef = coef + expDir->coef;
         expDir->coef = coef;
         if (coef == 0) {
-            if (length == 1) {
-                firstPtr = nullptr;
-                length = 0;
-            } else if (firstPtr == expDir) {
-                firstPtr = expDir->nextNode;
-            } else {
-                dirP previousDir = firstPtr;
-                while (previousDir->nextNode != expDir)
-                    previousDir = previousDir->nextNode;
-                if (expDir->nextNode != nullptr)
-                    previousDir->nextNode = expDir->nextNode;
-                else previousDir->nextNode = nullptr;
-            }
-            length--;
+            rmTerm(expDir);
         }
     } else {
         if (coef != 0) {
@@ -177,4 +164,21 @@ void polynomialPtr::isOpposite(polynomialPtr p1, polynomialPtr p2) {
     } else {
         cout << "No son polinomios opuestos." << endl;
     }
+}
+
+void polynomialPtr::rmTerm(dirP dir) {
+    if (length > 0) {
+        if (dir == firstPtr) {
+            if (length == 1) firstPtr = nullptr;
+            else firstPtr = dir;
+        } else {
+            dirP previousDir = firstPtr;
+            while (previousDir->nextNode != dir) {
+                previousDir = previousDir->nextNode;
+            }
+            previousDir->nextNode = dir->nextNode;
+        }
+        length--;
+    } else cout << "Invalid dir." << endl;
+
 }
