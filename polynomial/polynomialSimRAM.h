@@ -42,7 +42,15 @@ public:
 
     int getExponent(int term);
 
-    void show();
+    void addition(polynomialSimRAM p1, polynomialSimRAM p2);
+
+    void subtraction(polynomialSimRAM p1, polynomialSimRAM p2);
+
+    void multiplication(polynomialSimRAM p1, polynomialSimRAM p2);
+
+    void isOpposite(polynomialSimRAM p1, polynomialSimRAM p2);
+
+    void print();
 };
 
 

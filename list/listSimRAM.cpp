@@ -198,7 +198,7 @@ void listSimRAM::setItem(memDir dir, DATA_TYPE value) {
     }
 }
 
-void listSimRAM::show() {
+void listSimRAM::print() {
     cout << "L: ";
     memDir dir = ptrDir;
     int i = 1;

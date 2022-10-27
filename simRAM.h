@@ -42,7 +42,7 @@ public:
 
     bool isSpaceAvailable(memDir dir);
 
-    void show();
+    void print();
 };
 
 

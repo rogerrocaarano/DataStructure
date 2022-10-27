@@ -47,7 +47,7 @@ public:
 
     void setItem(memDir dir, DATA_TYPE value);
 
-    void show();
+    void print();
 };
 
 

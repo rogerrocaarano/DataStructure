@@ -187,7 +187,7 @@ void listPtr::setItem(dirP dir, DATA_TYPE value) {
     }
 }
 
-void listPtr::printList() {
+void listPtr::print() {
     dirP dir = getFirstDir();
     while (dir->nextNode != nullptr) {
         cout << getValue(dir) << ",";
