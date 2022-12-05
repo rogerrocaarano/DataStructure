@@ -6,24 +6,24 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(
         DataStructure
         main.cpp
-        simRAM.cpp
-        simRAM.h
-        list/listSimRAM.cpp
-        list/listSimRAM.h
-        polynomial/polynomialList.cpp
-        polynomial/polynomialList.h
-        list/listVector.cpp
-        list/listVector.h
-        list/listPtr.cpp
-        list/listPtr.h
-        polynomial/polynomialVector.cpp
-        polynomial/polynomialVector.h
-        polynomial/polynomialVectorDouble.cpp
-        polynomial/polynomialVectorDouble.h
-        polynomial/polynomialSimRAM.cpp
-        polynomial/polynomialSimRAM.h
-        polynomial/polynomialPtr.cpp
-        polynomial/polynomialPtr.h
+        MEMORIARRA.cpp
+        MEMORIARRA.h
+        LISTARRA.cpp
+        LISTARRA.h
+        polinomio/polynomialList.cpp
+        polinomio/polynomialList.h
+        lista/listVector.cpp
+        lista/listVector.h
+        lista/listPtr.cpp
+        lista/listPtr.h
+        polinomio/polynomialVector.cpp
+        polinomio/polynomialVector.h
+        polinomio/polynomialVectorDouble.cpp
+        polinomio/polynomialVectorDouble.h
+        POLINOMIORRA.cpp
+        POLINOMIORRA.h
+        polinomio/polynomialPtr.cpp
+        polinomio/polynomialPtr.h
 )
 
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} "-static")

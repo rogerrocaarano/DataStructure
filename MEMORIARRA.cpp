@@ -2,7 +2,7 @@
 // Created by rogerroca on 4/10/2022.
 //
 
-#include "simRAM.h"
+#include "MEMORIARRA.h"
 #include "iostream"
 
 using namespace std;
@@ -43,68 +43,68 @@ namespace IDs {
         return ids;
     }
 } // namespace IDs
-simRAM::simRAM() {
+MEMORIARRA::MEMORIARRA() {
     for (int i = 0; i < MAX_MEM_SPACE; i++) {
         mem[i].link = i + 1; // Create the initial values for memory links.
-        mem[i].dataStored = 0; // Initialize data values.
+        mem[i].Dato = 0; // Initialize data values.
     }
     mem[MAX_MEM_SPACE - 1].link = NULL_VALUE; // Set last link to -1. (end of memory).
-    nextFreeNode = 0;
+    libre = 0;
 }
 
-memDir simRAM::newSpace(const string &idStr) {
+memDir MEMORIARRA::new_espacio(const string &cadena_id) {
     // Getting ids from a comma separated string
     // and saving it to an array.
-    int idCount = IDs::countIds(idStr);
-    string *ids = IDs::idStrToArray(idStr);
+    int idCount = IDs::countIds(cadena_id);
+    string *ids = IDs::idStrToArray(cadena_id);
     // request the first available node to memory:
-    memDir requestNode = nextFreeNode;
-    memDir firstUsedNode = nextFreeNode;
+    memDir requestNode = libre;
+    memDir firstUsedNode = libre;
     // set node id and jump to the next linked node:
     for (int i = 0; i < idCount - 1; i++) {
         mem[requestNode].id = ids[i];
         requestNode = mem[requestNode].link; // linked node.
     }
-    nextFreeNode = mem[requestNode].link; // new nextFreeNode.
+    libre = mem[requestNode].link; // new libre.
     mem[requestNode].link = NULL_VALUE;
     mem[requestNode].id = ids[idCount - 1];
     return firstUsedNode;
 }
 
-void simRAM::delSpace(memDir dir) {
+void MEMORIARRA::delete_espacio(memDir dir) {
     // link the new available memory until first NULL_VALUE.
     memDir x = dir;
     while (mem[x].link != NULL_VALUE) {
         x = mem[x].link;
     }
-    // Link with nextFreeNode and
+    // Link with libre and
     // set new direction of available memory.
-    mem[x].link = nextFreeNode;
-    nextFreeNode = dir;
+    mem[x].link = libre;
+    libre = dir;
 }
 
-void simRAM::setData(memDir dir, const string &idStr, int dataValue) {
+void MEMORIARRA::poner_dato(memDir dir, const string &cadena_id, int dataValue) {
     memDir z = dir;
     while (z != NULL_VALUE) {
-        if (mem[z].id == idStr) {          // If found id:
-            mem[z].dataStored = dataValue; // Save new Value.
+        if (mem[z].id == cadena_id) {          // If found id:
+            mem[z].Dato = dataValue; // Save new Value.
         }
         z = mem[z].link;
     }
 }
 
-int simRAM::getData(memDir dir, const string &idStr) {
+int MEMORIARRA::obtenerDato(memDir dir, const string &cadena_id) {
     memDir z = dir;
     while (z != NULL_VALUE) {
-        if (mem[z].id == idStr) {
-            return mem[z].dataStored;
+        if (mem[z].id == cadena_id) {
+            return mem[z].Dato;
         }
         z = mem[z].link;
     }
 }
 
-int simRAM::getAvailableSpace() {
-    memDir x = nextFreeNode;
+int MEMORIARRA::Espacio_Disponible() {
+    memDir x = libre;
     int availableSpace = 0;
     while (x != -1) {
         availableSpace = availableSpace + 1;
@@ -113,13 +113,13 @@ int simRAM::getAvailableSpace() {
     return availableSpace;
 }
 
-int simRAM::getUsedSpace() {
-    int usedSpace = (MAX_MEM_SPACE) - getAvailableSpace();
+int MEMORIARRA::Espacio_ocupado() {
+    int usedSpace = (MAX_MEM_SPACE) - Espacio_Disponible();
     return usedSpace;
 }
 
-bool simRAM::isSpaceAvailable(memDir dir) {
-    memDir x = nextFreeNode;
+bool MEMORIARRA::dir_libre(memDir dir) {
+    memDir x = libre;
     bool isAvailable = false; // flag.
     while (x != NULL_VALUE && !isAvailable) {
         if (x == dir) {
@@ -130,14 +130,14 @@ bool simRAM::isSpaceAvailable(memDir dir) {
     return isAvailable;
 }
 
-void simRAM::print() {
+void MEMORIARRA::mostrar() {
     cout << "DIR\tID\t\tDATA\tLINK" << endl;
     cout << "----------------------------------------" << endl;
     for (int i = 0; i < MAX_MEM_SPACE; i++) {
-        cout << i << "\t" << mem[i].id << "\t\t" << mem[i].dataStored << "\t" << mem[i].link << endl;
+        cout << i << "\t" << mem[i].id << "\t\t" << mem[i].Dato << "\t" << mem[i].link << endl;
     }
     cout << "----------------------------------------" << endl;
-    cout << "Siguiente nodo Libre: " << nextFreeNode << endl;
-    cout << "Espacio ocupado: " << getUsedSpace() << endl;
-    cout << "Espacio disponible: " << getAvailableSpace() << endl;
+    cout << "Siguiente nodo Libre: " << libre << endl;
+    cout << "Espacio ocupado: " << Espacio_ocupado() << endl;
+    cout << "Espacio disponible: " << Espacio_Disponible() << endl;
 }

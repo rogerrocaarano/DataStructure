@@ -16,11 +16,11 @@ polynomialVectorDouble::polynomialVectorDouble() {
     }
 }
 
-bool polynomialVectorDouble::isZero() {
+bool polynomialVectorDouble::EsCero() {
     return length == 0;
 }
 
-int polynomialVectorDouble::getGrade() {
+int polynomialVectorDouble::Grado() {
     if (this->length > 0) {
         int grade = vExp[0];
         for (int i = 0; i <= length - 1; i++) {
@@ -30,15 +30,15 @@ int polynomialVectorDouble::getGrade() {
     } else cout << "Polynomial is empty" << endl;
 }
 
-double polynomialVectorDouble::getCoefficient(int exp) {
-    int pos = findExp(exp);
+double polynomialVectorDouble::coeficiente(int exp) {
+    int pos = BuscarExponente(exp);
     if (pos != -1) {
         return vCoef[pos];
     } else cout << "Exponent not found." << endl;
 }
 
-void polynomialVectorDouble::setCoefficient(double coef, int exp) {
-    int pos = findExp(exp);
+void polynomialVectorDouble::AsignarCoeficiente(double coef, int exp) {
+    int pos = BuscarExponente(exp);
     if (pos != -1) {
         if (coef == 0) {
             rmTerm(pos);
@@ -46,8 +46,8 @@ void polynomialVectorDouble::setCoefficient(double coef, int exp) {
     }
 }
 
-void polynomialVectorDouble::setTerm(double coef, int exp) {
-    int pos = findExp(exp);
+void polynomialVectorDouble::poner_termino(double coef, int exp) {
+    int pos = BuscarExponente(exp);
     if (pos != -1) {
         vCoef[pos] = vCoef[pos] + coef;
         if (vCoef[pos] == 0) rmTerm(pos);
@@ -60,56 +60,56 @@ void polynomialVectorDouble::setTerm(double coef, int exp) {
     }
 }
 
-int polynomialVectorDouble::getNumberOfTerms() {
+int polynomialVectorDouble::numero_terminos() {
     return length;
 }
 
-int polynomialVectorDouble::getExponent(int term) {
+int polynomialVectorDouble::exponente(int term) {
     if (term > 0 && term <= length) {
         return vExp[term - 1];
     } else cout << "Invalid position." << endl;
 }
 
-void polynomialVectorDouble::addition(polynomialVectorDouble p1, polynomialVectorDouble p2) {
-    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
-        int exp = p1.getExponent(i);
-        double coef = p1.getCoefficient(exp);
-        setTerm(coef, exp);
+void polynomialVectorDouble::sumar(polynomialVectorDouble p1, polynomialVectorDouble p2) {
+    for (int i = 1; i <= p1.numero_terminos(); i++) {
+        int exp = p1.exponente(i);
+        double coef = p1.coeficiente(exp);
+        poner_termino(coef, exp);
     }
-    for (int i = 1; i <= p2.getNumberOfTerms(); i++) {
-        int exp = p2.getExponent(i);
-        double coef = p2.getCoefficient(exp);
-        setTerm(coef, exp);
-    }
-}
-
-void polynomialVectorDouble::subtraction(polynomialVectorDouble p1, polynomialVectorDouble p2) {
-    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
-        int exp = p1.getExponent(i);
-        double coef = p1.getCoefficient(exp);
-        setTerm(coef, exp);
-    }
-    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
-        int exp = p2.getExponent(i);
-        double coef = p2.getCoefficient(exp) * (-1);
-        setTerm(coef, exp);
+    for (int i = 1; i <= p2.numero_terminos(); i++) {
+        int exp = p2.exponente(i);
+        double coef = p2.coeficiente(exp);
+        poner_termino(coef, exp);
     }
 }
 
-void polynomialVectorDouble::multiplication(polynomialVectorDouble p1, polynomialVectorDouble p2) {
-    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
-        for (int j = 1; j <= p2.getNumberOfTerms(); j++) {
-            int exp = p1.getExponent(i) + p2.getExponent(j);
-            double coef = p1.getCoefficient(p1.getExponent(i))
-                          * p2.getCoefficient(p2.getExponent(j));
-            setTerm(coef, exp);
+void polynomialVectorDouble::restar(polynomialVectorDouble p1, polynomialVectorDouble p2) {
+    for (int i = 1; i <= p1.numero_terminos(); i++) {
+        int exp = p1.exponente(i);
+        double coef = p1.coeficiente(exp);
+        poner_termino(coef, exp);
+    }
+    for (int i = 1; i <= p1.numero_terminos(); i++) {
+        int exp = p2.exponente(i);
+        double coef = p2.coeficiente(exp) * (-1);
+        poner_termino(coef, exp);
+    }
+}
+
+void polynomialVectorDouble::multiplicar(polynomialVectorDouble p1, polynomialVectorDouble p2) {
+    for (int i = 1; i <= p1.numero_terminos(); i++) {
+        for (int j = 1; j <= p2.numero_terminos(); j++) {
+            int exp = p1.exponente(i) + p2.exponente(j);
+            double coef = p1.coeficiente(p1.exponente(i))
+                          * p2.coeficiente(p2.exponente(j));
+            poner_termino(coef, exp);
         }
     }
 }
 
-void polynomialVectorDouble::isOpposite(polynomialVectorDouble p1, polynomialVectorDouble p2) {
-    addition(p1, p2);
-    if (isZero()) {
+void polynomialVectorDouble::opuesto(polynomialVectorDouble p1, polynomialVectorDouble p2) {
+    sumar(p1, p2);
+    if (EsCero()) {
         cout << "Son polinomios opuestos." << endl;
     } else {
         cout << "No son polinomios opuestos." << endl;
@@ -117,7 +117,7 @@ void polynomialVectorDouble::isOpposite(polynomialVectorDouble p1, polynomialVec
 }
 
 void polynomialVectorDouble::print() {
-    if (isZero()) {
+    if (EsCero()) {
         cout << "0" << endl;
     } else {
         for (int i = 0; i < length; i++) {
@@ -133,18 +133,18 @@ void polynomialVectorDouble::print() {
     }
 }
 
-void polynomialVectorDouble::derive(polynomialVectorDouble p1) {
-    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
-        if (p1.getExponent(i) != 0) {
-            int exp = p1.getExponent(i) - 1;
-            int coef = p1.getCoefficient(p1.getExponent(i))
-                       * p1.getExponent(i);
-            setTerm(coef, exp);
+void polynomialVectorDouble::derivar(polynomialVectorDouble p1) {
+    for (int i = 1; i <= p1.numero_terminos(); i++) {
+        if (p1.exponente(i) != 0) {
+            int exp = p1.exponente(i) - 1;
+            int coef = p1.coeficiente(p1.exponente(i))
+                       * p1.exponente(i);
+            poner_termino(coef, exp);
         }
     }
 }
 
-int polynomialVectorDouble::findExp(int exp) {
+int polynomialVectorDouble::BuscarExponente(int exp) {
     int pos = -1;
     int i = 0;
     while (pos == -1 && i <= length - 1) {
@@ -168,7 +168,7 @@ void polynomialVectorDouble::rmTerm(int pos) {
     } else cout << "Invalid direction" << endl;
 }
 
-double polynomialVectorDouble::integral(double a, double b, double dx) {
+double polynomialVectorDouble::integrar(double a, double b, double dx) {
     if (b > a) {
         double area = 0;
         double y;
@@ -188,8 +188,8 @@ double polynomialVectorDouble::integral(double a, double b, double dx) {
 double polynomialVectorDouble::eval(double x) {
     double y = 0;
     for (int i = 1; i <= length; i++) {
-        int exp = getExponent(i);
-        double coef = getCoefficient(exp);
+        int exp = exponente(i);
+        double coef = coeficiente(exp);
         double term = coef * pow(x, exp);
         y = y + term;
     }

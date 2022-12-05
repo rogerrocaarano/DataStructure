@@ -15,7 +15,7 @@ listPtr::listPtr() {
 }
 
 dirP listPtr::getDir(int pos) {
-    if (isEmpty()) {
+    if (vacia()) {
         cout << "List empty.";
         return nullptr;
     } else {
@@ -34,8 +34,8 @@ dirP listPtr::getDir(int pos) {
     }
 }
 
-dirP listPtr::getLastDir() {
-    if (isEmpty()) {
+dirP listPtr::fin() {
+    if (vacia()) {
         cout << "Empty List." << endl;
         return nullptr;
     } else {
@@ -51,8 +51,8 @@ dirP listPtr::getLastDir() {
     }
 }
 
-dirP listPtr::getFirstDir() {
-    if (!isEmpty()) {
+dirP listPtr::primero() {
+    if (!vacia()) {
         return firstPtr;
     } else {
         cout << "Empty List." << endl;
@@ -60,24 +60,24 @@ dirP listPtr::getFirstDir() {
     }
 }
 
-dirP listPtr::getNextDir(dirP dir) {
-    if (isEmpty()) {
+dirP listPtr::siguiente(dirP dir) {
+    if (vacia()) {
         cout << "Empty List." << endl;
         return nullptr;
     } else {
-        if (dir == getLastDir()) {
+        if (dir == fin()) {
             cout << "Invalid direction" << endl;
             return nullptr;
         } else return dir->nextNode;
     }
 }
 
-dirP listPtr::getPreviousDir(dirP dir) {
-    if (isEmpty()) {
+dirP listPtr::anterior(dirP dir) {
+    if (vacia()) {
         cout << "Empty List." << endl;
         return nullptr;
     } else {
-        if (dir == getFirstDir()) {
+        if (dir == primero()) {
             cout << "Invalid direction" << endl;
             return nullptr;
         } else {
@@ -95,51 +95,51 @@ dirP listPtr::getPreviousDir(dirP dir) {
     }
 }
 
-bool listPtr::isEmpty() {
+bool listPtr::vacia() {
     return length == 0;
 }
 
-int listPtr::getValue(dirP dir) {
-    if (isEmpty()) {
+int listPtr::recupera(dirP dir) {
+    if (vacia()) {
         cout << "List is empty" << endl;
     } else {
         return dir->dataStored;
     }
 }
 
-int listPtr::getValue(int pos) {
+int listPtr::recupera(int pos) {
     dirP dir = getDir(pos);
-    getValue(dir);
+    recupera(dir);
 }
 
-int listPtr::getLength() {
+int listPtr::longitud() {
     return length;
 }
 
-void listPtr::insertItem(dirP dir, DATA_TYPE value) {
+void listPtr::inserta(dirP dir, DATA_TYPE value) {
     auto *x = new ListNode;
     x->dataStored = value;
     x->nextNode = nullptr;
-    if (isEmpty()) {
+    if (vacia()) {
         firstPtr = x;
         length = 1;
     } else {
-        if (dir == getFirstDir()) {
+        if (dir == primero()) {
             x->nextNode = dir;
             firstPtr = x;
         } else {
-            getPreviousDir(dir)->nextNode = x;
+            anterior(dir)->nextNode = x;
             x->nextNode = dir;
         }
         length++;
     }
 }
 
-void listPtr::insertItemFirst(DATA_TYPE value) {
+void listPtr::inserta_primero(DATA_TYPE value) {
     auto *x = new ListNode;
     x->dataStored = value;
     x->nextNode = nullptr;
-    if (isEmpty()) {
+    if (vacia()) {
         length = 1;
         firstPtr = x;
     } else {
@@ -149,19 +149,19 @@ void listPtr::insertItemFirst(DATA_TYPE value) {
     }
 }
 
-void listPtr::insertItemLast(DATA_TYPE value) {
-    if (isEmpty()) {
-        insertItemFirst(value);
+void listPtr::inserta_ultimo(DATA_TYPE value) {
+    if (vacia()) {
+        inserta_primero(value);
     } else {
         auto *x = new ListNode;
         x->dataStored = value;
         x->nextNode = nullptr;
-        getLastDir()->nextNode = x;
+        fin()->nextNode = x;
         length++;
     }
 }
 
-void listPtr::delItem(dirP dir) {
+void listPtr::suprime(dirP dir) {
     if (length == 0) {
         cout << "Lista Vacía." << endl;
         return;
@@ -171,7 +171,7 @@ void listPtr::delItem(dirP dir) {
             firstPtr = firstPtr->nextNode;
             delete (x);
         } else {
-            dirP previousDir = getPreviousDir(dir);
+            dirP previousDir = anterior(dir);
             previousDir->nextNode = dir->nextNode;
             delete (dir);
         }
@@ -179,8 +179,8 @@ void listPtr::delItem(dirP dir) {
     length--;
 }
 
-void listPtr::setItem(dirP dir, DATA_TYPE value) {
-    if (isEmpty()) {
+void listPtr::modifica(dirP dir, DATA_TYPE value) {
+    if (vacia()) {
         cout << "List is empty" << endl;
     } else {
         dir->dataStored = value;
@@ -188,12 +188,12 @@ void listPtr::setItem(dirP dir, DATA_TYPE value) {
 }
 
 void listPtr::print() {
-    dirP dir = getFirstDir();
+    dirP dir = primero();
     while (dir->nextNode != nullptr) {
-        cout << getValue(dir) << ",";
+        cout << recupera(dir) << ",";
         dir = dir->nextNode;
     }
     if (dir->nextNode == nullptr) {
-        cout << getValue(dir) << endl;
+        cout << recupera(dir) << endl;
     }
 }

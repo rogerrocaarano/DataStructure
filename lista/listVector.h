@@ -20,29 +20,29 @@ private:
 public:
     listVector();
 
-    dirV getLastDir();
+    dirV fin();
 
-    dirV getFirstDir();
+    dirV primero();
 
-    dirV getNextDir(dirV dir);
+    dirV siguiente(dirV dir);
 
-    dirV getPreviousDir(dirV dir);
+    dirV anterior(dirV dir);
 
-    bool isEmpty();
+    bool vacia();
 
-    int getValue(dirV dir);
+    int recupera(dirV dir);
 
-    int getLength();
+    int longitud();
 
-    void insertItem(dirV dir, DATA_TYPE value);
+    void inserta(dirV dir, DATA_TYPE value);
 
-    void insertItemFirst(DATA_TYPE value);
+    void inserta_primero(DATA_TYPE value);
 
-    void insertItemLast(DATA_TYPE value);
+    void inserta_ultimo(DATA_TYPE value);
 
-    void delItem(dirV dir);
+    void suprime(dirV dir);
 
-    void setItem(dirV dir, DATA_TYPE value);
+    void modifica(dirV dir, DATA_TYPE value);
 
     void print();
 };

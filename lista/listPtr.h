@@ -23,31 +23,31 @@ public:
 
     dirP getDir(int pos);
 
-    dirP getLastDir();
+    dirP fin();
 
-    dirP getFirstDir();
+    dirP primero();
 
-    dirP getNextDir(dirP dir);
+    dirP siguiente(dirP dir);
 
-    dirP getPreviousDir(dirP dir);
+    dirP anterior(dirP dir);
 
-    bool isEmpty();
+    bool vacia();
 
-    int getValue(dirP dir);
+    int recupera(dirP dir);
 
-    int getValue(int pos);
+    int recupera(int pos);
 
-    int getLength();
+    int longitud();
 
-    void insertItem(dirP dir, DATA_TYPE value);
+    void inserta(dirP dir, DATA_TYPE value);
 
-    void insertItemFirst(DATA_TYPE value);
+    void inserta_primero(DATA_TYPE value);
 
-    void insertItemLast(DATA_TYPE value);
+    void inserta_ultimo(DATA_TYPE value);
 
-    void delItem(dirP dir);
+    void suprime(dirP dir);
 
-    void setItem(dirP dir, DATA_TYPE value);
+    void modifica(dirP dir, DATA_TYPE value);
 
     void print();
 };
