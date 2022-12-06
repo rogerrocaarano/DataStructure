@@ -22,7 +22,7 @@ add_executable(
         lib/polinomioVectorDouble.h
         lib/polinomioPtr.cpp
         lib/polinomioPtr.h
-)
+        lib/conjuntoListaVector.cpp lib/conjuntoListaVector.h)
 # Ejecutables de entregas realizadas
 add_executable(
         act2_SMemoria

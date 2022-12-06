@@ -16,7 +16,6 @@ dirV listaVector::fin() {
     if (!vacia()) {
         return length - 1;
     } else {
-        cout << "Empty List." << endl;
         return NULL_VALUE;
     }
 }
@@ -25,20 +24,17 @@ dirV listaVector::primero() {
     if (!vacia()) {
         return 0;
     } else {
-        cout << "Empty List." << endl;
         return NULL_VALUE;
     }
 }
 
 dirV listaVector::siguiente(dirV dir) {
     if (vacia()) {
-        cout << "Empty List." << endl;
         return NULL_VALUE;
     } else {
         if (dir >= 0 && dir < length - 1) {
             return dir + 1;
         } else {
-            cout << "Invalid direction" << endl;
             return NULL_VALUE;
         }
     }
@@ -46,13 +42,11 @@ dirV listaVector::siguiente(dirV dir) {
 
 dirV listaVector::anterior(dirV dir) {
     if (vacia()) {
-        cout << "Empty List." << endl;
         return -1;
     } else {
         if (dir > 0 && dir <= length - 1) {
             return dir - 1;
         } else {
-            cout << "Invalid direction" << endl;
             return NULL_VALUE;
         }
     }
@@ -64,12 +58,10 @@ bool listaVector::vacia() {
 
 int listaVector::recupera(dirV dir) {
     if (vacia()) {
-        cout << "Empty List." << endl;
     } else {
         if (dir >= 0 && dir <= length - 1) {
             return list[dir];
         } else {
-            cout << "Invalid direction." << endl;
         }
     }
 }
@@ -80,7 +72,7 @@ int listaVector::longitud() {
 
 void listaVector::inserta(dirV dir, DATA_TYPE value) {
     if (length == MAX_VECTOR_SIZE) {
-        cout << "List is full.";
+        cout << "lista::inserta->La lista está llena." << endl;
         return;
     } else {
         if (dir >= 0 && dir <= length - 1) {
@@ -90,7 +82,7 @@ void listaVector::inserta(dirV dir, DATA_TYPE value) {
             }
             list[dir] = value;
         } else {
-            cout << "Invalid direction." << endl;
+            cout << "lista::inserta->Dirección inválida." << endl;
             return;
         }
     }
@@ -107,7 +99,7 @@ void listaVector::inserta_primero(DATA_TYPE value) {
 
 void listaVector::inserta_ultimo(DATA_TYPE value) {
     if (length == MAX_VECTOR_SIZE) {
-        cout << "List is full.";
+        cout << "lista::inserta_ultimo->La lista está llena." << endl;
     } else {
         length++;
         list[length - 1] = value;
@@ -116,7 +108,7 @@ void listaVector::inserta_ultimo(DATA_TYPE value) {
 
 void listaVector::suprime(dirV dir) {
     if (length == MAX_VECTOR_SIZE) {
-        cout << "List is full.";
+        cout << "lista::suprime->La lista está llena." << endl;
         return;
     } else {
         if (dir >= 0 && dir <= length - 1) {
@@ -125,7 +117,7 @@ void listaVector::suprime(dirV dir) {
             }
             length--;
         } else {
-            cout << "Invalid direction." << endl;
+            cout << "lista::suprime->Dirección inválida." << endl;
             return;
         }
     }
@@ -133,13 +125,13 @@ void listaVector::suprime(dirV dir) {
 
 void listaVector::modifica(dirV dir, DATA_TYPE value) {
     if (vacia()) {
-        cout << "List is empty" << endl;
+        cout << "lista::modifica->La lista está vacía." << endl;
         return;
     } else {
         if (dir >= 0 && dir <= length - 1) {
             list[dir] = value;
         } else {
-            cout << "Invalid direction." << endl;
+            cout << "lista::modifica->Dirección inválida." << endl;
             return;
         }
     }
@@ -147,7 +139,7 @@ void listaVector::modifica(dirV dir, DATA_TYPE value) {
 
 void listaVector::print() {
     if (vacia()) {
-        cout << "List is empty" << endl;
+        cout << "lista::print->La lista está vacía." << endl;
     } else {
         cout << "List: ";
         for (int i = 0; i <= length - 1; i++) {
