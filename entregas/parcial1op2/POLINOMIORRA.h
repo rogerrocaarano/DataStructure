@@ -5,7 +5,7 @@
 #ifndef DATASTRUCTURE_POLINOMIORRA_H
 #define DATASTRUCTURE_POLINOMIORRA_H
 
-#include "../lib/SMemoria.h"
+#include "../../lib/SMemoria.h"
 
 const string COEF = "coef";
 const string EXP = "exp";
