@@ -2,24 +2,24 @@
 // Created by rogerroca on 19/10/2022.
 //
 
-#ifndef DATASTRUCTURE_LISTPTR_H
-#define DATASTRUCTURE_LISTPTR_H
+#ifndef DATASTRUCTURE_LISTAPTR_H
+#define DATASTRUCTURE_LISTAPTR_H
 
 struct ListNode {
     int dataStored;
     ListNode *nextNode;
 };
 typedef ListNode *dirP;
-typedef int DATA_TYPE; // Data type than the listVector can store.
+typedef int DATA_TYPE; // Data type than the listaVector can store.
 
 
-class listPtr {
+class listaPtr {
 private:
     dirP firstPtr;
     int length;
 public:
 
-    listPtr();
+    listaPtr();
 
     dirP getDir(int pos);
 
@@ -53,4 +53,4 @@ public:
 };
 
 
-#endif //DATASTRUCTURE_LISTPTR_H
+#endif //DATASTRUCTURE_LISTAPTR_H

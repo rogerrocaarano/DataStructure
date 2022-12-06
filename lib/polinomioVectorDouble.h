@@ -2,13 +2,13 @@
 // Created by rogerroca on 20/10/2022.
 //
 
-#ifndef DATASTRUCTURE_POLYNOMIALVECTORDOUBLE_H
-#define DATASTRUCTURE_POLYNOMIALVECTORDOUBLE_H
+#ifndef DATASTRUCTURE_POLINOMIOVECTORDOUBLE_H
+#define DATASTRUCTURE_POLINOMIOVECTORDOUBLE_H
 
 
 const int MAX_SIZE_POL_VECT_DOUBLE = 100;
 
-class polynomialVectorDouble {
+class polinomioVectorDouble {
 private:
     double vCoef[MAX_SIZE_POL_VECT_DOUBLE]{};
     int vExp[MAX_SIZE_POL_VECT_DOUBLE]{};
@@ -19,7 +19,7 @@ private:
     void rmTerm(int pos);
 
 public:
-    polynomialVectorDouble();
+    polinomioVectorDouble();
 
     bool EsCero();
 
@@ -35,17 +35,17 @@ public:
 
     int exponente(int term);
 
-    void sumar(polynomialVectorDouble p1, polynomialVectorDouble p2);
+    void sumar(polinomioVectorDouble p1, polinomioVectorDouble p2);
 
-    void restar(polynomialVectorDouble p1, polynomialVectorDouble p2);
+    void restar(polinomioVectorDouble p1, polinomioVectorDouble p2);
 
-    void multiplicar(polynomialVectorDouble p1, polynomialVectorDouble p2);
+    void multiplicar(polinomioVectorDouble p1, polinomioVectorDouble p2);
 
-    void opuesto(polynomialVectorDouble p1, polynomialVectorDouble p2);
+    void opuesto(polinomioVectorDouble p1, polinomioVectorDouble p2);
 
     void print();
 
-    void derivar(polynomialVectorDouble p1);
+    void derivar(polinomioVectorDouble p1);
 
     double integrar(double a, double b, double dx);
 
@@ -55,4 +55,4 @@ public:
 };
 
 
-#endif //DATASTRUCTURE_POLYNOMIALVECTORDOUBLE_H
+#endif //DATASTRUCTURE_POLINOMIOVECTORDOUBLE_H

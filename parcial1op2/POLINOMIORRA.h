@@ -5,7 +5,7 @@
 #ifndef DATASTRUCTURE_POLINOMIORRA_H
 #define DATASTRUCTURE_POLINOMIORRA_H
 
-#include "MEMORIARRA.h"
+#include "../lib/SMemoria.h"
 
 const string COEF = "coef";
 const string EXP = "exp";
@@ -15,7 +15,7 @@ const string POL_NODE = COEF + ',' + EXP + ',' + NEXT_NODE;
 
 class POLINOMIORRA {
 private:
-    MEMORIARRA *m;
+    MEMRRA *m;
     memDir ptrPol;
     int length;
 
@@ -26,7 +26,7 @@ private:
 public:
     POLINOMIORRA();
 
-    POLINOMIORRA(MEMORIARRA *mem);
+    POLINOMIORRA(MEMRRA *mem);
 
     bool EsCero();
 

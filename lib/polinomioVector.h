@@ -2,12 +2,12 @@
 // Created by rogerroca on 20/10/2022.
 //
 
-#ifndef DATASTRUCTURE_POLYNOMIALVECTOR_H
-#define DATASTRUCTURE_POLYNOMIALVECTOR_H
+#ifndef DATASTRUCTURE_POLINOMIOVECTOR_H
+#define DATASTRUCTURE_POLINOMIOVECTOR_H
 
 const int MAX_SIZE_POL_VECT = 100;
 
-class polynomialVector {
+class polinomioVector {
 private:
     int vCoef[MAX_SIZE_POL_VECT]{};
     int vExp[MAX_SIZE_POL_VECT]{};
@@ -18,7 +18,7 @@ private:
     void rmTerm(int pos);
 
 public:
-    polynomialVector();
+    polinomioVector();
 
     bool EsCero();
 
@@ -34,20 +34,20 @@ public:
 
     int exponente(int term);
 
-    void sumar(polynomialVector p1, polynomialVector p2);
+    void sumar(polinomioVector p1, polinomioVector p2);
 
-    void restar(polynomialVector p1, polynomialVector p2);
+    void restar(polinomioVector p1, polinomioVector p2);
 
-    void multiplicar(polynomialVector p1, polynomialVector p2);
+    void multiplicar(polinomioVector p1, polinomioVector p2);
 
-    void Opuesto(polynomialVector p1, polynomialVector p2);
+    void Opuesto(polinomioVector p1, polinomioVector p2);
 
     void print();
 
-    void derivar(polynomialVector p1);
+    void derivar(polinomioVector p1);
 
 
 };
 
 
-#endif //DATASTRUCTURE_POLYNOMIALVECTOR_H
+#endif //DATASTRUCTURE_POLINOMIOVECTOR_H

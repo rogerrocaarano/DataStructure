@@ -2,26 +2,26 @@
 // Created by rogerroca on 5/10/2022.
 //
 
-#ifndef DATASTRUCTURE_LISTARRA_H
-#define DATASTRUCTURE_LISTARRA_H
+#ifndef DATASTRUCTURE_LISTASMEMORIA_H
+#define DATASTRUCTURE_LISTASMEMORIA_H
 
-#include "MEMORIARRA.h"
+#include "../lib/SMemoria.h"
 
 const string LIST_ITEM = "elem";
 const string NEXT_LIST_ITEM_POINTER = "sig";
 const string LIST_NODE = LIST_ITEM + ',' + NEXT_LIST_ITEM_POINTER;
 
-typedef int DATA_TYPE; // Data type than the LISTARRA can store.
+typedef int DATA_TYPE; // Data type than the listaSMemoria can store.
 
-class LISTARRA {
+class listaSMemoria {
 private:
     memDir ptrDir; // Points to a memory node.
     int length;
-    MEMORIARRA *listMem;
+    MEMRRA *listMem;
 public:
-    LISTARRA();
+    listaSMemoria();
 
-    LISTARRA(MEMORIARRA *mem);
+    listaSMemoria(MEMRRA *mem);
 
     memDir fin();
 
@@ -51,4 +51,4 @@ public:
 };
 
 
-#endif //DATASTRUCTURE_LISTARRA_H
+#endif //DATASTRUCTURE_LISTASMEMORIA_H

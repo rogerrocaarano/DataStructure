@@ -4,26 +4,35 @@ project(DataStructure)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(
-        DataStructure
+        dev
         main.cpp
-        MEMORIARRA.cpp
-        MEMORIARRA.h
-        LISTARRA.cpp
-        LISTARRA.h
-        polinomio/polynomialList.cpp
-        polinomio/polynomialList.h
-        lista/listVector.cpp
-        lista/listVector.h
-        lista/listPtr.cpp
-        lista/listPtr.h
-        polinomio/polynomialVector.cpp
-        polinomio/polynomialVector.h
-        polinomio/polynomialVectorDouble.cpp
-        polinomio/polynomialVectorDouble.h
-        POLINOMIORRA.cpp
-        POLINOMIORRA.h
-        polinomio/polynomialPtr.cpp
-        polinomio/polynomialPtr.h
+        lib/SMemoria.cpp
+        lib/SMemoria.h
+        lib/polinomioListaSMemoria.cpp
+        lib/polinomioListaSMemoria.h
+        lib/listaVector.cpp
+        lib/listaVector.h
+        lib/listaPtr.cpp
+        lib/listaPtr.h
+        lib/listaSMemoria.cpp
+        lib/listaSMemoria.h
+        lib/polinomioVector.cpp
+        lib/polinomioVector.h
+        lib/polinomioVectorDouble.cpp
+        lib/polinomioVectorDouble.h
+        lib/polinomioPtr.cpp
+        lib/polinomioPtr.h
+)
+
+add_executable(
+        parcial1op2
+        parcial1op2/main.cpp
+        parcial1op2/SMemoria.cpp
+        parcial1op2/MEMRRA.h
+        parcial1op2/LISTARRA.cpp
+        parcial1op2/LISTARRA.h
+        parcial1op2/POLINOMIORRA.cpp
+        parcial1op2/POLINOMIORRA.h
 )
 
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} "-static")

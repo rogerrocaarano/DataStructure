@@ -2,8 +2,8 @@
 // Created by rogerroca on 26/10/2022.
 //
 
-#ifndef DATASTRUCTURE_POLYNOMIALPTR_H
-#define DATASTRUCTURE_POLYNOMIALPTR_H
+#ifndef DATASTRUCTURE_POLINOMIOPTR_H
+#define DATASTRUCTURE_POLINOMIOPTR_H
 
 #include "string"
 
@@ -17,7 +17,7 @@ struct polynomialNode {
 
 typedef polynomialNode *dirP;
 
-class polynomialPtr {
+class polinomioPtr {
 private:
     dirP firstPtr;
     int length;
@@ -27,7 +27,7 @@ private:
     dirP BuscarTerminoN(int i);
 
 public:
-    polynomialPtr();
+    polinomioPtr();
 
     bool EsCero();
 
@@ -45,16 +45,16 @@ public:
 
     void print();
 
-    void sumar(polynomialPtr p1, polynomialPtr p2);
+    void sumar(polinomioPtr p1, polinomioPtr p2);
 
-    void restar(polynomialPtr p1, polynomialPtr p2);
+    void restar(polinomioPtr p1, polinomioPtr p2);
 
-    void multiplicar(polynomialPtr p1, polynomialPtr p2);
+    void multiplicar(polinomioPtr p1, polinomioPtr p2);
 
-    void Opuesto(polynomialPtr p1, polynomialPtr p2);
+    void Opuesto(polinomioPtr p1, polinomioPtr p2);
 
     void rmTerm(dirP dir);
 };
 
 
-#endif //DATASTRUCTURE_POLYNOMIALPTR_H
+#endif //DATASTRUCTURE_POLINOMIOPTR_H

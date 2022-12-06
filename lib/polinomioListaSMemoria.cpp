@@ -2,7 +2,7 @@
 // Created by rogerroca on 6/10/2022.
 //
 
-#include "polynomialList.h"
+#include "polinomioListaSMemoria.h"
 #include "iostream"
 
 using namespace std;
@@ -21,7 +21,7 @@ namespace Ex {
     }
 }
 
-memDir polynomialList::BuscarExponente(int exp) {
+memDir polinomioListaSMemoria::BuscarExponente(int exp) {
     memDir dir = pol->siguiente(pol->primero());
     if (dir != NULL_VALUE) {
         memDir expDir = NULL_VALUE;
@@ -39,7 +39,7 @@ memDir polynomialList::BuscarExponente(int exp) {
     }
 }
 
-memDir polynomialList::BuscarTerminoN(int i) {
+memDir polinomioListaSMemoria::BuscarTerminoN(int i) {
     memDir dir = pol->primero();
     int nt = 0;
     memDir termDir = NULL_VALUE;
@@ -54,16 +54,16 @@ memDir polynomialList::BuscarTerminoN(int i) {
     return termDir;
 }
 
-polynomialList::polynomialList() {
-    // Init LISTARRA.
-    this->pol = new LISTARRA();
+polinomioListaSMemoria::polinomioListaSMemoria() {
+    // Init listaSMemoria.
+    this->pol = new listaSMemoria();
 }
 
-bool polynomialList::esCero() {
+bool polinomioListaSMemoria::esCero() {
     return pol->longitud() == 0;
 }
 
-int polynomialList::Grado() {
+int polinomioListaSMemoria::Grado() {
     memDir dir = pol->siguiente(pol->primero());
     if (dir != NULL_VALUE) {
         int maxGrade = pol->recupera(dir);
@@ -79,7 +79,7 @@ int polynomialList::Grado() {
     }
 }
 
-int polynomialList::coeficiente(int exp) {
+int polinomioListaSMemoria::coeficiente(int exp) {
     memDir dir = BuscarExponente(exp);
     if (dir != NULL_VALUE) {
         return pol->recupera(pol->anterior(dir));
@@ -88,7 +88,7 @@ int polynomialList::coeficiente(int exp) {
     }
 }
 
-void polynomialList::asignarCoeficiente(int coef, int exp) {
+void polinomioListaSMemoria::asignarCoeficiente(int coef, int exp) {
     memDir dir = BuscarExponente(exp);
     if (dir != NULL_VALUE) {
         memDir coefDir = pol->anterior(dir);
@@ -102,7 +102,7 @@ void polynomialList::asignarCoeficiente(int coef, int exp) {
     }
 }
 
-void polynomialList::poner_termino(int coef, int exp) {
+void polinomioListaSMemoria::poner_termino(int coef, int exp) {
     memDir expDir = BuscarExponente(exp);
     if (expDir != NULL_VALUE) {
         memDir coefDir = pol->anterior(expDir);
@@ -119,11 +119,11 @@ void polynomialList::poner_termino(int coef, int exp) {
     }
 }
 
-int polynomialList::numero_terminos() {
+int polinomioListaSMemoria::numero_terminos() {
     return pol->longitud() / 2;
 }
 
-int polynomialList::exponente(int term) {
+int polinomioListaSMemoria::exponente(int term) {
     memDir dir = BuscarTerminoN(term);
     if (dir != NULL_VALUE) {
         return pol->recupera(pol->siguiente(dir));
@@ -132,7 +132,7 @@ int polynomialList::exponente(int term) {
     }
 }
 
-void polynomialList::sumar(polynomialList p1, polynomialList p2) {
+void polinomioListaSMemoria::sumar(polinomioListaSMemoria p1, polinomioListaSMemoria p2) {
     for (int i = 1; i <= p1.numero_terminos(); i++) {
         int exp = p1.exponente(i);
         int coef = p1.coeficiente(exp);
@@ -145,7 +145,7 @@ void polynomialList::sumar(polynomialList p1, polynomialList p2) {
     }
 }
 
-void polynomialList::restar(polynomialList p1, polynomialList p2) {
+void polinomioListaSMemoria::restar(polinomioListaSMemoria p1, polinomioListaSMemoria p2) {
     for (int i = 1; i <= p1.numero_terminos(); i++) {
         int exp = p1.exponente(i);
         int coef = p1.coeficiente(exp);
@@ -158,7 +158,7 @@ void polynomialList::restar(polynomialList p1, polynomialList p2) {
     }
 }
 
-void polynomialList::multiplicar(polynomialList p1, polynomialList p2) {
+void polinomioListaSMemoria::multiplicar(polinomioListaSMemoria p1, polinomioListaSMemoria p2) {
     for (int i = 1; i <= p1.numero_terminos(); i++) {
         for (int j = 1; j <= p2.numero_terminos(); j++) {
             int exp = p1.exponente(i) + p2.exponente(j);
@@ -169,7 +169,7 @@ void polynomialList::multiplicar(polynomialList p1, polynomialList p2) {
     }
 }
 
-void polynomialList::opuesto(polynomialList p1, polynomialList p2) {
+void polinomioListaSMemoria::opuesto(polinomioListaSMemoria p1, polinomioListaSMemoria p2) {
     sumar(p1, p2);
     if (esCero()) {
         cout << "Son polinomios opuestos." << endl;
@@ -178,7 +178,7 @@ void polynomialList::opuesto(polynomialList p1, polynomialList p2) {
     }
 }
 
-void polynomialList::print() {
+void polinomioListaSMemoria::print() {
     if (esCero()) {
         cout << "0" << endl;
     } else {
@@ -203,7 +203,7 @@ void polynomialList::print() {
     }
 }
 
-void polynomialList::derivar(polynomialList p1) {
+void polinomioListaSMemoria::derivar(polinomioListaSMemoria p1) {
     for (int i = 1; i <= p1.numero_terminos(); i++) {
         if (p1.exponente(i) != 0) {
             int exp = p1.exponente(i) - 1;

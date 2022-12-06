@@ -2,17 +2,17 @@
 // Created by rogerroca on 18/10/2022.
 //
 
-#include "listVector.h"
+#include "listaVector.h"
 #include "iostream"
 
 using namespace std;
 
-listVector::listVector() {
+listaVector::listaVector() {
     list = new DATA_TYPE[MAX_VECTOR_SIZE];
     this->length = 0;
 }
 
-dirV listVector::fin() {
+dirV listaVector::fin() {
     if (!vacia()) {
         return length - 1;
     } else {
@@ -21,7 +21,7 @@ dirV listVector::fin() {
     }
 }
 
-dirV listVector::primero() {
+dirV listaVector::primero() {
     if (!vacia()) {
         return 0;
     } else {
@@ -30,7 +30,7 @@ dirV listVector::primero() {
     }
 }
 
-dirV listVector::siguiente(dirV dir) {
+dirV listaVector::siguiente(dirV dir) {
     if (vacia()) {
         cout << "Empty List." << endl;
         return NULL_VALUE;
@@ -44,7 +44,7 @@ dirV listVector::siguiente(dirV dir) {
     }
 }
 
-dirV listVector::anterior(dirV dir) {
+dirV listaVector::anterior(dirV dir) {
     if (vacia()) {
         cout << "Empty List." << endl;
         return -1;
@@ -58,11 +58,11 @@ dirV listVector::anterior(dirV dir) {
     }
 }
 
-bool listVector::vacia() {
+bool listaVector::vacia() {
     return length == 0;
 }
 
-int listVector::recupera(dirV dir) {
+int listaVector::recupera(dirV dir) {
     if (vacia()) {
         cout << "Empty List." << endl;
     } else {
@@ -74,11 +74,11 @@ int listVector::recupera(dirV dir) {
     }
 }
 
-int listVector::longitud() {
+int listaVector::longitud() {
     return length;
 }
 
-void listVector::inserta(dirV dir, DATA_TYPE value) {
+void listaVector::inserta(dirV dir, DATA_TYPE value) {
     if (length == MAX_VECTOR_SIZE) {
         cout << "List is full.";
         return;
@@ -96,7 +96,7 @@ void listVector::inserta(dirV dir, DATA_TYPE value) {
     }
 }
 
-void listVector::inserta_primero(DATA_TYPE value) {
+void listaVector::inserta_primero(DATA_TYPE value) {
     if (vacia()) {
         list[0] = value;
         length = 1;
@@ -105,7 +105,7 @@ void listVector::inserta_primero(DATA_TYPE value) {
     }
 }
 
-void listVector::inserta_ultimo(DATA_TYPE value) {
+void listaVector::inserta_ultimo(DATA_TYPE value) {
     if (length == MAX_VECTOR_SIZE) {
         cout << "List is full.";
     } else {
@@ -114,7 +114,7 @@ void listVector::inserta_ultimo(DATA_TYPE value) {
     }
 }
 
-void listVector::suprime(dirV dir) {
+void listaVector::suprime(dirV dir) {
     if (length == MAX_VECTOR_SIZE) {
         cout << "List is full.";
         return;
@@ -131,7 +131,7 @@ void listVector::suprime(dirV dir) {
     }
 }
 
-void listVector::modifica(dirV dir, DATA_TYPE value) {
+void listaVector::modifica(dirV dir, DATA_TYPE value) {
     if (vacia()) {
         cout << "List is empty" << endl;
         return;
@@ -145,7 +145,7 @@ void listVector::modifica(dirV dir, DATA_TYPE value) {
     }
 }
 
-void listVector::print() {
+void listaVector::print() {
     if (vacia()) {
         cout << "List is empty" << endl;
     } else {

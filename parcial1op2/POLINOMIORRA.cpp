@@ -34,12 +34,12 @@ memDir POLINOMIORRA::BuscarTerminoN(int i) {
 }
 
 POLINOMIORRA::POLINOMIORRA() {
-    this->m = new MEMORIARRA();
+    this->m = new MEMRRA();
     length = 0;
     ptrPol = NULL_VALUE;
 }
 
-POLINOMIORRA::POLINOMIORRA(MEMORIARRA *mem) {
+POLINOMIORRA::POLINOMIORRA(MEMRRA *mem) {
     this->m = mem;
     length = 0;
     ptrPol = NULL_VALUE;

@@ -2,8 +2,8 @@
 // Created by rogerroca on 4/10/2022.
 //
 
-#ifndef DATASTRUCTURE_MEMORIARRA_H
-#define DATASTRUCTURE_MEMORIARRA_H
+#ifndef DATASTRUCTURE_MEMRRA_H
+#define DATASTRUCTURE_MEMRRA_H
 
 #include "string"
 
@@ -21,12 +21,12 @@ struct NodoM {
 };
 
 
-class MEMORIARRA {
+class MEMRRA {
 private:
     NodoM mem[MAX_MEM_SPACE];
     memDir libre; // Next available memory node.
 public:
-    MEMORIARRA();
+    MEMRRA();
 
     memDir new_espacio(const string &cadena_id);
 
@@ -46,4 +46,4 @@ public:
 };
 
 
-#endif //DATASTRUCTURE_MEMORIARRA_H
+#endif //DATASTRUCTURE_MEMRRA_H

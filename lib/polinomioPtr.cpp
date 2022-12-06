@@ -2,12 +2,12 @@
 // Created by rogerroca on 26/10/2022.
 //
 
-#include "polynomialPtr.h"
+#include "polinomioPtr.h"
 #include "iostream"
 
 using namespace std;
 
-dirP polynomialPtr::BuscarExponente(int exp) {
+dirP polinomioPtr::BuscarExponente(int exp) {
     dirP dir = firstPtr;
     if (dir != nullptr) {
         dirP expDir = nullptr;
@@ -20,7 +20,7 @@ dirP polynomialPtr::BuscarExponente(int exp) {
     } else return nullptr;
 }
 
-dirP polynomialPtr::BuscarTerminoN(int i) {
+dirP polinomioPtr::BuscarTerminoN(int i) {
     dirP dir = firstPtr;
     int nt = 0;
     dirP termDir = nullptr;
@@ -33,16 +33,16 @@ dirP polynomialPtr::BuscarTerminoN(int i) {
     return termDir;
 }
 
-polynomialPtr::polynomialPtr() {
+polinomioPtr::polinomioPtr() {
     length = 0;
     firstPtr = nullptr;
 }
 
-bool polynomialPtr::EsCero() {
+bool polinomioPtr::EsCero() {
     return length == 0;
 }
 
-int polynomialPtr::Grado() {
+int polinomioPtr::Grado() {
     dirP dir = firstPtr;
     if (dir != nullptr) {
         int maxGrade = dir->exp;
@@ -56,14 +56,14 @@ int polynomialPtr::Grado() {
     }
 }
 
-int polynomialPtr::coeficiente(int exp) {
+int polinomioPtr::coeficiente(int exp) {
     dirP dir = BuscarExponente(exp);
     if (dir != nullptr) {
         return dir->coef;
     } else cout << "Not found." << endl;
 }
 
-void polynomialPtr::AsignarCoeficiente(int coef, int exp) {
+void polinomioPtr::AsignarCoeficiente(int coef, int exp) {
     dirP dir = BuscarExponente(exp);
     if (dir != nullptr) {
         dir->coef = coef;
@@ -73,7 +73,7 @@ void polynomialPtr::AsignarCoeficiente(int coef, int exp) {
     } else cout << "Not found." << endl;
 }
 
-void polynomialPtr::poner_termino(int coef, int exp) {
+void polinomioPtr::poner_termino(int coef, int exp) {
     dirP expDir = BuscarExponente(exp);
     if (expDir != nullptr) {
         coef = coef + expDir->coef;
@@ -93,18 +93,18 @@ void polynomialPtr::poner_termino(int coef, int exp) {
     }
 }
 
-int polynomialPtr::numero_terminos() {
+int polinomioPtr::numero_terminos() {
     return length;
 }
 
-int polynomialPtr::exponente(int term) {
+int polinomioPtr::exponente(int term) {
     dirP dir = BuscarTerminoN(term);
     if (dir != nullptr) {
         return dir->exp;
     } else cout << "Term not found" << endl;
 }
 
-void polynomialPtr::print() {
+void polinomioPtr::print() {
     cout << "P: ";
     dirP dir = firstPtr;
     int i = 1;
@@ -120,7 +120,7 @@ void polynomialPtr::print() {
     cout << endl;
 }
 
-void polynomialPtr::sumar(polynomialPtr p1, polynomialPtr p2) {
+void polinomioPtr::sumar(polinomioPtr p1, polinomioPtr p2) {
     for (int i = 1; i <= p1.numero_terminos(); i++) {
         int exp = p1.exponente(i);
         int coef = p1.coeficiente(exp);
@@ -133,7 +133,7 @@ void polynomialPtr::sumar(polynomialPtr p1, polynomialPtr p2) {
     }
 }
 
-void polynomialPtr::restar(polynomialPtr p1, polynomialPtr p2) {
+void polinomioPtr::restar(polinomioPtr p1, polinomioPtr p2) {
     for (int i = 1; i <= p1.numero_terminos(); i++) {
         int exp = p1.exponente(i);
         int coef = p1.coeficiente(exp);
@@ -146,7 +146,7 @@ void polynomialPtr::restar(polynomialPtr p1, polynomialPtr p2) {
     }
 }
 
-void polynomialPtr::multiplicar(polynomialPtr p1, polynomialPtr p2) {
+void polinomioPtr::multiplicar(polinomioPtr p1, polinomioPtr p2) {
     for (int i = 1; i <= p1.numero_terminos(); i++) {
         for (int j = 1; j <= p2.numero_terminos(); j++) {
             int exp = p1.exponente(i) + p2.exponente(j);
@@ -157,7 +157,7 @@ void polynomialPtr::multiplicar(polynomialPtr p1, polynomialPtr p2) {
     }
 }
 
-void polynomialPtr::Opuesto(polynomialPtr p1, polynomialPtr p2) {
+void polinomioPtr::Opuesto(polinomioPtr p1, polinomioPtr p2) {
     sumar(p1, p2);
     if (EsCero()) {
         cout << "Son polinomios opuestos." << endl;
@@ -166,7 +166,7 @@ void polynomialPtr::Opuesto(polynomialPtr p1, polynomialPtr p2) {
     }
 }
 
-void polynomialPtr::rmTerm(dirP dir) {
+void polinomioPtr::rmTerm(dirP dir) {
     if (length > 0) {
         if (dir == firstPtr) {
             if (length == 1) firstPtr = nullptr;

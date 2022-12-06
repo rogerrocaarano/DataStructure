@@ -2,23 +2,23 @@
 // Created by rogerroca on 18/10/2022.
 //
 
-#ifndef DATASTRUCTURE_LISTVECTOR_H
-#define DATASTRUCTURE_LISTVECTOR_H
+#ifndef DATASTRUCTURE_LISTAVECTOR_H
+#define DATASTRUCTURE_LISTAVECTOR_H
 
 
 const int MAX_VECTOR_SIZE = 100;
 const int NULL_VALUE = -1;
 
 typedef int dirV;
-typedef int DATA_TYPE; // Data type than the listVector can store.
+typedef int DATA_TYPE; // Data type than the listaVector can store.
 
-class listVector {
+class listaVector {
 private:
     dirV ptrDir;
     int length;
     DATA_TYPE *list;
 public:
-    listVector();
+    listaVector();
 
     dirV fin();
 
@@ -48,4 +48,4 @@ public:
 };
 
 
-#endif //DATASTRUCTURE_LISTVECTOR_H
+#endif //DATASTRUCTURE_LISTAVECTOR_H

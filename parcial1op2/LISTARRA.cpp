@@ -21,19 +21,19 @@ namespace Ex {
     }
 }
 
-LISTARRA::LISTARRA() {
-    this->listMem = new MEMORIARRA(); // Init simulated memory.
+listaSMemoria::listaSMemoria() {
+    this->listMem = new MEMRRA(); // Init simulated memory.
     length = 0;
     ptrDir = NULL_VALUE;
 }
 
-LISTARRA::LISTARRA(MEMORIARRA *mem) {
+listaSMemoria::listaSMemoria(MEMRRA *mem) {
     this->listMem = mem; // Use user input memory.
     length = 0;
     ptrDir = NULL_VALUE;
 }
 
-memDir LISTARRA::fin() {
+memDir listaSMemoria::fin() {
     memDir lastDir;
     if (vacia()) {
         Ex::emptyList();
@@ -47,7 +47,7 @@ memDir LISTARRA::fin() {
     }
 }
 
-memDir LISTARRA::primero() {
+memDir listaSMemoria::primero() {
     if (vacia()) {
         Ex::emptyList();
     } else {
@@ -55,7 +55,7 @@ memDir LISTARRA::primero() {
     }
 }
 
-memDir LISTARRA::siguiente(memDir dir) {
+memDir listaSMemoria::siguiente(memDir dir) {
     if (vacia()) {
         Ex::emptyList();
         return NULL_VALUE;
@@ -73,7 +73,7 @@ memDir LISTARRA::siguiente(memDir dir) {
     }
 }
 
-memDir LISTARRA::anterior(memDir dir) {
+memDir listaSMemoria::anterior(memDir dir) {
     if (vacia()) {
         Ex::emptyList();
     } else {
@@ -94,11 +94,11 @@ memDir LISTARRA::anterior(memDir dir) {
     }
 }
 
-bool LISTARRA::vacia() {
+bool listaSMemoria::vacia() {
     return !(length > 0);
 }
 
-int LISTARRA::recupera(memDir dir) {
+int listaSMemoria::recupera(memDir dir) {
     if (vacia()) {
         Ex::emptyList();
     } else {
@@ -106,11 +106,11 @@ int LISTARRA::recupera(memDir dir) {
     }
 }
 
-int LISTARRA::longitud() {
+int listaSMemoria::longitud() {
     return length;
 }
 
-void LISTARRA::inserta(memDir dir, DATA_TYPE value) {
+void listaSMemoria::inserta(memDir dir, DATA_TYPE value) {
     /**
     * 17/10/2022 17:00
     * Added exception for empty lista
@@ -142,7 +142,7 @@ void LISTARRA::inserta(memDir dir, DATA_TYPE value) {
     }
 }
 
-void LISTARRA::inserta_primero(DATA_TYPE value) {
+void listaSMemoria::inserta_primero(DATA_TYPE value) {
     memDir x = listMem->new_espacio(LIST_NODE);
     if (x != NULL_VALUE) {
         listMem->poner_dato(x, LIST_ITEM, value);
@@ -154,7 +154,7 @@ void LISTARRA::inserta_primero(DATA_TYPE value) {
     }
 }
 
-void LISTARRA::inserta_ultimo(DATA_TYPE value) {
+void listaSMemoria::inserta_ultimo(DATA_TYPE value) {
     if (this->vacia()) {
         inserta_primero(value);
     } else {
@@ -174,7 +174,7 @@ void LISTARRA::inserta_ultimo(DATA_TYPE value) {
     }
 }
 
-void LISTARRA::suprime(memDir dir) {
+void listaSMemoria::suprime(memDir dir) {
     if (vacia()) {
         Ex::emptyList();
     } else {
@@ -190,7 +190,7 @@ void LISTARRA::suprime(memDir dir) {
     }
 }
 
-void LISTARRA::modifica(memDir dir, DATA_TYPE value) {
+void listaSMemoria::modifica(memDir dir, DATA_TYPE value) {
     if (vacia()) {
         Ex::emptyList();
     } else {
@@ -198,7 +198,7 @@ void LISTARRA::modifica(memDir dir, DATA_TYPE value) {
     }
 }
 
-void LISTARRA::mostrar() {
+void listaSMemoria::mostrar() {
     cout << "L: ";
     memDir dir = ptrDir;
     int i = 1;

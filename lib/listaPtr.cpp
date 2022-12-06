@@ -2,19 +2,19 @@
 // Created by rogerroca on 19/10/2022.
 //
 
-#include "listPtr.h"
+#include "listaPtr.h"
 #include "iostream"
 
 using namespace std;
 
 const bool VERBOSE = true;
 
-listPtr::listPtr() {
+listaPtr::listaPtr() {
     firstPtr = nullptr;
     length = 0;
 }
 
-dirP listPtr::getDir(int pos) {
+dirP listaPtr::getDir(int pos) {
     if (vacia()) {
         cout << "List empty.";
         return nullptr;
@@ -34,7 +34,7 @@ dirP listPtr::getDir(int pos) {
     }
 }
 
-dirP listPtr::fin() {
+dirP listaPtr::fin() {
     if (vacia()) {
         cout << "Empty List." << endl;
         return nullptr;
@@ -51,7 +51,7 @@ dirP listPtr::fin() {
     }
 }
 
-dirP listPtr::primero() {
+dirP listaPtr::primero() {
     if (!vacia()) {
         return firstPtr;
     } else {
@@ -60,7 +60,7 @@ dirP listPtr::primero() {
     }
 }
 
-dirP listPtr::siguiente(dirP dir) {
+dirP listaPtr::siguiente(dirP dir) {
     if (vacia()) {
         cout << "Empty List." << endl;
         return nullptr;
@@ -72,7 +72,7 @@ dirP listPtr::siguiente(dirP dir) {
     }
 }
 
-dirP listPtr::anterior(dirP dir) {
+dirP listaPtr::anterior(dirP dir) {
     if (vacia()) {
         cout << "Empty List." << endl;
         return nullptr;
@@ -95,11 +95,11 @@ dirP listPtr::anterior(dirP dir) {
     }
 }
 
-bool listPtr::vacia() {
+bool listaPtr::vacia() {
     return length == 0;
 }
 
-int listPtr::recupera(dirP dir) {
+int listaPtr::recupera(dirP dir) {
     if (vacia()) {
         cout << "List is empty" << endl;
     } else {
@@ -107,16 +107,16 @@ int listPtr::recupera(dirP dir) {
     }
 }
 
-int listPtr::recupera(int pos) {
+int listaPtr::recupera(int pos) {
     dirP dir = getDir(pos);
     recupera(dir);
 }
 
-int listPtr::longitud() {
+int listaPtr::longitud() {
     return length;
 }
 
-void listPtr::inserta(dirP dir, DATA_TYPE value) {
+void listaPtr::inserta(dirP dir, DATA_TYPE value) {
     auto *x = new ListNode;
     x->dataStored = value;
     x->nextNode = nullptr;
@@ -135,7 +135,7 @@ void listPtr::inserta(dirP dir, DATA_TYPE value) {
     }
 }
 
-void listPtr::inserta_primero(DATA_TYPE value) {
+void listaPtr::inserta_primero(DATA_TYPE value) {
     auto *x = new ListNode;
     x->dataStored = value;
     x->nextNode = nullptr;
@@ -149,7 +149,7 @@ void listPtr::inserta_primero(DATA_TYPE value) {
     }
 }
 
-void listPtr::inserta_ultimo(DATA_TYPE value) {
+void listaPtr::inserta_ultimo(DATA_TYPE value) {
     if (vacia()) {
         inserta_primero(value);
     } else {
@@ -161,7 +161,7 @@ void listPtr::inserta_ultimo(DATA_TYPE value) {
     }
 }
 
-void listPtr::suprime(dirP dir) {
+void listaPtr::suprime(dirP dir) {
     if (length == 0) {
         cout << "Lista Vacía." << endl;
         return;
@@ -179,7 +179,7 @@ void listPtr::suprime(dirP dir) {
     length--;
 }
 
-void listPtr::modifica(dirP dir, DATA_TYPE value) {
+void listaPtr::modifica(dirP dir, DATA_TYPE value) {
     if (vacia()) {
         cout << "List is empty" << endl;
     } else {
@@ -187,7 +187,7 @@ void listPtr::modifica(dirP dir, DATA_TYPE value) {
     }
 }
 
-void listPtr::print() {
+void listaPtr::print() {
     dirP dir = primero();
     while (dir->nextNode != nullptr) {
         cout << recupera(dir) << ",";
