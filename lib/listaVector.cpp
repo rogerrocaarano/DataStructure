@@ -2,18 +2,18 @@
 // Created by rogerroca on 18/10/2022.
 //
 
-#include "listVector.h"
+#include "listaVector.h"
 #include "iostream"
 
 using namespace std;
 
-listVector::listVector() {
+listaVector::listaVector() {
     list = new DATA_TYPE[MAX_VECTOR_SIZE];
     this->length = 0;
 }
 
-dirV listVector::getLastDir() {
-    if (!isEmpty()) {
+dirV listaVector::fin() {
+    if (!vacia()) {
         return length - 1;
     } else {
         cout << "Empty List." << endl;
@@ -21,8 +21,8 @@ dirV listVector::getLastDir() {
     }
 }
 
-dirV listVector::getFirstDir() {
-    if (!isEmpty()) {
+dirV listaVector::primero() {
+    if (!vacia()) {
         return 0;
     } else {
         cout << "Empty List." << endl;
@@ -30,8 +30,8 @@ dirV listVector::getFirstDir() {
     }
 }
 
-dirV listVector::getNextDir(dirV dir) {
-    if (isEmpty()) {
+dirV listaVector::siguiente(dirV dir) {
+    if (vacia()) {
         cout << "Empty List." << endl;
         return NULL_VALUE;
     } else {
@@ -44,8 +44,8 @@ dirV listVector::getNextDir(dirV dir) {
     }
 }
 
-dirV listVector::getPreviousDir(dirV dir) {
-    if (isEmpty()) {
+dirV listaVector::anterior(dirV dir) {
+    if (vacia()) {
         cout << "Empty List." << endl;
         return -1;
     } else {
@@ -58,12 +58,12 @@ dirV listVector::getPreviousDir(dirV dir) {
     }
 }
 
-bool listVector::isEmpty() {
+bool listaVector::vacia() {
     return length == 0;
 }
 
-int listVector::getValue(dirV dir) {
-    if (isEmpty()) {
+int listaVector::recupera(dirV dir) {
+    if (vacia()) {
         cout << "Empty List." << endl;
     } else {
         if (dir >= 0 && dir <= length - 1) {
@@ -74,11 +74,11 @@ int listVector::getValue(dirV dir) {
     }
 }
 
-int listVector::getLength() {
+int listaVector::longitud() {
     return length;
 }
 
-void listVector::insertItem(dirV dir, DATA_TYPE value) {
+void listaVector::inserta(dirV dir, DATA_TYPE value) {
     if (length == MAX_VECTOR_SIZE) {
         cout << "List is full.";
         return;
@@ -96,16 +96,16 @@ void listVector::insertItem(dirV dir, DATA_TYPE value) {
     }
 }
 
-void listVector::insertItemFirst(DATA_TYPE value) {
-    if (isEmpty()) {
+void listaVector::inserta_primero(DATA_TYPE value) {
+    if (vacia()) {
         list[0] = value;
         length = 1;
     } else {
-        insertItem(0, value);
+        inserta(0, value);
     }
 }
 
-void listVector::insertItemLast(DATA_TYPE value) {
+void listaVector::inserta_ultimo(DATA_TYPE value) {
     if (length == MAX_VECTOR_SIZE) {
         cout << "List is full.";
     } else {
@@ -114,7 +114,7 @@ void listVector::insertItemLast(DATA_TYPE value) {
     }
 }
 
-void listVector::delItem(dirV dir) {
+void listaVector::suprime(dirV dir) {
     if (length == MAX_VECTOR_SIZE) {
         cout << "List is full.";
         return;
@@ -131,8 +131,8 @@ void listVector::delItem(dirV dir) {
     }
 }
 
-void listVector::setItem(dirV dir, DATA_TYPE value) {
-    if (isEmpty()) {
+void listaVector::modifica(dirV dir, DATA_TYPE value) {
+    if (vacia()) {
         cout << "List is empty" << endl;
         return;
     } else {
@@ -145,8 +145,8 @@ void listVector::setItem(dirV dir, DATA_TYPE value) {
     }
 }
 
-void listVector::print() {
-    if (isEmpty()) {
+void listaVector::print() {
+    if (vacia()) {
         cout << "List is empty" << endl;
     } else {
         cout << "List: ";

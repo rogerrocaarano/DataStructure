@@ -2,12 +2,12 @@
 // Created by rogerroca on 26/10/2022.
 //
 
-#include "polynomialPtr.h"
+#include "polinomioPtr.h"
 #include "iostream"
 
 using namespace std;
 
-dirP polynomialPtr::findExp(int exp) {
+dirP polinomioPtr::BuscarExponente(int exp) {
     dirP dir = firstPtr;
     if (dir != nullptr) {
         dirP expDir = nullptr;
@@ -20,7 +20,7 @@ dirP polynomialPtr::findExp(int exp) {
     } else return nullptr;
 }
 
-dirP polynomialPtr::findTermN(int i) {
+dirP polinomioPtr::BuscarTerminoN(int i) {
     dirP dir = firstPtr;
     int nt = 0;
     dirP termDir = nullptr;
@@ -33,16 +33,16 @@ dirP polynomialPtr::findTermN(int i) {
     return termDir;
 }
 
-polynomialPtr::polynomialPtr() {
+polinomioPtr::polinomioPtr() {
     length = 0;
     firstPtr = nullptr;
 }
 
-bool polynomialPtr::isZero() {
+bool polinomioPtr::EsCero() {
     return length == 0;
 }
 
-int polynomialPtr::getGrade() {
+int polinomioPtr::Grado() {
     dirP dir = firstPtr;
     if (dir != nullptr) {
         int maxGrade = dir->exp;
@@ -56,15 +56,15 @@ int polynomialPtr::getGrade() {
     }
 }
 
-int polynomialPtr::getCoefficient(int exp) {
-    dirP dir = findExp(exp);
+int polinomioPtr::coeficiente(int exp) {
+    dirP dir = BuscarExponente(exp);
     if (dir != nullptr) {
         return dir->coef;
     } else cout << "Not found." << endl;
 }
 
-void polynomialPtr::setCoefficient(int coef, int exp) {
-    dirP dir = findExp(exp);
+void polinomioPtr::AsignarCoeficiente(int coef, int exp) {
+    dirP dir = BuscarExponente(exp);
     if (dir != nullptr) {
         dir->coef = coef;
         if (coef == 0) {
@@ -73,8 +73,8 @@ void polynomialPtr::setCoefficient(int coef, int exp) {
     } else cout << "Not found." << endl;
 }
 
-void polynomialPtr::setTerm(int coef, int exp) {
-    dirP expDir = findExp(exp);
+void polinomioPtr::poner_termino(int coef, int exp) {
+    dirP expDir = BuscarExponente(exp);
     if (expDir != nullptr) {
         coef = coef + expDir->coef;
         expDir->coef = coef;
@@ -93,18 +93,18 @@ void polynomialPtr::setTerm(int coef, int exp) {
     }
 }
 
-int polynomialPtr::getNumberOfTerms() {
+int polinomioPtr::numero_terminos() {
     return length;
 }
 
-int polynomialPtr::getExponent(int term) {
-    dirP dir = findTermN(term);
+int polinomioPtr::exponente(int term) {
+    dirP dir = BuscarTerminoN(term);
     if (dir != nullptr) {
         return dir->exp;
     } else cout << "Term not found" << endl;
 }
 
-void polynomialPtr::print() {
+void polinomioPtr::print() {
     cout << "P: ";
     dirP dir = firstPtr;
     int i = 1;
@@ -120,53 +120,53 @@ void polynomialPtr::print() {
     cout << endl;
 }
 
-void polynomialPtr::addition(polynomialPtr p1, polynomialPtr p2) {
-    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
-        int exp = p1.getExponent(i);
-        int coef = p1.getCoefficient(exp);
-        setTerm(coef, exp);
+void polinomioPtr::sumar(polinomioPtr p1, polinomioPtr p2) {
+    for (int i = 1; i <= p1.numero_terminos(); i++) {
+        int exp = p1.exponente(i);
+        int coef = p1.coeficiente(exp);
+        poner_termino(coef, exp);
     }
-    for (int i = 1; i <= p2.getNumberOfTerms(); i++) {
-        int exp = p2.getExponent(i);
-        int coef = p2.getCoefficient(exp);
-        setTerm(coef, exp);
-    }
-}
-
-void polynomialPtr::subtraction(polynomialPtr p1, polynomialPtr p2) {
-    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
-        int exp = p1.getExponent(i);
-        int coef = p1.getCoefficient(exp);
-        setTerm(coef, exp);
-    }
-    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
-        int exp = p2.getExponent(i);
-        int coef = p2.getCoefficient(exp) * (-1);
-        setTerm(coef, exp);
+    for (int i = 1; i <= p2.numero_terminos(); i++) {
+        int exp = p2.exponente(i);
+        int coef = p2.coeficiente(exp);
+        poner_termino(coef, exp);
     }
 }
 
-void polynomialPtr::multiplication(polynomialPtr p1, polynomialPtr p2) {
-    for (int i = 1; i <= p1.getNumberOfTerms(); i++) {
-        for (int j = 1; j <= p2.getNumberOfTerms(); j++) {
-            int exp = p1.getExponent(i) + p2.getExponent(j);
-            int coef = p1.getCoefficient(p1.getExponent(i))
-                       * p2.getCoefficient(p2.getExponent(j));
-            setTerm(coef, exp);
+void polinomioPtr::restar(polinomioPtr p1, polinomioPtr p2) {
+    for (int i = 1; i <= p1.numero_terminos(); i++) {
+        int exp = p1.exponente(i);
+        int coef = p1.coeficiente(exp);
+        poner_termino(coef, exp);
+    }
+    for (int i = 1; i <= p1.numero_terminos(); i++) {
+        int exp = p2.exponente(i);
+        int coef = p2.coeficiente(exp) * (-1);
+        poner_termino(coef, exp);
+    }
+}
+
+void polinomioPtr::multiplicar(polinomioPtr p1, polinomioPtr p2) {
+    for (int i = 1; i <= p1.numero_terminos(); i++) {
+        for (int j = 1; j <= p2.numero_terminos(); j++) {
+            int exp = p1.exponente(i) + p2.exponente(j);
+            int coef = p1.coeficiente(p1.exponente(i))
+                       * p2.coeficiente(p2.exponente(j));
+            poner_termino(coef, exp);
         }
     }
 }
 
-void polynomialPtr::isOpposite(polynomialPtr p1, polynomialPtr p2) {
-    addition(p1, p2);
-    if (isZero()) {
+void polinomioPtr::Opuesto(polinomioPtr p1, polinomioPtr p2) {
+    sumar(p1, p2);
+    if (EsCero()) {
         cout << "Son polinomios opuestos." << endl;
     } else {
         cout << "No son polinomios opuestos." << endl;
     }
 }
 
-void polynomialPtr::rmTerm(dirP dir) {
+void polinomioPtr::rmTerm(dirP dir) {
     if (length > 0) {
         if (dir == firstPtr) {
             if (length == 1) firstPtr = nullptr;
