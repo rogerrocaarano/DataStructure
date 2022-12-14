@@ -2,27 +2,6 @@ cmake_minimum_required(VERSION 3.23)
 project(inf220)
 
 set(CMAKE_CXX_STANDARD 17)
-# Ejecutable de desarrollo
-add_executable(
-        dev
-        main.cpp
-        lib/SMemoria.cpp
-        lib/SMemoria.h
-        lib/polinomioListaSMemoria.cpp
-        lib/polinomioListaSMemoria.h
-        lib/listaVector.cpp
-        lib/listaVector.h
-        lib/listaPtr.cpp
-        lib/listaPtr.h
-        lib/listaSMemoria.cpp
-        lib/listaSMemoria.h
-        lib/polinomioVector.cpp
-        lib/polinomioVector.h
-        lib/polinomioVectorDouble.cpp
-        lib/polinomioVectorDouble.h
-        lib/polinomioPtr.cpp
-        lib/polinomioPtr.h
-        lib/conjuntoListaVector.cpp lib/conjuntoListaVector.h)
 # Ejecutables de entregas realizadas
 add_executable(
         act2_SMemoria
@@ -48,5 +27,16 @@ add_executable(
         entregas/parcial1op2/POLINOMIORRA.cpp
         entregas/parcial1op2/POLINOMIORRA.h
 )
-
+# Ejecutables pruebas
+add_executable(
+        ConjuntoVector
+        tests/t_ConjuntoListaVector.cpp
+        lib/conjuntoListaVector.h
+        lib/conjuntoListaVector.cpp
+        lib/listaVector.h
+        lib/listaVector.cpp
+)
+add_executable(
+        ConjuntoPtr
+        tests/t_ConjuntoPtr.cpp)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
