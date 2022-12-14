@@ -42,4 +42,10 @@ add_executable(
         lib/conjuntoPtr.h
         lib/conjuntoPtr.cpp
 )
+add_executable(
+        act2022-C1
+        entregas/act2022-C1/main.cpp
+        entregas/act2022-C1/conjuntoPtr.h
+        entregas/act2022-C1/conjuntoPtr.cpp
+)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
