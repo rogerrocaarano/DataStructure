@@ -38,5 +38,8 @@ add_executable(
 )
 add_executable(
         ConjuntoPtr
-        tests/t_ConjuntoPtr.cpp)
+        tests/t_ConjuntoPtr.cpp
+        lib/conjuntoPtr.h
+        lib/conjuntoPtr.cpp
+)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
