@@ -27,6 +27,12 @@ add_executable(
         entregas/parcial1op2/POLINOMIORRA.cpp
         entregas/parcial1op2/POLINOMIORRA.h
 )
+add_executable(
+        act2022-C1
+        entregas/act2022-C1/main.cpp
+        entregas/act2022-C1/conjuntoPtr.h
+        entregas/act2022-C1/conjuntoPtr.cpp
+)
 # Ejecutables pruebas
 add_executable(
         ConjuntoVector
@@ -41,11 +47,12 @@ add_executable(
         tests/t_ConjuntoPtr.cpp
         lib/conjuntoPtr.h
         lib/conjuntoPtr.cpp
+        tests/t_matrizDispersaVector.cpp
 )
 add_executable(
-        act2022-C1
-        entregas/act2022-C1/main.cpp
-        entregas/act2022-C1/conjuntoPtr.h
-        entregas/act2022-C1/conjuntoPtr.cpp
+        matrizDispersaVector
+        tests/t_matrizDispersaVector.cpp
+        lib/matrizDispersaVector.cpp
+        lib/matrizDispersaVector.h
 )
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
