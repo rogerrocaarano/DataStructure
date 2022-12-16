@@ -55,4 +55,8 @@ add_executable(
         lib/matrizDispersaVector.cpp
         lib/matrizDispersaVector.h
 )
+add_executable(
+        matrizDispersaCSRvector
+        tests/t_matrizDispersaCSRVector.cpp
+        lib/matrizDispersaCSRVector.cpp lib/matrizDispersaCSRVector.h)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
