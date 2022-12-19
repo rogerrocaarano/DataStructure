@@ -39,6 +39,14 @@ add_executable(
         entregas/act2022-M1/matrizDispersaCSRVector.h
         entregas/act2022-M1/matrizDispersaCSRVector.cpp
 )
+add_executable(
+        act2022-P1
+        entregas/act2022-P1/main.cpp
+        entregas/act2022-P1/aritmPila.h
+        entregas/act2022-P1/aritmPila.cpp
+        entregas/act2022-P1/pilaPtr.h
+        entregas/act2022-P1/pilaPtr.cpp
+)
 # Ejecutables pruebas
 add_executable(
         ConjuntoVector

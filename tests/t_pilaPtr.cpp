@@ -9,8 +9,8 @@ int main() {
     pilaPtr p;
     p.meter(1);
     p.meter(2);
-    p.meter(3);
-    int e;
+    p.meter(3.1);
+    double e;
     p.sacar(e);
     std::cout << e << std::endl;
     std::cout << p.toStr() << std::endl;

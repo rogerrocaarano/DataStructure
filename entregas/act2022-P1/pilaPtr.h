@@ -5,6 +5,7 @@
 #ifndef INF220_PILAPTR_H
 #define INF220_PILAPTR_H
 
+#include "iostream"
 
 class pilaPtr {
     typedef double DATA_TYPE;
