@@ -139,7 +139,7 @@ void listaVector::modifica(dirV dir, DATA_TYPE value) {
 
 void listaVector::print() {
     if (vacia()) {
-        cout << "lista::print->La lista está vacía." << endl;
+        cout << "lista::inicio->La lista está vacía." << endl;
     } else {
         cout << "List: ";
         for (int i = 0; i <= length - 1; i++) {

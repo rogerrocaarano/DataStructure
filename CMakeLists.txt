@@ -47,6 +47,10 @@ add_executable(
         entregas/act2022-P1/pilaPtr.h
         entregas/act2022-P1/pilaPtr.cpp
 )
+add_executable(
+        act2022-CL1
+        entregas/act2022-CL1/main.cpp
+        entregas/act2022-CL1/diColaPtr.cpp entregas/act2022-CL1/colaPrioridad.cpp)
 # Ejecutables pruebas
 add_executable(
         ConjuntoVector
