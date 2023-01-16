@@ -91,4 +91,9 @@ add_executable(
         pilaVector
         tests/t_pilaVector.cpp
         lib/pilaVector.cpp lib/pilaVector.h)
+add_executable(
+        pilaSMemoria
+        tests/t_pilaSMemoria.cpp
+        lib/SMemoria.h lib/SMemoria.cpp
+        lib/pilaSMemoria.cpp lib/pilaSMemoria.h)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
