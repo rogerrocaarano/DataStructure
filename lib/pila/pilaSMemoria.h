@@ -5,7 +5,7 @@
 #ifndef INF220_PILASMEMORIA_H
 #define INF220_PILASMEMORIA_H
 
-#include "SMemoria.h"
+#include "../SMemoria.h"
 
 class pilaSMemoria {
     typedef int DATA_TYPE;

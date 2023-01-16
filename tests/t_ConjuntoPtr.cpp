@@ -2,7 +2,7 @@
 // Created by rogerroca on 14/12/2022.
 //
 #include "iostream"
-#include "../lib/conjuntoPtr.h"
+#include "../lib/conjunto/conjuntoPtr.h"
 
 int main() {
     conjuntoPtr C;

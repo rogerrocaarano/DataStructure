@@ -1,7 +1,7 @@
 //
 // Created by rogerroca on 14/12/2022.
 //
-#include "../lib/matrizDispersaVector.h"
+#include "../lib/matrizDispersa/matrizDispersaVector.h"
 #include "iostream"
 
 int main() {

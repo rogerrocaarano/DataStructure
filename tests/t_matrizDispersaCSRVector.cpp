@@ -2,7 +2,7 @@
 // Created by rogerroca on 14/12/2022.
 //
 #include "iostream"
-#include "../lib/matrizDispersaCSRVector.h"
+#include "../lib/matrizDispersa/matrizDispersaCSRVector.h"
 
 int main() {
     // iniciar la estructura

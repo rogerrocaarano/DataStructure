@@ -5,7 +5,7 @@
 #ifndef INF220_PILALISTA_H
 #define INF220_PILALISTA_H
 
-#include "listaPtr.h"
+#include "../lista/listaPtr.h"
 #include "iostream"
 
 class pilaLista {

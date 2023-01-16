@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "../lib/pilaLista.h"
+#include "../lib/pila/pilaLista.h"
 
 int main() {
     pilaLista p;

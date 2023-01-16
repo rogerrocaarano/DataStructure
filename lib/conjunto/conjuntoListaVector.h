@@ -5,7 +5,7 @@
 #ifndef INF220_CONJUNTOLISTAVECTOR_H
 #define INF220_CONJUNTOLISTAVECTOR_H
 
-#include "listaVector.h"
+#include "../lista/listaVector.h"
 
 class conjuntoListaVector {
 private:

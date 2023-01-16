@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "../lib/pilaSMemoria.h"
+#include "../lib/pila/pilaSMemoria.h"
 
 int main() {
     pilaSMemoria p;

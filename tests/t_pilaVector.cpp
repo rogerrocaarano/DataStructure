@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "../lib/pilaVector.h"
+#include "../lib/pila/pilaVector.h"
 
 int main() {
     pilaVector p;

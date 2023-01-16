@@ -55,45 +55,45 @@ add_executable(
 add_executable(
         ConjuntoVector
         tests/t_ConjuntoListaVector.cpp
-        lib/conjuntoListaVector.h
-        lib/conjuntoListaVector.cpp
-        lib/listaVector.h
-        lib/listaVector.cpp
+        lib/conjunto/conjuntoListaVector.h
+        lib/conjunto/conjuntoListaVector.cpp
+        lib/lista/listaVector.h
+        lib/lista/listaVector.cpp
 )
 add_executable(
         ConjuntoPtr
         tests/t_ConjuntoPtr.cpp
-        lib/conjuntoPtr.h
-        lib/conjuntoPtr.cpp
+        lib/conjunto/conjuntoPtr.h
+        lib/conjunto/conjuntoPtr.cpp
         tests/t_matrizDispersaVector.cpp
 )
 add_executable(
         matrizDispersaVector
         tests/t_matrizDispersaVector.cpp
-        lib/matrizDispersaVector.cpp
-        lib/matrizDispersaVector.h
+        lib/matrizDispersa/matrizDispersaVector.cpp
+        lib/matrizDispersa/matrizDispersaVector.h
 )
 add_executable(
         matrizDispersaCSRvector
         tests/t_matrizDispersaCSRVector.cpp
-        lib/matrizDispersaCSRVector.cpp lib/matrizDispersaCSRVector.h)
+        lib/matrizDispersa/matrizDispersaCSRVector.cpp lib/matrizDispersa/matrizDispersaCSRVector.h)
 add_executable(
         pilaPtr
         tests/t_pilaPtr.cpp
-        lib/pilaPtr.cpp lib/pilaPtr.h)
+        lib/pila/pilaPtr.cpp lib/pila/pilaPtr.h)
 add_executable(
         pilaLista
         tests/t_pilaLista.cpp
-        lib/pilaLista.cpp lib/pilaLista.h
-        lib/listaPtr.h lib/listaPtr.cpp
+        lib/pila/pilaLista.cpp lib/pila/pilaLista.h
+        lib/lista/listaPtr.h lib/lista/listaPtr.cpp
 )
 add_executable(
         pilaVector
         tests/t_pilaVector.cpp
-        lib/pilaVector.cpp lib/pilaVector.h)
+        lib/pila/pilaVector.cpp lib/pila/pilaVector.h)
 add_executable(
         pilaSMemoria
         tests/t_pilaSMemoria.cpp
         lib/SMemoria.h lib/SMemoria.cpp
-        lib/pilaSMemoria.cpp lib/pilaSMemoria.h)
+        lib/pila/pilaSMemoria.cpp lib/pila/pilaSMemoria.h)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})

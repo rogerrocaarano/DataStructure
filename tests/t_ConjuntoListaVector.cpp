@@ -2,7 +2,7 @@
 // Created by rogerroca on 14/12/2022.
 //
 #include "iostream"
-#include "../lib/conjuntoListaVector.h"
+#include "../lib/conjunto/conjuntoListaVector.h"
 
 int main() {
     conjuntoListaVector C;

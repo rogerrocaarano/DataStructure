@@ -5,7 +5,7 @@
 #ifndef DATASTRUCTURE_POLINOMIOLISTASMEMORIA_H
 #define DATASTRUCTURE_POLINOMIOLISTASMEMORIA_H
 
-#include "listaSMemoria.h"
+#include "../lista/listaSMemoria.h"
 
 using namespace std;
 

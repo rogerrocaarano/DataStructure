@@ -5,7 +5,7 @@
 #ifndef DATASTRUCTURE_LISTASMEMORIA_H
 #define DATASTRUCTURE_LISTASMEMORIA_H
 
-#include "../lib/SMemoria.h"
+#include "../SMemoria.h"
 
 const string LIST_ITEM = "elem";
 const string NEXT_LIST_ITEM_POINTER = "sig";
