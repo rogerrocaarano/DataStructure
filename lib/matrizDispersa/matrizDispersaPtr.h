@@ -26,6 +26,8 @@ private:
 
     void eliminar(node_ptr pos);
 
+    bool verificarRango(int f, int c);
+
 public:
     matrizDispersaPtr();
 

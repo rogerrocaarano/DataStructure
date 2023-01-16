@@ -21,16 +21,20 @@ void matrizDispersaPtr::eliminar(matrizDispersaPtr::node_ptr pos) {
         std::cout << "Error: Posicion fuera de rango" << std::endl;
         return;
     }
+    // Si es el primer elemento:
     if (pos == M_ptr) {
         M_ptr = pos->sig;
         delete pos;
+        nt--;
         return;
     }
-    matrizDispersaPtr::node_ptr _pos = M_ptr;
-    while (_pos->sig != pos)
-        _pos = _pos->sig;
-    _pos->sig = pos->sig;
+    matrizDispersaPtr::node_ptr ptr_ant = M_ptr;
+    while (ptr_ant->sig != pos) {
+        ptr_ant = ptr_ant->sig;
+    }
+    ptr_ant->sig = pos->sig;
     delete pos;
+    nt--;
 }
 
 matrizDispersaPtr::matrizDispersaPtr() {
@@ -55,6 +59,9 @@ int matrizDispersaPtr::dimension_columna() {
 }
 
 void matrizDispersaPtr::poner(int f, int c, matrizDispersaPtr::DATA_TYPE valor) {
+    if (!verificarRango(f, c)) {
+        return;
+    }
     matrizDispersaPtr::node_ptr pos = obtenerPosicion(f, c);
     if (pos != nullptr) {
         // Asignamos el valor y si el valor es igual a "repe" hay que eliminarlo:
@@ -76,12 +83,7 @@ void matrizDispersaPtr::poner(int f, int c, matrizDispersaPtr::DATA_TYPE valor) 
 }
 
 matrizDispersaPtr::DATA_TYPE matrizDispersaPtr::elemento(int f, int c) {
-    if (f < 0 || f > df) {
-        std::cout << "Error: Fila fuera de rango." << std::endl;
-        return repe;
-    }
-    if (c < 0 || c > dc) {
-        std::cout << "Error: Columna fuera de rango." << std::endl;
+    if (!verificarRango(f, c)) {
         return repe;
     }
     matrizDispersaPtr::node_ptr pos = obtenerPosicion(f, c);
@@ -89,20 +91,16 @@ matrizDispersaPtr::DATA_TYPE matrizDispersaPtr::elemento(int f, int c) {
 }
 
 void matrizDispersaPtr::definir_valor_repetido(matrizDispersaPtr::DATA_TYPE valor) {
-    // En tiempo de ejecución se eliminarán
-    // los valores coincidentes con el nuevo valor para "repe"
-    int i = 0;
-    matrizDispersaPtr::node_ptr node = M_ptr;
-    while (i < nt) {
-        if (node->dato == valor) {
-            matrizDispersaPtr::node_ptr aux = node->sig;
-            eliminar(node);
-            node = aux;
-            break;
+    // Eliminar los elementos de la matriz que coincidan con el nuevo valor para "repe"
+    // y luego cambiar el valor en la estructura.
+    for (int i = 1; i <= df; i++) {
+        for (int j = 1; j <= dc; j++) {
+            if (elemento(i, j) == valor) {
+                node_ptr pos = obtenerPosicion(i, j);
+                eliminar(pos);
+            }
         }
-        i++;
     }
-    // definir el nuevo valor para "repe"
     repe = valor;
 }
 
@@ -113,4 +111,17 @@ void matrizDispersaPtr::mostrar() {
         }
         std::cout << std::endl;
     }
+}
+
+bool matrizDispersaPtr::verificarRango(int f, int c) {
+    // Verificar si los datos están dentro del rango de la matriz:
+    if (f <= 0 || f > df) {
+        std::cout << "Error: Fila fuera de rango." << std::endl;
+        return false;
+    }
+    if (c <= 0 || c > dc) {
+        std::cout << "Error: Columna fuera de rango." << std::endl;
+        return false;
+    }
+    return true;
 }
