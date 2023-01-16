@@ -123,4 +123,7 @@ add_executable(
         tests/cola/t_colaSMemoria.cpp
         lib/SMemoria.cpp lib/SMemoria.h
         lib/cola/colaSMemoria.cpp lib/cola/colaSMemoria.h)
+add_executable(
+        colaVector
+        tests/cola/colaVector.cpp lib/cola/colaVector.cpp lib/cola/colaVector.h)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
