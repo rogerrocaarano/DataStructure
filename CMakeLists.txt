@@ -118,4 +118,9 @@ add_executable(
         colaPtr
         tests/cola/t_colaPtr.cpp
         lib/cola/colaPtr.cpp lib/cola/colaPtr.h)
+add_executable(
+        colaSmemoria
+        tests/cola/t_colaSMemoria.cpp
+        lib/SMemoria.cpp lib/SMemoria.h
+        lib/cola/colaSMemoria.cpp lib/cola/colaSMemoria.h)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
