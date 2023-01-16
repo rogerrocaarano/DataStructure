@@ -21,12 +21,12 @@ struct NodoM {
 };
 
 
-class MEMRRA {
+class SMemoria {
 private:
     NodoM mem[MAX_MEM_SPACE];
     memDir libre; // Next available memory node.
 public:
-    MEMRRA();
+    SMemoria();
 
     memDir new_espacio(const string &cadena_id);
 

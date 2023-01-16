@@ -17,11 +17,11 @@ class listaSMemoria {
 private:
     memDir ptrDir; // Points to a memory node.
     int length;
-    MEMRRA *listMem;
+    SMemoria *listMem;
 public:
     listaSMemoria();
 
-    listaSMemoria(MEMRRA *mem);
+    listaSMemoria(SMemoria *mem);
 
     memDir fin();
 

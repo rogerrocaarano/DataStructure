@@ -43,7 +43,7 @@ namespace IDs {
         return ids;
     }
 } // namespace IDs
-MEMRRA::MEMRRA() {
+SMemoria::SMemoria() {
     for (int i = 0; i < MAX_MEM_SPACE; i++) {
         mem[i].link = i + 1; // Create the initial values for memory links.
         mem[i].Dato = 0; // Initialize data values.
@@ -52,7 +52,7 @@ MEMRRA::MEMRRA() {
     libre = 0;
 }
 
-memDir MEMRRA::new_espacio(const string &cadena_id) {
+memDir SMemoria::new_espacio(const string &cadena_id) {
     // Getting ids from a comma separated string
     // and saving it to an array.
     int idCount = IDs::countIds(cadena_id);
@@ -71,7 +71,7 @@ memDir MEMRRA::new_espacio(const string &cadena_id) {
     return firstUsedNode;
 }
 
-void MEMRRA::delete_espacio(memDir dir) {
+void SMemoria::delete_espacio(memDir dir) {
     // link the new available memory until first NULL_VALUE.
     memDir x = dir;
     while (mem[x].link != NULL_VALUE) {
@@ -83,7 +83,7 @@ void MEMRRA::delete_espacio(memDir dir) {
     libre = dir;
 }
 
-void MEMRRA::poner_dato(memDir dir, const string &cadena_id, int dataValue) {
+void SMemoria::poner_dato(memDir dir, const string &cadena_id, int dataValue) {
     memDir z = dir;
     while (z != NULL_VALUE) {
         if (mem[z].id == cadena_id) {          // If found id:
@@ -93,7 +93,7 @@ void MEMRRA::poner_dato(memDir dir, const string &cadena_id, int dataValue) {
     }
 }
 
-int MEMRRA::obtenerDato(memDir dir, const string &cadena_id) {
+int SMemoria::obtenerDato(memDir dir, const string &cadena_id) {
     memDir z = dir;
     while (z != NULL_VALUE) {
         if (mem[z].id == cadena_id) {
@@ -103,7 +103,7 @@ int MEMRRA::obtenerDato(memDir dir, const string &cadena_id) {
     }
 }
 
-int MEMRRA::Espacio_Disponible() {
+int SMemoria::Espacio_Disponible() {
     memDir x = libre;
     int availableSpace = 0;
     while (x != -1) {
@@ -113,12 +113,12 @@ int MEMRRA::Espacio_Disponible() {
     return availableSpace;
 }
 
-int MEMRRA::Espacio_ocupado() {
+int SMemoria::Espacio_ocupado() {
     int usedSpace = (MAX_MEM_SPACE) - Espacio_Disponible();
     return usedSpace;
 }
 
-bool MEMRRA::dir_libre(memDir dir) {
+bool SMemoria::dir_libre(memDir dir) {
     memDir x = libre;
     bool isAvailable = false; // flag.
     while (x != NULL_VALUE && !isAvailable) {
@@ -130,7 +130,7 @@ bool MEMRRA::dir_libre(memDir dir) {
     return isAvailable;
 }
 
-void MEMRRA::mostrar() {
+void SMemoria::mostrar() {
     cout << "DIR\tID\t\tDATA\tLINK" << endl;
     cout << "----------------------------------------" << endl;
     for (int i = 0; i < MAX_MEM_SPACE; i++) {

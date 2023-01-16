@@ -22,12 +22,12 @@ namespace Ex {
 }
 
 listaSMemoria::listaSMemoria() {
-    this->listMem = new MEMRRA(); // Init simulated memory.
+    this->listMem = new SMemoria(); // Init simulated memory.
     length = 0;
     ptrDir = NULL_VALUE;
 }
 
-listaSMemoria::listaSMemoria(MEMRRA *mem) {
+listaSMemoria::listaSMemoria(SMemoria *mem) {
     this->listMem = mem; // Use user input memory.
     length = 0;
     ptrDir = NULL_VALUE;
