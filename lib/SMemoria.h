@@ -9,7 +9,7 @@
 
 using namespace std;
 
-const int MAX_MEM_SPACE = 20;
+const int MAX_MEM_SPACE = 100;
 const int NULL_VALUE = -1;
 
 // Define a structure than represents a memory node
