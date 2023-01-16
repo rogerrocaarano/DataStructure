@@ -1,7 +1,7 @@
 //
 // Created by rogerroca on 14/12/2022.
 //
-#include "../lib/matrizDispersa/matrizDispersaSMemoria.h"
+#include "../../lib/matrizDispersa/matrizDispersaSMemoria.h"
 #include "iostream"
 
 int main() {

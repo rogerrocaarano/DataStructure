@@ -2,7 +2,7 @@
 // Created by rogerroca on 14/12/2022.
 //
 #include "iostream"
-#include "../lib/matrizDispersa/matrizDispersaCSRSMemoria.h"
+#include "../../lib/matrizDispersa/matrizDispersaCSRSMemoria.h"
 
 int main() {
     // iniciar la estructura

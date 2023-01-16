@@ -1,12 +1,12 @@
 //
 // Created by rogerroca on 14/12/2022.
 //
+#include "../../lib/matrizDispersa/matrizDispersaPtr.h"
 #include "iostream"
-#include "../lib/matrizDispersa/matrizDispersaCSRVector.h"
 
 int main() {
     // iniciar la estructura
-    matrizDispersaCSRVector m;
+    matrizDispersaPtr m;
     m.dimensionar(3, 4);
     std::cout << "TEST1::dimension_fila()";
     if (m.dimension_fila() == 3) {
@@ -24,6 +24,7 @@ int main() {
     m.poner(3, 4, 34);
     m.poner(2, 1, 21);
     m.poner(2, 3, 23);
+    m.poner(0, 1, 1);
     bool testResult3 = true;
     std::cout << "TEST3::elemento()";
     if (m.elemento(1, 1) != 11) {

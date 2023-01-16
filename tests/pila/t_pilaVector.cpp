@@ -3,10 +3,10 @@
 //
 
 #include <iostream>
-#include "../lib/pila/pilaLista.h"
+#include "../../lib/pila/pilaVector.h"
 
 int main() {
-    pilaLista p;
+    pilaVector p;
     p.meter(1);
     p.meter(2);
     p.meter(3);

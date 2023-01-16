@@ -3,10 +3,10 @@
 //
 
 #include <iostream>
-#include "../lib/pila/pilaSMemoria.h"
+#include "../../lib/pila/pilaLista.h"
 
 int main() {
-    pilaSMemoria p;
+    pilaLista p;
     p.meter(1);
     p.meter(2);
     p.meter(3);

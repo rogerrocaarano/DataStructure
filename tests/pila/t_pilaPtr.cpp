@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "../lib/pila/pilaPtr.h"
+#include "../../lib/pila/pilaPtr.h"
 
 int main() {
     pilaPtr p;

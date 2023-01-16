@@ -1,12 +1,12 @@
 //
 // Created by rogerroca on 14/12/2022.
 //
-#include "../lib/matrizDispersa/matrizDispersaPtr.h"
+#include "../../lib/matrizDispersa/matrizDispersaVector.h"
 #include "iostream"
 
 int main() {
     // iniciar la estructura
-    matrizDispersaPtr m;
+    matrizDispersaVector m;
     m.dimensionar(3, 4);
     std::cout << "TEST1::dimension_fila()";
     if (m.dimension_fila() == 3) {
