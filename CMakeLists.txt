@@ -96,4 +96,9 @@ add_executable(
         tests/t_pilaSMemoria.cpp
         lib/SMemoria.h lib/SMemoria.cpp
         lib/pila/pilaSMemoria.cpp lib/pila/pilaSMemoria.h)
+add_executable(
+        matrizDispersaSMemoria
+        tests/t_matrizDispersaSMemoria.cpp
+        lib/SMemoria.h lib/SMemoria.cpp
+        lib/matrizDispersa/matrizDispersaSMemoria.cpp lib/matrizDispersa/matrizDispersaSMemoria.h)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
