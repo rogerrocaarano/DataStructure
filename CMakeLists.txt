@@ -109,4 +109,9 @@ add_executable(
         matrizDispersaCSRPtr
         tests/t_matrizDispersaCSRPtr.cpp
         lib/matrizDispersa/matrizDispersaCSRPtr.cpp lib/matrizDispersa/matrizDispersaCSRPtr.h)
+add_executable(
+        matrizDispersaCSRSMemoria
+        tests/t_matrizDispersaCSRSMemoria.cpp
+        lib/SMemoria.h lib/SMemoria.cpp
+        lib/matrizDispersa/matrizDispersaCSRSMemoria.cpp lib/matrizDispersa/matrizDispersaCSRSMemoria.h)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
