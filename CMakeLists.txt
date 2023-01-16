@@ -114,4 +114,8 @@ add_executable(
         tests/matrizDispersa/t_matrizDispersaCSRSMemoria.cpp
         lib/SMemoria.h lib/SMemoria.cpp
         lib/matrizDispersa/matrizDispersaCSRSMemoria.cpp lib/matrizDispersa/matrizDispersaCSRSMemoria.h)
+add_executable(
+        colaPtr
+        tests/cola/t_colaPtr.cpp
+        lib/cola/colaPtr.cpp lib/cola/colaPtr.h)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
