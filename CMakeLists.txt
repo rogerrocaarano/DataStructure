@@ -81,4 +81,10 @@ add_executable(
         pilaPtr
         tests/t_pilaPtr.cpp
         lib/pilaPtr.cpp lib/pilaPtr.h)
+add_executable(
+        pilaLista
+        tests/t_pilaLista.cpp
+        lib/pilaLista.cpp lib/pilaLista.h
+        lib/listaPtr.h lib/listaPtr.cpp
+)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
