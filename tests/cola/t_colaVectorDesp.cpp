@@ -5,7 +5,7 @@
 #include "iostream"
 
 int main() {
-    colaVectorDesp c;
+    dicolaVectorDesp c;
     c.poner(1);
     c.poner(2);
     c.poner(3);
@@ -13,7 +13,10 @@ int main() {
     c.mostrar();
     int e;
     c.sacar(e);
-    std::cout << e << std::endl;
-    std::cout << c.primero();
+    c.mostrar();
+    c.poner_frente(10);
+    c.mostrar();
+    c.sacar_final(e);
+    c.mostrar();
     return 0;
 }

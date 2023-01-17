@@ -10,10 +10,10 @@
 const int COLA_SIZE = 100;
 
 class colaVectorDesp {
+protected:
     typedef int DATA_TYPE;
-private:
     DATA_TYPE Cola[COLA_SIZE];
-    DATA_TYPE firstCola, lastCola;
+    int firstCola, lastCola;
 
 public:
     colaVectorDesp();
@@ -31,5 +31,11 @@ public:
     void mostrar();
 };
 
+class dicolaVectorDesp : public colaVectorDesp {
+public:
+    void poner_frente(colaVectorDesp::DATA_TYPE e);
+
+    void sacar_final(colaVectorDesp::DATA_TYPE &e);
+};
 
 #endif //INF220_COLAVECTORDESP_H
