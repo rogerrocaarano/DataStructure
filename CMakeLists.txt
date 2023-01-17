@@ -51,6 +51,9 @@ add_executable(
         act2022-CL1
         entregas/act2022-CL1/main.cpp
         entregas/act2022-CL1/diColaPtr.cpp entregas/act2022-CL1/colaPrioridad.cpp)
+add_executable(
+        parcial2
+        entregas/parcial2/main.cpp entregas/parcial2/colaPrioridad.cpp entregas/parcial2/colaPrioridad.h entregas/parcial2/colaSMemoria.cpp entregas/parcial2/colaSMemoria.h entregas/parcial2/SMemoria.cpp entregas/parcial2/SMemoria.h)
 # Ejecutables pruebas
 add_executable(
         ConjuntoVector
