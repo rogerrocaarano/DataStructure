@@ -60,3 +60,24 @@ int colaVectorCirc::siguiente(int dir) {
     else
         return dir + 1;
 }
+
+void dicolaVectorCirc::poner_frente(colaVectorCirc::DATA_TYPE e) {
+    if (siguiente(lastCola) != firstCola) {
+        firstCola = anterior(firstCola);
+        Cola[firstCola] = e;
+    }
+}
+
+void dicolaVectorCirc::sacar_final(colaVectorCirc::DATA_TYPE &e) {
+    if (!vacia()) {
+        e = Cola[lastCola - 1];
+        lastCola = anterior(lastCola);
+    }
+}
+
+int dicolaVectorCirc::anterior(int dir) {
+    if (dir == 0)
+        return COLA_SIZE - 1;
+    else
+        return dir - 1;
+}

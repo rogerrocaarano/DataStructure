@@ -10,10 +10,10 @@
 const int COLA_SIZE = 100;
 
 class colaVectorCirc {
+protected:
     typedef int DATA_TYPE;
-private:
     DATA_TYPE Cola[COLA_SIZE];
-    DATA_TYPE firstCola, lastCola;
+    int firstCola, lastCola;
 
 public:
     colaVectorCirc();
@@ -31,6 +31,16 @@ public:
     void mostrar();
 
     int siguiente(int dir);
+};
+
+class dicolaVectorCirc : public colaVectorCirc {
+private:
+    int anterior(int dir);
+
+public:
+    void poner_frente(colaVectorCirc::DATA_TYPE e);
+
+    void sacar_final(colaVectorCirc::DATA_TYPE &e);
 };
 
 
