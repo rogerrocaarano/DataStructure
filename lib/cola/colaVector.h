@@ -10,10 +10,10 @@
 const int COLA_SIZE = 100;
 
 class colaVector {
+protected:
     typedef int DATA_TYPE;
-private:
     DATA_TYPE Cola[COLA_SIZE];
-    DATA_TYPE firstCola, lastCola;
+    int firstCola, lastCola;
 
 public:
     colaVector();
@@ -29,6 +29,13 @@ public:
     std::string to_str();
 
     void mostrar();
+};
+
+class dicolaVector : public colaVector {
+public:
+    void poner_frente(colaVector::DATA_TYPE e);
+
+    void sacar_final(colaVector::DATA_TYPE &e);
 };
 
 

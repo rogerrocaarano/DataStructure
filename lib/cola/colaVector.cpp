@@ -53,3 +53,27 @@ std::string colaVector::to_str() {
 void colaVector::mostrar() {
     std::cout << to_str() << std::endl;
 }
+
+void dicolaVector::poner_frente(colaVector::DATA_TYPE e) {
+    if (vacia()) {
+        Cola[firstCola] = e;
+        lastCola++;
+    } else {
+        if (lastCola < COLA_SIZE) {
+            for (int i = lastCola; i >= firstCola; i--) {
+                Cola[i] = Cola[i - 1];
+            }
+            Cola[firstCola] = e;
+            lastCola++;
+        }
+    }
+
+}
+
+void dicolaVector::sacar_final(colaVector::DATA_TYPE &e) {
+    if (vacia()) {
+        return;
+    }
+    e = Cola[lastCola];
+    lastCola--;
+}
