@@ -5,7 +5,7 @@
 #include "iostream"
 
 int main() {
-    colaVector c;
+    t_colaVector c;
     c.poner(1);
     c.poner(2);
     c.poner(3);

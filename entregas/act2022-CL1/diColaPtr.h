@@ -5,7 +5,7 @@
 // ---------------------------------------------------------------------------
 #include <iostream>
 
-class DicolaP {
+class diColaPtr {
     struct NodoC {
         int elemento;
         NodoC *sig;
@@ -15,7 +15,7 @@ private:
     NodoC *fin;
 
 public:
-    DicolaP();
+    diColaPtr();
 
     bool vacia();
 

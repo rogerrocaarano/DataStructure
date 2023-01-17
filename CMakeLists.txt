@@ -27,12 +27,12 @@ add_executable(
         entregas/parcial1op2/POLINOMIORRA.cpp
         entregas/parcial1op2/POLINOMIORRA.h
 )
-add_executable(
-        act2022-C1
-        entregas/act2022-C1/main.cpp
-        entregas/act2022-C1/conjuntoPtr.h
-        entregas/act2022-C1/conjuntoPtr.cpp
-)
+#add_executable(
+#        act2022-C1
+#        entregas/act2022-C1/main.cpp
+#        entregas/act2022-C1/conjuntoPtr.h
+#        entregas/act2022-C1/conjuntoPtr.cpp
+#        lib/dicola/diColaPtr.cpp lib/dicola/diColaPtr.h)
 add_executable(
         act2022-M1
         entregas/act2022-M1/main.cpp
@@ -125,7 +125,7 @@ add_executable(
         lib/cola/colaSMemoria.cpp lib/cola/colaSMemoria.h)
 add_executable(
         colaVector
-        tests/cola/colaVector.cpp lib/cola/colaVector.cpp lib/cola/colaVector.h)
+        tests/cola/t_colaVector.cpp lib/cola/colaVector.cpp lib/cola/colaVector.h)
 add_executable(
         colaVectorDesp
         tests/cola/t_colaVectorDesp.cpp lib/cola/colaVectorDesp.cpp lib/cola/colaVectorDesp.h)

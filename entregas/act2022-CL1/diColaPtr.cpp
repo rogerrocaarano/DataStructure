@@ -6,15 +6,15 @@
 // ---------------------------------------------------------------------------
 #pragma package(smart_init)
 
-DicolaP::DicolaP() {
+diColaPtr::diColaPtr() {
     ini = fin = nullptr;
 }
 
-bool DicolaP::vacia() {
+bool diColaPtr::vacia() {
     return ini == nullptr;
 }
 
-void DicolaP::poner(int e) {
+void diColaPtr::poner(int e) {
     auto *aux = new NodoC();
     aux->elemento = e;
     aux->sig = nullptr;
@@ -26,7 +26,7 @@ void DicolaP::poner(int e) {
     }
 }
 
-void DicolaP::sacar(int &e) {
+void diColaPtr::sacar(int &e) {
     if (!vacia()) {
         e = ini->elemento;
         NodoC *x = ini;
@@ -38,17 +38,17 @@ void DicolaP::sacar(int &e) {
     }
 }
 
-int DicolaP::primero() {
+int diColaPtr::primero() {
     if (!vacia())
         return ini->elemento;
 }
 
-int DicolaP::ultimo() {
+int diColaPtr::ultimo() {
     if (!vacia())
         return fin->elemento;
 }
 
-void DicolaP::poner_frente(int e) {
+void diColaPtr::poner_frente(int e) {
     auto *aux = new NodoC();
     if (vacia())
         ini = fin = aux;
@@ -59,7 +59,7 @@ void DicolaP::poner_frente(int e) {
     }
 }
 
-void DicolaP::sacar_final(int &e) {
+void diColaPtr::sacar_final(int &e) {
     if (!vacia()) {
         e = fin->elemento;
         NodoC *x = fin;
@@ -76,10 +76,10 @@ void DicolaP::sacar_final(int &e) {
     }
 }
 
-std::string DicolaP::to_str() {
+std::string diColaPtr::to_str() {
     std::string s = "";
     int e;
-    auto *aux = new DicolaP();
+    auto *aux = new diColaPtr();
     while (!vacia()) {
         sacar(e);
         aux->poner(e);

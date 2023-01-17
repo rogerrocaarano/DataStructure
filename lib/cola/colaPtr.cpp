@@ -65,3 +65,32 @@ std::string colaPtr::to_str() {
 void colaPtr::mostrar() {
     std::cout << to_str() << std::endl;
 }
+
+void dicolaPtr::poner_frente(colaPtr::DATA_TYPE e) {
+    auto *aux = new NodoC();
+    if (vacia())
+        firstCola = lastCola = aux;
+    else {
+        aux->elemento = e;
+        aux->sig = firstCola;
+        firstCola = aux;
+    }
+}
+
+void dicolaPtr::sacar_final(DATA_TYPE &e) {
+    if (vacia()) {
+        return;
+    }
+    e = lastCola->elemento;
+    NodoC *sacar = lastCola;
+    if (firstCola == lastCola)
+        firstCola = lastCola = nullptr;
+    else {
+        NodoC *ant = firstCola;
+        while (ant->sig != lastCola)
+            ant = ant->sig;
+        ant->sig = nullptr;
+        lastCola = ant;
+    }
+    delete sacar;
+}

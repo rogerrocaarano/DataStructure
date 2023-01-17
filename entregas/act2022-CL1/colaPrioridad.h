@@ -16,7 +16,7 @@ using namespace std;
 
 class ColaPrioridad {
 private:
-    DicolaP *vc;
+    diColaPtr *vc;
     int *vf;
     int cola_act;
     int cant;

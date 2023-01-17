@@ -8,15 +8,15 @@
 #include "iostream"
 
 class colaPtr {
+protected:
     typedef int DATA_TYPE;
-
     struct NodoC {
         DATA_TYPE elemento;
         NodoC *sig;
     };
-private:
     NodoC *firstCola; // Puntero al inicio de la cola
     NodoC *lastCola; // Puntero al final de la cola
+
 public:
     colaPtr();
 
@@ -31,8 +31,13 @@ public:
     std::string to_str();
 
     void mostrar();
+};
 
+class dicolaPtr : public colaPtr {
+public:
+    void poner_frente(colaPtr::DATA_TYPE e);
 
+    void sacar_final(colaPtr::DATA_TYPE &e);
 };
 
 

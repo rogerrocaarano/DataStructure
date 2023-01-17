@@ -9,7 +9,7 @@
 ColaPrioridad::ColaPrioridad() {
     // El constructor por defecto creará una estructura con 3 colas
     maxColas = 3;
-    vc = new DicolaP[maxColas];
+    vc = new diColaPtr[maxColas];
     vf = new int[maxColas];
     for (int i = 0; i < maxColas; i++) {
         // vc[i] = new ColaL();
@@ -93,7 +93,7 @@ string ColaPrioridad::to_str() {
 
 ColaPrioridad::ColaPrioridad(int colas) {
     maxColas = colas;
-    vc = new DicolaP[maxColas];
+    vc = new diColaPtr[maxColas];
     vf = new int[maxColas];
     for (int i = 0; i < maxColas; i++) {
         // vc[i] = new ColaL();
