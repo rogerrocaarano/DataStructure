@@ -129,4 +129,7 @@ add_executable(
 add_executable(
         colaVectorDesp
         tests/cola/t_colaVectorDesp.cpp lib/cola/colaVectorDesp.cpp lib/cola/colaVectorDesp.h)
+add_executable(
+        colaVectorCirc
+        tests/cola/t_colaVectorCirc.cpp lib/cola/colaVectorCirc.cpp lib/cola/colaVectorCirc.h)
 set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
