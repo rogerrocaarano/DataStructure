@@ -2,7 +2,7 @@
 // Created by rogerroca on 4/10/2022.
 //
 
-#ifndef DATASTRUCTURE_MEMRRA_H
+#ifndef DATASTRUCTURE_SMEMORIA_H
 #define DATASTRUCTURE_SMEMORIA_H
 
 #include "string"
