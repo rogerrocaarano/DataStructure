@@ -7,10 +7,6 @@
 
 #include "../SMemoria.h"
 
-const string LIST_ITEM = "elem";
-const string NEXT_LIST_ITEM_POINTER = "sig";
-const string LIST_NODE = LIST_ITEM + ',' + NEXT_LIST_ITEM_POINTER;
-
 typedef int DATA_TYPE; // Data type than the listaSMemoria can store.
 
 class listaSMemoria {

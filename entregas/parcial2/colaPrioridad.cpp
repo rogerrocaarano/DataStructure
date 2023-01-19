@@ -75,7 +75,7 @@ void ColaPrioridadRRA::sacar(int &e) {
     }
 }
 
-void ColaPrioridadRRA::asignar_frec_prioridad(int frec, int prior) {
+void ColaPrioridadRRA::asignar_frecuencia_prioridad(int frec, int prior) {
     if (prior > 0 && prior <= maxColas) {
         vf[prior - 1] = frec;
     }

@@ -9,14 +9,7 @@
 
 class matrizDispersaSMemoria {
     typedef int DATA_TYPE;
-    const string MD_DATA = "dato";
-    const string MD_FILA = "fila";
-    const string MD_COL = "col";
-    const string NEXT_MD_ITEM_POINTER = "sig";
-    const string MD_NODE = MD_DATA + ',' +
-                           MD_FILA + ',' +
-                           MD_COL + ',' +
-                           NEXT_MD_ITEM_POINTER;
+
 private:
     SMemoria mem;
     int df; // Dimensión filas

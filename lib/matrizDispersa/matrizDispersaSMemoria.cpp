@@ -8,10 +8,10 @@
 memDir matrizDispersaSMemoria::obtenerPosicion(int f, int c) {
     memDir dir = M_ptr;
     for (int i = 0; i < nt; i++) {
-        if (mem.obtenerDato(dir, MD_FILA) == f && mem.obtenerDato(dir, MD_COL) == c) {
+        if (mem.obtenerDato(dir, "->fila") == f && mem.obtenerDato(dir, "->col") == c) {
             return dir;
         }
-        dir = mem.obtenerDato(dir, NEXT_MD_ITEM_POINTER);
+        dir = mem.obtenerDato(dir, "->sig");
     }
     return NULL_VALUE;
 }
@@ -50,7 +50,7 @@ void matrizDispersaSMemoria::poner(int f, int c, matrizDispersaSMemoria::DATA_TY
     memDir pos = obtenerPosicion(f, c);
     if (pos >= 0) {
         // Asignamos el valor y si el valor es igual a "repe" hay que eliminarlo:
-        mem.poner_dato(pos, MD_DATA, valor);
+        mem.poner_dato(pos, "->dato", valor);
         if (valor == repe) {
             eliminar(pos);
         }
@@ -58,15 +58,15 @@ void matrizDispersaSMemoria::poner(int f, int c, matrizDispersaSMemoria::DATA_TY
     }
     // No existe el valor en la matriz.
     // Crear un nuevo elemento:
-    memDir dir = mem.new_espacio(MD_NODE); // Pedir espacio de memoria
+    memDir dir = mem.new_espacio("data,fila,col,sig"); // Pedir espacio de memoria
     if (dir == NULL_VALUE) {
         std::cout << "Error: No existe suficiente espacio." << std::endl;
         return;
     }
-    mem.poner_dato(dir, MD_DATA, valor);
-    mem.poner_dato(dir, MD_FILA, f);
-    mem.poner_dato(dir, MD_COL, c);
-    mem.poner_dato(dir, NEXT_MD_ITEM_POINTER, M_ptr);
+    mem.poner_dato(dir, "->dato", valor);
+    mem.poner_dato(dir, "->fila", f);
+    mem.poner_dato(dir, "->col", c);
+    mem.poner_dato(dir, "->sig", M_ptr);
     M_ptr = dir;
     nt++;
 }
@@ -81,7 +81,7 @@ matrizDispersaSMemoria::DATA_TYPE matrizDispersaSMemoria::elemento(int f, int c)
         return repe;
     }
     memDir pos = obtenerPosicion(f, c);
-    return pos == -1 ? repe : mem.obtenerDato(pos, MD_DATA);
+    return pos == -1 ? repe : mem.obtenerDato(pos, "->dato");
 }
 
 void matrizDispersaSMemoria::definir_valor_repetido(matrizDispersaSMemoria::DATA_TYPE valor) {
@@ -90,8 +90,8 @@ void matrizDispersaSMemoria::definir_valor_repetido(matrizDispersaSMemoria::DATA
     int i = 0;
     memDir dir = M_ptr;
     while (i < nt) {
-        if (mem.obtenerDato(dir, MD_DATA) == valor) {
-            memDir aux = mem.obtenerDato(dir, NEXT_MD_ITEM_POINTER);
+        if (mem.obtenerDato(dir, "->dato") == valor) {
+            memDir aux = mem.obtenerDato(dir, "->sig");
             eliminar(dir);
             dir = aux;
             break;

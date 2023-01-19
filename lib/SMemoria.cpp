@@ -83,7 +83,12 @@ void SMemoria::delete_espacio(memDir dir) {
     libre = dir;
 }
 
-void SMemoria::poner_dato(memDir dir, const string &cadena_id, int dataValue) {
+void SMemoria::poner_dato(memDir dir, string cadena_id, int dataValue) {
+    eliminarFlecha(cadena_id);
+    if (cadena_id.empty()) {
+        cout << "Verificar sintaxis cadena_id" << endl;
+        return;
+    }
     memDir z = dir;
     while (z != NULL_VALUE) {
         if (mem[z].id == cadena_id) {          // If found id:
@@ -93,7 +98,12 @@ void SMemoria::poner_dato(memDir dir, const string &cadena_id, int dataValue) {
     }
 }
 
-int SMemoria::obtenerDato(memDir dir, const string &cadena_id) {
+int SMemoria::obtenerDato(memDir dir, string cadena_id) {
+    eliminarFlecha(cadena_id);
+    if (cadena_id.empty()) {
+        cout << "Verificar sintaxis cadena_id" << endl;
+        return NULL_VALUE;
+    }
     memDir z = dir;
     while (z != NULL_VALUE) {
         if (mem[z].id == cadena_id) {
@@ -140,4 +150,10 @@ void SMemoria::mostrar() {
     cout << "Siguiente nodo Libre: " << libre << endl;
     cout << "Espacio ocupado: " << Espacio_ocupado() << endl;
     cout << "Espacio disponible: " << Espacio_Disponible() << endl;
+}
+
+void SMemoria::eliminarFlecha(string &cadena_id) {
+    if (cadena_id.substr(0, 2) == "->")
+        cadena_id.erase(0, 2);
+    else cadena_id = "";
 }

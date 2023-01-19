@@ -25,6 +25,8 @@ class SMemoria {
 private:
     NodoM mem[MAX_MEM_SPACE];
     memDir libre; // Next available memory node.
+    void eliminarFlecha(string &cadena_id);
+
 public:
     SMemoria();
 
@@ -32,9 +34,9 @@ public:
 
     void delete_espacio(memDir dir);
 
-    void poner_dato(memDir dir, const string &cadena_id, int dataValue);
+    void poner_dato(memDir dir, string cadena_id, int dataValue);
 
-    int obtenerDato(memDir dir, const string &cadena_id);
+    int obtenerDato(memDir dir, string cadena_id);
 
     int Espacio_Disponible();
 

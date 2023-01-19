@@ -32,7 +32,7 @@ public:
 
     void sacar(int &e);
 
-    void asignar_frec_prioridad(int frec, int prior);
+    void asignar_frecuencia_prioridad(int frec, int prior);
 
     string to_str();
 };

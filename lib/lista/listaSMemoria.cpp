@@ -41,7 +41,7 @@ memDir listaSMemoria::fin() {
         memDir x = ptrDir;
         while (x != NULL_VALUE) {
             lastDir = x;
-            x = listMem->obtenerDato(x, NEXT_LIST_ITEM_POINTER);
+            x = listMem->obtenerDato(x, "->sig");
         }
         return lastDir;
     }
@@ -68,7 +68,7 @@ memDir listaSMemoria::siguiente(memDir dir) {
             Ex::incorrectDir();
             return NULL_VALUE;
         } else {
-            return (listMem->obtenerDato(dir, NEXT_LIST_ITEM_POINTER));
+            return (listMem->obtenerDato(dir, "->sig"));
         }
     }
 }
@@ -87,7 +87,7 @@ memDir listaSMemoria::anterior(memDir dir) {
                     return previousDir;
                 }
                 previousDir = x;
-                x = listMem->obtenerDato(x, NEXT_LIST_ITEM_POINTER);
+                x = listMem->obtenerDato(x, "->sig");
             }
             return previousDir;
         }
@@ -102,7 +102,7 @@ int listaSMemoria::recupera(memDir dir) {
     if (vacia()) {
         Ex::emptyList();
     } else {
-        return listMem->obtenerDato(dir, LIST_ITEM);
+        return listMem->obtenerDato(dir, "->elem");
     }
 }
 
@@ -118,22 +118,22 @@ void listaSMemoria::inserta(memDir dir, DATA_TYPE value) {
     if (this->vacia()) {
         inserta_primero(value);
     } else {
-        memDir x = listMem->new_espacio(LIST_NODE); // request new memory space.
+        memDir x = listMem->new_espacio("elem,sig"); // request new memory space.
         if (x != NULL_VALUE) {
-            listMem->poner_dato(x, LIST_ITEM, value);
-            listMem->poner_dato(x, NEXT_LIST_ITEM_POINTER, dir);
+            listMem->poner_dato(x, "->elem", value);
+            listMem->poner_dato(x, "->sig", dir);
             if (vacia()) {
                 ptrDir = x;
                 length = 1;
             } else {
                 length++;
                 if (dir == primero()) {
-                    listMem->poner_dato(x, NEXT_LIST_ITEM_POINTER, dir);
+                    listMem->poner_dato(x, "->sig", dir);
                     ptrDir = x;
                 } else {
                     memDir prevDir = anterior(dir);
-                    listMem->poner_dato(prevDir, NEXT_LIST_ITEM_POINTER, x);
-                    listMem->poner_dato(x, NEXT_LIST_ITEM_POINTER, dir);
+                    listMem->poner_dato(prevDir, "->sig", x);
+                    listMem->poner_dato(x, "->sig", dir);
                 }
             }
         } else {
@@ -143,10 +143,10 @@ void listaSMemoria::inserta(memDir dir, DATA_TYPE value) {
 }
 
 void listaSMemoria::inserta_primero(DATA_TYPE value) {
-    memDir x = listMem->new_espacio(LIST_NODE);
+    memDir x = listMem->new_espacio("elem,sig");
     if (x != NULL_VALUE) {
-        listMem->poner_dato(x, LIST_ITEM, value);
-        listMem->poner_dato(x, NEXT_LIST_ITEM_POINTER, ptrDir);
+        listMem->poner_dato(x, "->elem", value);
+        listMem->poner_dato(x, "->sig", ptrDir);
         length++;
         ptrDir = x;
     } else {
@@ -158,12 +158,12 @@ void listaSMemoria::inserta_ultimo(DATA_TYPE value) {
     if (this->vacia()) {
         inserta_primero(value);
     } else {
-        memDir x = listMem->new_espacio(LIST_NODE);
+        memDir x = listMem->new_espacio("elem,sig");
         if (x != NULL_VALUE) {
-            listMem->poner_dato(x, LIST_ITEM, value);
-            listMem->poner_dato(x, NEXT_LIST_ITEM_POINTER, NULL_VALUE);
+            listMem->poner_dato(x, "->elem", value);
+            listMem->poner_dato(x, "->sig", NULL_VALUE);
             if (longitud() != NULL_VALUE) {
-                listMem->poner_dato(fin(), NEXT_LIST_ITEM_POINTER, x);
+                listMem->poner_dato(fin(), "->sig", x);
             } else {
                 ptrDir = x;
             }
@@ -180,10 +180,10 @@ void listaSMemoria::suprime(memDir dir) {
     } else {
         if (dir == ptrDir) {
             memDir x = ptrDir;
-            ptrDir = listMem->obtenerDato(ptrDir, NEXT_LIST_ITEM_POINTER);
+            ptrDir = listMem->obtenerDato(ptrDir, "->sig");
             listMem->delete_espacio(x);
         } else {
-            listMem->poner_dato(anterior(dir), NEXT_LIST_ITEM_POINTER, siguiente(dir));
+            listMem->poner_dato(anterior(dir), "->sig", siguiente(dir));
             listMem->delete_espacio(dir);
         }
         length--;
@@ -194,7 +194,7 @@ void listaSMemoria::modifica(memDir dir, DATA_TYPE value) {
     if (vacia()) {
         Ex::emptyList();
     } else {
-        listMem->poner_dato(dir, LIST_ITEM, value);
+        listMem->poner_dato(dir, "->elem", value);
     }
 }
 
@@ -203,11 +203,11 @@ void listaSMemoria::mostrar() {
     memDir dir = ptrDir;
     int i = 1;
     while (i <= length) {
-        cout << listMem->obtenerDato(dir, LIST_ITEM);
+        cout << listMem->obtenerDato(dir, "->elem");
         if (i < length) {
             cout << " , ";
         }
-        dir = listMem->obtenerDato(dir, NEXT_LIST_ITEM_POINTER);
+        dir = listMem->obtenerDato(dir, "->sig");
         i++;
     }
     cout << endl;

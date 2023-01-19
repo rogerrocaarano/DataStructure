@@ -14,25 +14,25 @@ memDir matrizDispersaCSRSMemoria::obtener_nodo_f(int f) {
         return NULL_VALUE;
     }
     memDir nodo_f = ptrFil;
-    while (mem.obtenerDato(nodo_f, F) != f) {
-        if (mem.obtenerDato(nodo_f, F_SIG) == NULL_VALUE) {
+    while (mem.obtenerDato(nodo_f, "->f") != f) {
+        if (mem.obtenerDato(nodo_f, "->f_sig") == NULL_VALUE) {
             return NULL_VALUE;
         }
-        nodo_f = mem.obtenerDato(nodo_f, F_SIG);
+        nodo_f = mem.obtenerDato(nodo_f, "->f_sig");
     }
     return nodo_f;
 }
 
 memDir matrizDispersaCSRSMemoria::obtener_nodo_c(memDir nodo_f, int c) {
-    if (nodo_f == NULL_VALUE || mem.obtenerDato(nodo_f, PTRCOL) == NULL_VALUE) {
+    if (nodo_f == NULL_VALUE || mem.obtenerDato(nodo_f, "->PtrCol") == NULL_VALUE) {
         return NULL_VALUE;
     }
-    memDir nodo_c = mem.obtenerDato(nodo_f, PTRCOL);
-    while (mem.obtenerDato(nodo_c, C) != c) {
-        if (mem.obtenerDato(nodo_c, C_SIG) == NULL_VALUE) {
+    memDir nodo_c = mem.obtenerDato(nodo_f, "->PtrCol");
+    while (mem.obtenerDato(nodo_c, "->c") != c) {
+        if (mem.obtenerDato(nodo_c, "->c_sig") == NULL_VALUE) {
             return NULL_VALUE;
         }
-        nodo_c = mem.obtenerDato(nodo_c, C_SIG);
+        nodo_c = mem.obtenerDato(nodo_c, "->c_sig");
     }
     return nodo_c;
 }
@@ -58,11 +58,11 @@ void matrizDispersaCSRSMemoria::eliminar(int f, int c) {
     }
     // Eliminar el nodo del elemento
     // Si es el único elemento en la fila se eliminará toda la fila:
-    if (nodo_c == mem.obtenerDato(nodo_f, PTRCOL)
-        && mem.obtenerDato(nodo_c, C_SIG) == NULL_VALUE) {
+    if (nodo_c == mem.obtenerDato(nodo_f, "->PtrCol")
+        && mem.obtenerDato(nodo_c, "->c_sig") == NULL_VALUE) {
         mem.delete_espacio(nodo_c);
-        memDir nodo_f_sig = mem.obtenerDato(nodo_f, F_SIG);
-        mem.poner_dato(nodo_f_sig, F_ANT, mem.obtenerDato(nodo_f, F_ANT));
+        memDir nodo_f_sig = mem.obtenerDato(nodo_f, "->f_sig");
+        mem.poner_dato(nodo_f_sig, "->f_ant", mem.obtenerDato(nodo_f, "->f_ant"));
         if (nodo_f == ptrFil) {
             ptrFil = nodo_f_sig;
         }
@@ -71,14 +71,14 @@ void matrizDispersaCSRSMemoria::eliminar(int f, int c) {
         return;
     }
     // Si es el primer elemento en la fila:
-    if (nodo_c == mem.obtenerDato(nodo_f, PTRCOL)) {
-        mem.poner_dato(nodo_f, PTRCOL, mem.obtenerDato(nodo_c, C_SIG));
+    if (nodo_c == mem.obtenerDato(nodo_f, "->PtrCol")) {
+        mem.poner_dato(nodo_f, "->PtrCol", mem.obtenerDato(nodo_c, "->c_sig"));
     } else {
-        memDir nodo_c_ant = mem.obtenerDato(nodo_f, PTRCOL);
-        while (mem.obtenerDato(nodo_c_ant, C_SIG) != nodo_c) {
-            nodo_c_ant = mem.obtenerDato(nodo_c_ant, C_SIG);
+        memDir nodo_c_ant = mem.obtenerDato(nodo_f, "->PtrCol");
+        while (mem.obtenerDato(nodo_c_ant, "->c_sig") != nodo_c) {
+            nodo_c_ant = mem.obtenerDato(nodo_c_ant, "->c_sig");
         }
-        mem.poner_dato(nodo_c_ant, C_SIG, mem.obtenerDato(nodo_c, C_SIG));
+        mem.poner_dato(nodo_c_ant, "->c_sig", mem.obtenerDato(nodo_c, "->c_sig"));
     }
     nt--;
     mem.delete_espacio(nodo_c);
@@ -115,38 +115,38 @@ void matrizDispersaCSRSMemoria::poner(int f, int c, matrizDispersaCSRSMemoria::D
         // Si se introduce el valor "repe" en alguno de los elementos ya existentes, el elemento debe ser eliminado:
         // Obtener la posición del elemento a eliminar y llamar al método eliminar(pos)
         if (valor != repe) {
-            mem.poner_dato(nodo_c, DATO, valor);
+            mem.poner_dato(nodo_c, "->dato", valor);
         } else eliminar(f, c);
         return;
     }
     // Si no es un valor existente
     // Crear un nuevo nodo de columna
-    nodo_c = mem.new_espacio(NodoCol);
+    nodo_c = mem.new_espacio("dato,c,c_sig");
     if (nodo_c == NULL_VALUE) return;
-    mem.poner_dato(nodo_c, C, c);
-    mem.poner_dato(nodo_c, DATO, valor);
-    mem.poner_dato(nodo_c, C_SIG, NULL_VALUE);
+    mem.poner_dato(nodo_c, "->c", c);
+    mem.poner_dato(nodo_c, "->dato", valor);
+    mem.poner_dato(nodo_c, "->c_sig", NULL_VALUE);
     if (nodo_f != NULL_VALUE) { // Caso 1: Un valor nuevo para una fila ya existente.
-        memDir aux = mem.obtenerDato(nodo_f, PTRCOL);
-        while (mem.obtenerDato(aux, C_SIG) != NULL_VALUE) {
-            aux = mem.obtenerDato(aux, C_SIG);
+        memDir aux = mem.obtenerDato(nodo_f, "->PtrCol");
+        while (mem.obtenerDato(aux, "->c_sig") != NULL_VALUE) {
+            aux = mem.obtenerDato(aux, "->c_sig");
         }
-        mem.poner_dato(aux, C_SIG, nodo_c);
+        mem.poner_dato(aux, "->c_sig", nodo_c);
     } else { // Caso 2: Un valor nuevo para una fila y columna nuevos.
-        nodo_f = mem.new_espacio(NodoFil);
-        mem.poner_dato(nodo_f, PTRCOL, nodo_c);
-        mem.poner_dato(nodo_f, F, f);
-        mem.poner_dato(nodo_f, F_SIG, NULL_VALUE);
+        nodo_f = mem.new_espacio("f,f_sig,f_ant,PtrCol");
+        mem.poner_dato(nodo_f, "->PtrCol", nodo_c);
+        mem.poner_dato(nodo_f, "->f", f);
+        mem.poner_dato(nodo_f, "->f_sig", NULL_VALUE);
         if (ptrFil == NULL_VALUE) {
             ptrFil = nodo_f;
-            mem.poner_dato(nodo_f, F_ANT, NULL_VALUE);
+            mem.poner_dato(nodo_f, "->f_ant", NULL_VALUE);
         } else {
             memDir aux = ptrFil;
-            while (mem.obtenerDato(aux, F_SIG) != NULL_VALUE) {
-                aux = mem.obtenerDato(aux, F_SIG);
+            while (mem.obtenerDato(aux, "->f_sig") != NULL_VALUE) {
+                aux = mem.obtenerDato(aux, "->f_sig");
             }
-            mem.poner_dato(nodo_f, F_ANT, aux);
-            mem.poner_dato(aux, F_SIG, nodo_f);
+            mem.poner_dato(nodo_f, "->f_ant", aux);
+            mem.poner_dato(aux, "->f_sig", nodo_f);
         }
     }
     nt++;
@@ -160,7 +160,7 @@ matrizDispersaCSRSMemoria::DATA_TYPE matrizDispersaCSRSMemoria::elemento(int f, 
     if (nodo_f == NULL_VALUE || nodo_c == NULL_VALUE) {
         return repe;
     }
-    return mem.obtenerDato(nodo_c, DATO);
+    return mem.obtenerDato(nodo_c, "->dato");
 }
 
 void matrizDispersaCSRSMemoria::definir_valor_repetido(matrizDispersaCSRSMemoria::DATA_TYPE valor) {

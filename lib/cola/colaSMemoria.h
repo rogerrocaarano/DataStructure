@@ -9,10 +9,6 @@
 
 class colaSMemoria {
     typedef int DATA_TYPE;
-    const string ELEMENTO = "elem";
-    const string SIG = "sig";
-    const string NODO = ELEMENTO + ',' +
-                        SIG;
 private:
     memDir firstCola; // Puntero al inicio de la cola
     memDir lastCola; // Puntero al final de la cola

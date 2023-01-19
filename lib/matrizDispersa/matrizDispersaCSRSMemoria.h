@@ -9,21 +9,7 @@
 
 class matrizDispersaCSRSMemoria {
     typedef int DATA_TYPE;
-    const string DATO = "dato";
-    const string C = "c";
-    const string C_SIG = "c_sig";
-    const string NodoCol = DATO + ',' +
-                           C + ',' +
-                           C_SIG;
 
-    const string F = "f";
-    const string F_SIG = "f_sig";
-    const string F_ANT = "f_ant";
-    const string PTRCOL = "PtrCol";
-    const string NodoFil = F + ',' +
-                           F_SIG + ',' +
-                           F_ANT + ',' +
-                           PTRCOL;
 private:
     // Variables globales:
     memDir ptrFil;

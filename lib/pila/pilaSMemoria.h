@@ -9,9 +9,7 @@
 
 class pilaSMemoria {
     typedef int DATA_TYPE;
-    const string PILA_ITEM = "elem";
-    const string NEXT_PILA_ITEM_POINTER = "sig";
-    const string PILA_NODE = PILA_ITEM + ',' + NEXT_PILA_ITEM_POINTER;
+
 private:
     memDir tope;
     SMemoria m;

@@ -26,9 +26,9 @@ int main() {
     pRRA->poner(200, 2);
     pRRA->poner(1000, 3);
     pRRA->poner(300, 2);
-    pRRA->asignar_frec_prioridad(2, 1);
-    pRRA->asignar_frec_prioridad(2, 2);
-    pRRA->asignar_frec_prioridad(1, 3);
+    pRRA->asignar_frecuencia_prioridad(2, 1);
+    pRRA->asignar_frecuencia_prioridad(2, 2);
+    pRRA->asignar_frecuencia_prioridad(1, 3);
     M->mostrar();
     pRRA->sacar(elem);
     mostrar(elem);
